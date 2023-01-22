@@ -2,13 +2,14 @@
   "name": "capsule-capsulate",
   "version": "0.1.0",
   "description": "The official Capsule document converter.",
-  "module": "index.js",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "capsule-capsulate"
+    "url": "https://github.com/ActiveEngagement/capsule-capsulate.git"
   },
   "author": "Justin Kimbrell",
   "license": "ISC",
@@ -18,11 +19,13 @@
     "lodash": "^4.17.21"
   },
   "dependencies": {
+    "events": "^3.3.0",
+    "html-entities": "^2.3.3",
     "html-minifier": "^4.0.0",
     "inline-css": "^4.0.1",
     "jquery": "^3.6.3",
     "js-beautify": "^1.14.7",
-    "jsdom": "^21.0.0",
+    "jsdom": "^19.0.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.flatten": "^4.4.0",
     "lodash.isnumber": "^3.0.3",

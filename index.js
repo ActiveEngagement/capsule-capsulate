@@ -1,5 +1,5 @@
-import capsulate from "./lib/capsulate";
+const capsulate = require('./lib/capsulate');
 
-export {
+module.exports = {
     capsulate
 };

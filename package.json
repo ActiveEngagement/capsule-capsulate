@@ -1,6 +1,6 @@
 {
   "name": "capsule-capsulate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The official Capsule document converter.",
   "type": "commonjs",
   "main": "index.js",

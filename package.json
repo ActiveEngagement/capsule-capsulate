@@ -1,0 +1,35 @@
+{
+  "name": "capsule-capsulate",
+  "version": "0.1.0",
+  "description": "The official Capsule document converter.",
+  "module": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "capsule-capsulate"
+  },
+  "author": "Justin Kimbrell",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "jest": "^29.3.1",
+    "lodash": "^4.17.21"
+  },
+  "dependencies": {
+    "html-minifier": "^4.0.0",
+    "inline-css": "^4.0.1",
+    "jquery": "^3.6.3",
+    "js-beautify": "^1.14.7",
+    "jsdom": "^21.0.0",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.flatten": "^4.4.0",
+    "lodash.isnumber": "^3.0.3",
+    "lodash.pickby": "^4.6.0",
+    "lodash.size": "^4.2.0",
+    "lodash.template": "^4.5.0",
+    "nunjucks": "^3.2.3",
+    "viewport-dimensions": "^0.2.0"
+  }
+}

@@ -1,0 +1,12 @@
+<table>
+    <tbody><tr>
+        <td align="center">
+            <img src="{{ $template->logo_src }}" alt="{{ $template->logo_alt }}" width="200" class="logo">
+            <!--[if mso]><table><tr><td style="padding: 1em;"><![endif]-->
+<div class="py-3 font-size-14 font-italic text-secondary" style="padding:1em; font-size:14px; color: red;">
+                @markdown(isset($template-&gt;options-&gt;sponsor_note) ? $template-&gt;options-&gt;sponsor_note : 'Please see a special message from our sponsor.')
+            </div>
+<!--[if mso]></td></tr></table><![endif]-->
+        </td>
+    </tr>
+</tbody></table>

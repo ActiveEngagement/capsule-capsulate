@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Capsulate</title>
+    </head>
+    <body>
+        <div id="app">
+            <textarea></textarea>
+        </div>
+        
+        <script type="module">
+            import { capsulate } from './index';
+            import { cheerio, manipulate } from './src/helpers';
+            import FixMsoWrapper from './src/dom/FixMsoWrapper';
+            import { TaskRunner } from './src/TaskRunner';
+            import Beautify from './src/plugins/Beautify';
+            import InlineCss from './src/plugins/InlineCss';
+
+            const html = `<html>
+                <head>
+                    <style type="text/css">
+                        .text-red {
+                            color: red;
+                        }
+                        .text-lg {
+                            font-size: 1.2em;
+                        }
+                    </style>
+                </head>
+                <body class="text-red">
+                    <h1>Some Title</h1>
+                    <p class="text-lg">Some content here.</p>
+                </body>
+            </html>
+            `;
+
+            const runner = new TaskRunner([
+                new Beautify,
+                new InlineCss
+            ]);
+        
+            const response = await runner.process(html);
+
+            
+            console.log(response);
+
+            // capsulate(html).then(response => console.log(response))
+        </script>
+    </body>
+</html>

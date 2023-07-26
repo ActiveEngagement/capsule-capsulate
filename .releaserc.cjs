@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
     branches: [
-        'master',
+        'main',
         {
             name: 'beta',
             channel: 'beta',

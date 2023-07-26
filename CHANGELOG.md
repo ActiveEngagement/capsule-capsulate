@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.1...v0.2.2) (2023-07-26)
+
+
+### Bug Fixes
+
+* testing release ([ede8437](https://github.com/ActiveEngagement/capsule-capsulate/commit/ede84374f48dacccfaa17dfca321c66c21f92a19))
+
 ## [0.2.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.0...v0.2.1) (2023-07-26)
 
 

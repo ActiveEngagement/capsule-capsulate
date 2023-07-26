@@ -13,7 +13,7 @@ export default class PreserveHeadTag extends BasePlugin {
     }
 
     async postprocess($: CheerioAPI) {
-        if(!this.head) {
+        if(!this.head.length) {
             return $;
         }
         

@@ -12,6 +12,7 @@ import ExtractTarget, { ExtractTargetOptions } from "./plugins/ExtractTarget";
 import HtmlMinifier, { HtmlMinifierOptions } from "./plugins/HtmlMinifier";
 import InlineCss from "./plugins/InlineCss";
 import PreserveBodyAttributes from "./plugins/PreserveBodyAttributes";
+import PreserveHeadTag from "./plugins/PreserveHeadTag";
 import Template, { TemplateOptions } from "./plugins/Template";
 import { TaskRunner } from "./TaskRunner";
 
@@ -28,7 +29,7 @@ export default async function capsulate(src: string, options: CapsulateOptions =
     const runner = new TaskRunner([
         new InlineCss(),
         new PreserveBodyAttributes,
-        // new PreserveHeadTag,
+        new PreserveHeadTag,
         new ExtractTarget(options.extractTarget),
         new Template(options.template),
         new ManipulateDom([

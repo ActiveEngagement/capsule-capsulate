@@ -46,8 +46,6 @@ export default class Template extends BasePlugin<TemplateOptions> {
             );
         }
         catch(e) {
-            console.log(e);
-            
             return src;
         }
     }

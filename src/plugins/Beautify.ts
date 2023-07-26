@@ -5,7 +5,7 @@ export default class Beautify extends BasePlugin<HTMLBeautifyOptions> {
 
     defaultOptions(): HTMLBeautifyOptions {
         // More options can be found here:
-        // https://www.npmjs.com/package/html-minifier
+        // https://www.npmjs.com/package/js-beautify
         return {
             indent_size: 4,
             indent_char: ' ',

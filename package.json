@@ -3,7 +3,8 @@
   "version": "0.1.1",
   "description": "The official Capsule document converter.",
   "type": "module",
-  "main": "index.ts",
+  "main": "dist/capsule-capsulate.cjs",
+  "module": "dist/capsule-capsulate.js",
   "test": "jest",
   "scripts": {
     "dev": "vite dev",

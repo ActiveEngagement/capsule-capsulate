@@ -1,23 +1,34 @@
-import { minify } from 'html-minifier';
+import { crush } from 'html-crush';
 import BasePlugin from '../Plugin';
 
-// const minify = require('html-minifier').minify;
-// const Plugin = require('../lib/Plugin');
+export type HtmlMinifierOptions = {    
+  lineLengthLimit: number;
+  removeIndentations: boolean;
+  removeLineBreaks: boolean;
+  removeHTMLComments: boolean | 0 | 1 | 2;
+  removeCSSComments: boolean;
+  reportProgressFunc: null | ((percDone: number) => void);
+  reportProgressFuncFrom: number;
+  reportProgressFuncTo: number;
+  breakToTheLeftOf: string[];
+  mindTheInlineTags: string[];
+};
 
-export default class HtmlMinifier extends BasePlugin {
+export default class HtmlMinifier extends BasePlugin<Partial<HtmlMinifierOptions>> {
 
-    defaultOptions() {
+    defaultOptions(): Partial<HtmlMinifierOptions> {
         // More options can be found here:
-        // https://www.npmjs.com/package/html-minifier
+        // https://www.npmjs.com/package/html-crush
         return {
-            collapseWhitespace: true,
-            minifyCSS: true,
-            removeComments: true
+            removeIndentations: true,
+            removeLineBreaks: true,
+            removeHTMLComments: false,
+            breakToTheLeftOf: []
         };
     }
 
     async transform(src: string) {
-        return minify(src, this.options);
+        return crush(src, this.options).result;
     }
 
 };

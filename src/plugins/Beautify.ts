@@ -20,8 +20,6 @@ export default class Beautify extends BasePlugin<HTMLBeautifyOptions> {
     }
 
     async transform(src) {
-        console.log(this.options);
-        
         return html_beautify(src, this.options);
     }
 

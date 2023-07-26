@@ -4,6 +4,11 @@ import { defineConfig } from 'vite';
 
 // vite.config.js
 export default defineConfig({
+    resolve: {
+        alias: {
+            // 'html-minifier': 'https://cdnjs.cloudflare.com/ajax/libs/html-minifier/4.0.0/htmlminifier.js'
+        }
+    },
     build: {
         lib: {
             // Could also be a dictionary or array of multiple entry points
@@ -25,5 +30,8 @@ export default defineConfig({
             },
         },
     },
-    plugins: [vue()]
+    plugins: [vue()],
+    define: {
+        'process.env': process.env
+    }
 })

@@ -1,5 +1,5 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from 'fs';
+import path from 'path';
 import { TaskRunner } from '../../../src/TaskRunner';
 import Beautify from '../../../src/plugins/Beautify';
 import InlineCss from '../../../src/plugins/InlineCss';

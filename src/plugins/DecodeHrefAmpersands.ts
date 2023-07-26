@@ -1,4 +1,4 @@
-import BasePlugin from "../lib/Plugin";
+import BasePlugin from '../Plugin';
 
 export default class DecodeHrefAmpersands extends BasePlugin {
 

@@ -1,10 +1,6 @@
 import { CheerioAPI } from 'cheerio';
 import pickBy from 'lodash.pickby';
 import BaseDomPlugin from '../DomPlugin';
-// const jQuery = require('../lib/jquery');
-// const size = require('lodash.size');
-// const pickBy = require('lodash.pickby');
-// const Plugin = require('../lib/Plugin');
 
 export default class FixMsoWrapper extends BaseDomPlugin {
 

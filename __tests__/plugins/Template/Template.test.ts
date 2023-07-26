@@ -1,9 +1,8 @@
-const { test, expect } = global;
-const fs = require('fs');
-const path = require('path');
-const run = require('../../../lib/run');
-const Beautify = require('../../../plugins/Beautify');
-const Template = require('../../../plugins/Template');
+import fs from 'node:fs';
+import path from 'node:path';
+import { TaskRunner } from '../../../src/TaskRunner';
+import Beautify from '../../../src/plugins/Beautify';
+import Template from '../../../src/plugins/Template';
 
 test('compiling a template without a wrapper', async() => {
     const error = fs.readFileSync(
@@ -14,7 +13,7 @@ test('compiling a template without a wrapper', async() => {
         path.resolve('__tests__/plugins/Template/TemplateWithoutWrapper/expected.html'), 'utf8'
     );
 
-    const response = await run(error, [
+    const runner = new TaskRunner([
         new Beautify,
         new Template({
             data: {
@@ -24,7 +23,7 @@ test('compiling a template without a wrapper', async() => {
         })
     ]);
 
-    expect(response).toBe(expected);
+    expect(await runner.process(error)).toBe(expected);
 });
 
 test('compiling a template with a wrapper fragment', async() => {
@@ -40,10 +39,9 @@ test('compiling a template with a wrapper fragment', async() => {
         path.resolve('__tests__/plugins/Template/TemplateWithWrapperFragment/expected.html'), 'utf8'
     );
 
-    const response = await run(error, [
-        new Beautify(),
+    const runner = new TaskRunner([
+        new Beautify,
         new Template({
-            src,
             data: {
                 title: 'Title',
                 subtitle: 'Subtitle'
@@ -51,7 +49,7 @@ test('compiling a template with a wrapper fragment', async() => {
         })
     ]);
 
-    expect(response).toBe(expected);
+    expect(await runner.process(error)).toBe(expected);
 });
 
 test('compiling a template with a wrapper', async() => {
@@ -67,7 +65,7 @@ test('compiling a template with a wrapper', async() => {
         path.resolve('__tests__/plugins/Template/TemplateWithWrapper/expected.html'), 'utf8'
     );
 
-    const response = await run(error, [
+    const runner = new TaskRunner([
         new Beautify,
         new Template({
             src,
@@ -78,7 +76,7 @@ test('compiling a template with a wrapper', async() => {
         })
     ]);
 
-    expect(response).toBe(expected);
+    expect(await runner.process(error)).toBe(expected);
 });
 
 test('compiling a template with a doctype', async() => {
@@ -90,7 +88,7 @@ test('compiling a template with a doctype', async() => {
         path.resolve('__tests__/plugins/Template/TemplateWithDoctype/expected.html'), 'utf8'
     );
 
-    const response = await run(error, [
+    const runner = new TaskRunner([
         new Beautify,
         new Template({
             data: {
@@ -99,7 +97,7 @@ test('compiling a template with a doctype', async() => {
         })
     ]);
 
-    expect(response).toBe(expected);
+    expect(await runner.process(error)).toBe(expected);
 });
 
 test('compiling a template without a doctype', async() => {
@@ -111,7 +109,7 @@ test('compiling a template without a doctype', async() => {
         path.resolve('__tests__/plugins/Template/TemplateWithoutDoctype/expected.html'), 'utf8'
     );
 
-    const response = await run(error, [
+    const runner = new TaskRunner([
         new Beautify,
         new Template({
             data: {
@@ -120,5 +118,5 @@ test('compiling a template without a doctype', async() => {
         })
     ]);
 
-    expect(response).toBe(expected);
+    expect(await runner.process(error)).toBe(expected);
 });

@@ -3,11 +3,7 @@ import juice from 'juice';
 import BasePlugin from '../Plugin';
 import { cheerio } from '../helpers';
 
-export type InlineCssOptions = {
-    
-};
-
-export default class InlineCss extends BasePlugin<InlineCssOptions> {
+export default class InlineCss extends BasePlugin {
 
     async process($: CheerioAPI) {
         return await this.inlineCss($);

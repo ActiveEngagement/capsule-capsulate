@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.2...v0.2.3) (2023-07-26)
+
+
+### Bug Fixes
+
+* fixed a couple bugs with the head hanging ([e492c5a](https://github.com/ActiveEngagement/capsule-capsulate/commit/e492c5ae4f995e157e399ad295177666a3142cb9))
+
 ## [0.2.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.1...v0.2.2) (2023-07-26)
 
 

@@ -1,8 +1,6 @@
-import dotenv from 'dotenv';
+require('dotenv').config();
 
-dotenv.config();
-
-export default {
+module.exports = {
     branches: [
         'master',
         {
@@ -14,7 +12,7 @@ export default {
     plugins: [
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',
-        // "@semantic-release/npm",
+        "@semantic-release/npm",
         '@semantic-release/changelog',
         [
             '@semantic-release/git',

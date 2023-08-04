@@ -1,3 +1,10 @@
+## [0.2.4](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.3...v0.2.4) (2023-08-04)
+
+
+### Bug Fixes
+
+* issue with toString on undefined ([0143d1a](https://github.com/ActiveEngagement/capsule-capsulate/commit/0143d1ab6d9fc162226436fb291c1a5fb8e69c96))
+
 ## [0.2.3](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.2...v0.2.3) (2023-07-26)
 
 

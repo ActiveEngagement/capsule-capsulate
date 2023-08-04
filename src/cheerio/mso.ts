@@ -70,9 +70,9 @@ function traverse(el, children, modifier, fn) {
 };
 
 function isClosingMso(value) {
-    return value.toString().match(/\[(\s)?if(.+)?>(\s+)?<\/(.+)?/m);
+    return value?.toString().match(/\[(\s)?if(.+)?>(\s+)?<\/(.+)?/m);
 }
 
 function isOpeningMso(value) {
-    return value.toString().match(/\[(\s)?if(.+)?>(.+)?<table.+/m);
+    return value?.toString().match(/\[(\s)?if(.+)?>(.+)?<table.+/m);
 }

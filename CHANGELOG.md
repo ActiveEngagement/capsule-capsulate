@@ -1,3 +1,11 @@
+## [0.2.7](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.6...v0.2.7) (2023-08-06)
+
+
+### Bug Fixes
+
+* ts config ([aef7637](https://github.com/ActiveEngagement/capsule-capsulate/commit/aef76378abbae81bbec62d7d24854f30d5411cec))
+* updated package exports ([f2bcbe8](https://github.com/ActiveEngagement/capsule-capsulate/commit/f2bcbe8b5d948da2a677fb42b47414fbfc8ac3a6))
+
 ## [0.2.6](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.5...v0.2.6) (2023-08-06)
 
 

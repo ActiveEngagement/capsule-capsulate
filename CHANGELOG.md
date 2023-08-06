@@ -1,3 +1,10 @@
+## [0.2.9](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.8...v0.2.9) (2023-08-06)
+
+
+### Bug Fixes
+
+* capsulate needs to not be exported as a default ([64f9451](https://github.com/ActiveEngagement/capsule-capsulate/commit/64f9451f65c2a7fe2d047f2047986dbd19b58058))
+
 ## [0.2.8](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.7...v0.2.8) (2023-08-06)
 
 

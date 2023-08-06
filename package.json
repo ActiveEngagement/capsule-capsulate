@@ -6,12 +6,6 @@
   "main": "./dist/capsule-capsulate.umd.cjs",
   "module": "./dist/capsule-capsulate.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/capsule-capsulate.js",
-      "require": "./dist/capsule-capsulate.umd.cjs"
-    }
-  },
   "files": [
     "dist"
   ],

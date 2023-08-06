@@ -1,7 +1,3 @@
-import capsulate from './capsulate';
+export * from './capsulate';
+export * from './helpers';
 
-// export * from './src/helpers';
-
-export {
-    capsulate
-};

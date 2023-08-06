@@ -1,3 +1,10 @@
+## [0.2.5](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.4...v0.2.5) (2023-08-06)
+
+
+### Bug Fixes
+
+* issue with responsive images breaking ([72007bd](https://github.com/ActiveEngagement/capsule-capsulate/commit/72007bd907070ff03101aa21a2a89de70b1aceb7))
+
 ## [0.2.4](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.3...v0.2.4) (2023-08-04)
 
 

@@ -1,3 +1,10 @@
+## [0.2.8](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.7...v0.2.8) (2023-08-06)
+
+
+### Bug Fixes
+
+* improved exports again ([1fb9936](https://github.com/ActiveEngagement/capsule-capsulate/commit/1fb993671fca6d7e6c2340a8b7eb8ca020ebb713))
+
 ## [0.2.7](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.6...v0.2.7) (2023-08-06)
 
 

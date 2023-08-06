@@ -29,26 +29,21 @@
                 </div>
             `;
 
-            const html = `<html>
-                <head>
-                    <style>body { background: blue; }</style>
-                </head>
-                <body class="test" id="client">
-                    <div>{{ title }}</div>
-                </body>
-            </html>
+            const html = `<a href="https://google.com">google</a>
+
+<img src="https://dw-wp-production.imgix.net/2023/08/GettyImages-1536257915-scaled-e1691149827214.jpg?fit=crop&ar=16%3A9&w=1920&auto=format&ixlib=react-9.3.0" />
             `;
 
-            const runner = new TaskRunner([
-                new Beautify,
-                // new PreserveBodyAttributes,
-                // new PreserveHeadTag,
-                new Template({
-                    data: {
-                        title: 'Test'
-                    }
-                })
-            ]);
+            // const runner = new TaskRunner([
+            //     new Beautify,
+            //     // new PreserveBodyAttributes,
+            //     // new PreserveHeadTag,
+            //     new Template({
+            //         data: {
+            //             title: 'Test'
+            //         }
+            //     })
+            // ]);
         
             // const response = await runner.process(html);
             

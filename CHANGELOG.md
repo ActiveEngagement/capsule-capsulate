@@ -1,3 +1,10 @@
+## [0.2.6](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.5...v0.2.6) (2023-08-06)
+
+
+### Bug Fixes
+
+* added source maps and ts definitions ([b4db28a](https://github.com/ActiveEngagement/capsule-capsulate/commit/b4db28ae06bfea8568a1be20b14449c18de5cbe9))
+
 ## [0.2.5](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.4...v0.2.5) (2023-08-06)
 
 

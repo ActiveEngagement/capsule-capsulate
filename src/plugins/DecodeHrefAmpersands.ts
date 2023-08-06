@@ -6,7 +6,7 @@ export default class DecodeHrefAmpersands extends BasePlugin {
         const matches = src.match(/(?<attr>href=(?<quote>["']).*?\2)/gm);
 
         if(matches) {
-            for(let match of matches) {
+            for(const match of matches) {
                 src = src.replace(match, match.replace(/&amp;/g, '&'));
             }
         }

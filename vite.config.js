@@ -3,16 +3,17 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 // vite.config.js
-export default defineConfig({
+export default defineConfig(config => ({
     resolve: {
         alias: {
             // 'html-minifier': 'https://cdnjs.cloudflare.com/ajax/libs/html-minifier/4.0.0/htmlminifier.js'
         }
     },
     build: {
+        sourcemap: config.mode === 'production',
         lib: {
             // Could also be a dictionary or array of multiple entry points
-            entry: resolve(__dirname, 'index.ts'),
+            entry: resolve(__dirname, 'src/index.ts'),
             name: 'Capsulate',
             // the proper extensions will be added
             fileName: 'capsule-capsulate',
@@ -34,4 +35,4 @@ export default defineConfig({
     define: {
         'process.env': process.env
     }
-})
+}));

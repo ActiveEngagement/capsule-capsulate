@@ -45,7 +45,7 @@ export default class Template extends BasePlugin<TemplateOptions> {
                 src, Object.assign({}, data, this.options.data)
             );
         }
-        catch(e) {
+        catch (e) {
             return src;
         }
     }

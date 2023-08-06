@@ -1,9 +1,9 @@
-import { AnyNode, Cheerio, CheerioAPI } from "cheerio";
+import { AnyNode, Cheerio, CheerioAPI } from 'cheerio';
 import BaseDomPlugin from '../DomPlugin';
 
 export default class RemoveDisplayNone extends BaseDomPlugin {
 
-    protected nodes: AnyNode[] = []
+    protected nodes: AnyNode[] = [];
 
     async process($el: Cheerio<AnyNode>) {
         if($el.css('display') === 'none') {

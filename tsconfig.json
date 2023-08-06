@@ -13,7 +13,11 @@
       "paths": {},
       "allowJs": true,
       "allowSyntheticDefaultImports": true,
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "sourceRoot": "./src",
+      "outDir": "./dist"
     },
     "include": ["src"],
   }

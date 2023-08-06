@@ -3,9 +3,9 @@ import BasePlugin from '../Plugin';
 
 export default class PreserveBodyAttributes extends BasePlugin {
 
-    protected classes: string[]
+    protected classes: string[];
 
-    protected attrs: Record<string,string>
+    protected attrs: Record<string,string>;
 
     async preprocess($: CheerioAPI) {
         this.classes = ($('body').attr('class') ?? '').split(' ');

@@ -35,24 +35,24 @@ export default class FixMsoButtons extends BaseDomPlugin {
             
             const $table = $dom.find('table');
 
-            $table.css('display', `${$el.css('display') || 'inline'} !important`)
+            $table.css('display', `${$el.css('display') || 'inline'} !important`);
             $table.attr({
                 border: '0',
                 cellpadding: '0',
                 cellspacing: '0'
-            })
+            });
             
             const $td = $table.find('td');
 
             delete styles.display;
 
-            $td.css(styles)
+            $td.css(styles);
             $td.attr(pickBy({
                 color: $el.css('color'),
                 border: $el.css('border-width'),
                 bgcolor: $el.css('background-color') || $el.css('background'),
                 borderColor: $el.css('border-color'),
-            }))
+            }));
 
             if(!Object.keys($td.css()).length) {
                 continue;

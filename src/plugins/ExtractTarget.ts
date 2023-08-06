@@ -1,4 +1,4 @@
-import { CheerioAPI } from "cheerio";
+import { CheerioAPI } from 'cheerio';
 import BasePlugin from '../Plugin';
 import { cheerio } from '../helpers';
 

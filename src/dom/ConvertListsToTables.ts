@@ -26,7 +26,7 @@ export default class ConvertListsToTables extends BaseDomPlugin<ConvertListsToTa
             for(const child of $el.find('li')) {
                 const $tr = $('<tr />').appendTo($table.find('tbody'));
 
-                $(`<td valign="top" style="padding-bottom: 1em" />`)
+                $('<td valign="top" style="padding-bottom: 1em" />')
                     .append(`<div>&nbsp;&nbsp;&nbsp;&nbsp;${ el.tagName === 'ol' ? (i + 1) + '.' : this.options.symbol }&nbsp;&nbsp;</div>`)
                     .appendTo($tr);
 

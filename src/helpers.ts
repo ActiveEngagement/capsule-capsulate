@@ -30,7 +30,7 @@ export function cheerio(src?: string | AnyNode[], options: CheerioOptions = {}):
 };
 
 export function isFragment(src?: string) {
-    return src && !src.match(/<(body|html).+?>?/)
+    return src && !src.match(/<(body|html).+?>?/);
 };
 
 export async function manipulate(src: string, plugins: DomPlugin[]) {

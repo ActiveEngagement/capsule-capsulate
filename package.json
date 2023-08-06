@@ -3,12 +3,22 @@
   "version": "0.2.5",
   "description": "The official Capsule document converter.",
   "type": "module",
-  "main": "dist/capsule-capsulate.cjs",
-  "module": "dist/capsule-capsulate.js",
+  "main": "./dist/capsule-capsulate.umd.cjs",
+  "module": "./dist/capsule-capsulate.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/capsule-capsulate.js",
+      "require": "./dist/capsule-capsulate.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "test": "jest",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && tsc",
     "test": "jest"
   },
   "repository": {
@@ -28,8 +38,10 @@
     "@types/html-minifier": "^4.0.2",
     "@types/jest": "^29.5.3",
     "@types/js-beautify": "^1.13.3",
+    "@types/node": "^20.4.8",
     "@types/nunjucks": "^3.2.3",
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vue-interface/eslint-config": "1.0.0-beta.4",
     "babel-jest": "^29.6.1",
     "commitlint": "^17.6.7",
     "dotenv": "^16.3.1",
@@ -41,7 +53,8 @@
     "ts-jest": "^29.1.1",
     "tslib": "^2.6.1",
     "typescript": "^5.1.6",
-    "vite": "^4.4.7"
+    "vite": "^4.4.7",
+    "vite-plugin-dts": "^3.5.0"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.12",

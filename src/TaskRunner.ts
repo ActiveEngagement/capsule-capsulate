@@ -1,4 +1,4 @@
-import Plugin from "./Plugin";
+import Plugin from './Plugin';
 import { cheerio } from './helpers';
 
 export type TaskRunnerOptions = {

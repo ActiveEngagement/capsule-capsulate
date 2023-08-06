@@ -1,4 +1,4 @@
-import { html_beautify, HTMLBeautifyOptions } from "js-beautify";
+import { html_beautify, HTMLBeautifyOptions } from 'js-beautify';
 import BasePlugin from '../Plugin';
 
 export default class Beautify extends BasePlugin<HTMLBeautifyOptions> {

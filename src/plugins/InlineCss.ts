@@ -17,7 +17,7 @@ export default class InlineCss extends BasePlugin {
         try {
             return cheerio(juice($.html()));
         }
-        catch(e) {
+        catch (e) {
             throw new Error('There is invalid CSS or <link> tags in this document.');
         }
     }

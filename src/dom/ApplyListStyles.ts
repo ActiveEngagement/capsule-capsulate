@@ -12,7 +12,7 @@ export default class ApplyListStyles extends BaseDomPlugin {
             }
             
             if(!$el.attr('type')) {
-                $el.attr('type', el.tagName === 'ol' ? '1' : 'disc')
+                $el.attr('type', el.tagName === 'ol' ? '1' : 'disc');
             }
 
             if(!$el.padding()) {

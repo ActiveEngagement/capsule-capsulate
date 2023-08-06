@@ -1,20 +1,20 @@
-import FixBackgroundColor from "./dom/FixBackgroundColor";
-import FixFloatAlignment from "./dom/FixFloatAlignment";
-import FixFontColor from "./dom/FixFontColor";
-import FixMsoWrapper from "./dom/FixMsoWrapper";
+import FixBackgroundColor from './dom/FixBackgroundColor';
+import FixFloatAlignment from './dom/FixFloatAlignment';
+import FixFontColor from './dom/FixFontColor';
+import FixMsoWrapper from './dom/FixMsoWrapper';
 import FixResponsiveImages, { FixResponsiveImagesOptions } from './dom/FixResponsiveImages';
-import FixTableAlignment from "./dom/FixTableAlignment";
-import RemoveDisplayNone from "./dom/RemoveDisplayNone";
-import RemoveScriptTags from "./dom/RemoveScriptTags";
-import ManipulateDom from "./ManipulateDom";
-import DecodeHrefAmpersands from "./plugins/DecodeHrefAmpersands";
-import ExtractTarget, { ExtractTargetOptions } from "./plugins/ExtractTarget";
-import HtmlMinifier, { HtmlMinifierOptions } from "./plugins/HtmlMinifier";
-import InlineCss from "./plugins/InlineCss";
-import PreserveBodyAttributes from "./plugins/PreserveBodyAttributes";
-import PreserveHeadTag from "./plugins/PreserveHeadTag";
-import Template, { TemplateOptions } from "./plugins/Template";
-import { TaskRunner } from "./TaskRunner";
+import FixTableAlignment from './dom/FixTableAlignment';
+import RemoveDisplayNone from './dom/RemoveDisplayNone';
+import RemoveScriptTags from './dom/RemoveScriptTags';
+import ManipulateDom from './ManipulateDom';
+import DecodeHrefAmpersands from './plugins/DecodeHrefAmpersands';
+import ExtractTarget, { ExtractTargetOptions } from './plugins/ExtractTarget';
+import HtmlMinifier, { HtmlMinifierOptions } from './plugins/HtmlMinifier';
+import InlineCss from './plugins/InlineCss';
+import PreserveBodyAttributes from './plugins/PreserveBodyAttributes';
+import PreserveHeadTag from './plugins/PreserveHeadTag';
+import Template, { TemplateOptions } from './plugins/Template';
+import { TaskRunner } from './TaskRunner';
 
 export type CapsulateOptions = {
     extractTarget?: ExtractTargetOptions,

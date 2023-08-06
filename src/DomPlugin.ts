@@ -1,4 +1,4 @@
-import { AnyNode, Cheerio, CheerioAPI } from "cheerio"
+import { AnyNode, Cheerio, CheerioAPI } from 'cheerio';
 
 export interface DomPlugin {
     

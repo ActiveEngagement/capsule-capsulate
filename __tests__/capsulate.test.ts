@@ -1,4 +1,4 @@
-import capsulate from '../src/capsulate';
+import { capsulate } from '../src/capsulate';
 
 test('that the capsulate() function.', async() => {
     const results = await capsulate('<div id="contents">Contents</div>', {

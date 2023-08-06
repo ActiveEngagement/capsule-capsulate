@@ -25,7 +25,7 @@ export type CapsulateOptions = {
     }
 }
 
-export default async function capsulate(src: string, options: CapsulateOptions = {}) {
+export async function capsulate(src: string, options: CapsulateOptions = {}) {
     const runner = new TaskRunner([
         new InlineCss(),
         new PreserveBodyAttributes,

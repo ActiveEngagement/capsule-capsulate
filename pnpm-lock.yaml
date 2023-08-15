@@ -97,9 +97,6 @@ devDependencies:
   jest:
     specifier: ^29.6.1
     version: 29.6.1(@types/node@20.4.8)(ts-node@10.9.1)
-  lodash:
-    specifier: ^4.17.21
-    version: 4.17.21
   semantic-release:
     specifier: ^21.0.7
     version: 21.0.7

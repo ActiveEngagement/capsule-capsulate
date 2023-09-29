@@ -5,6 +5,7 @@ import { cheerio, isFragment } from '../helpers';
 
 export type TemplateOptions = {
     data?: object,
+    previewText?: string,
     src?: string,
     nunjucks?: nunjucks.ConfigureOptions
 }
@@ -15,6 +16,7 @@ export default class Template extends BasePlugin<TemplateOptions> {
         return {
             data: {},
             src: null,
+            previewText: undefined,
             nunjucks: {
                 autoescape: false
             }
@@ -22,19 +24,32 @@ export default class Template extends BasePlugin<TemplateOptions> {
     }
 
     async initialize(src: string) {
-        return this.compile(src);
+        return this.compile(src.replace(this.options.previewText, ''));
     }
 
     async process($: CheerioAPI) {
-        if(this.options.src) {
-            const contents = isFragment($.html()) ? $.html() : $('body').html();
-
-            const wrapped = this.compile(this.options.src, { contents });
-
-            return cheerio(wrapped);
+        if(!this.options.src) {
+            return $;
         }
 
-        return $;
+        const contents = isFragment($.html()) ? $.html() : $('body').html();
+
+        let wrapped = this.compile(this.options.src, { contents });
+
+        const bodyTag = wrapped.match(/<body(.+)?>/);
+
+        if(bodyTag) {
+            const index = wrapped.indexOf(bodyTag[0]) + bodyTag[0].length;
+
+            wrapped = wrapped.slice(0, index)
+                + (this.options.previewText ?? '')
+                + wrapped.slice(index);
+        }
+        else {
+            wrapped = (this.options.previewText ?? '') + wrapped;
+        }
+
+        return cheerio(wrapped);
     }
 
     compile(src: string, data?: object) {

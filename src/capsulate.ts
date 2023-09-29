@@ -27,11 +27,11 @@ export type CapsulateOptions = {
 
 export async function capsulate(src: string, options: CapsulateOptions = {}) {
     const runner = new TaskRunner([
-        new InlineCss(),
         new PreserveBodyAttributes,
         new PreserveHeadTag,
         new ExtractTarget(options.extractTarget),
         new Template(options.template),
+        new InlineCss(),
         new ManipulateDom([
             new FixBackgroundColor,
             new FixFloatAlignment,

@@ -1,3 +1,10 @@
+## [0.2.10](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.9...v0.2.10) (2023-09-29)
+
+
+### Bug Fixes
+
+* issue with unit-css not working with 0’s ([80eb2ab](https://github.com/ActiveEngagement/capsule-capsulate/commit/80eb2ab9579030574b134587f5f3402cdea2591b))
+
 ## [0.2.9](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.8...v0.2.9) (2023-08-06)
 
 

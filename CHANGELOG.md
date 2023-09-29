@@ -1,3 +1,10 @@
+## [0.2.11](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.10...v0.2.11) (2023-09-29)
+
+
+### Bug Fixes
+
+* issues with template wrapping and added previewText option ([d0f626f](https://github.com/ActiveEngagement/capsule-capsulate/commit/d0f626fdecd48687536d377c5f237eca41c3ec9e))
+
 ## [0.2.10](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.9...v0.2.10) (2023-09-29)
 
 

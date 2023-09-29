@@ -21,7 +21,13 @@ export default function() {
 };
 
 function unit(value) {
-    if(units.parse(value).unit === '%') {
+    const parsed = units.parse(value);
+
+    if(!parsed.unit) {
+        return `${value}px`;
+    }
+
+    if(parsed.unit === '%') {
         return value;
     }
 

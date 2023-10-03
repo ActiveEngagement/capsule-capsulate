@@ -26,6 +26,8 @@ export class TaskRunner {
         src = await this.reduce(src, async (carry, task) => {
             return await task.initialize(await carry);
         });
+        
+        let $ = cheerio(src);
 
         $ = await this.reduce(
             $, async (carry, task) => await task.preprocess(carry)

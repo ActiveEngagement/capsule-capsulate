@@ -48,3 +48,27 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
 
     return await runner.process(src);
 };
+
+export async function capsulate2(src: string, options: CapsulateOptions = {}) {
+    const runner = new TaskRunner([
+        new PreserveBodyAttributes,
+        new PreserveHeadTag,
+        new ExtractTarget(options.extractTarget),
+        new Template(options.template),
+        new InlineCss(),
+        new ManipulateDom([
+            new FixBackgroundColor,
+            new FixFloatAlignment,
+            new FixFontColor,
+            new FixMsoWrapper,
+            new FixResponsiveImages(options.dom?.fixResponsiveImages),
+            new FixTableAlignment,
+            new RemoveDisplayNone,
+            new RemoveScriptTags
+        ]),
+        new DecodeHrefAmpersands,
+        new HtmlMinifier(options.htmlMinifier),
+    ]);
+
+    return await runner.process(src);
+};

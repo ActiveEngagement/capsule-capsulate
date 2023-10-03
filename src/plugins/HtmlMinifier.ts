@@ -20,6 +20,7 @@ export default class HtmlMinifier extends BasePlugin<Partial<HtmlMinifierOptions
         // More options can be found here:
         // https://www.npmjs.com/package/html-crush
         return {
+            lineLengthLimit: Infinity,
             removeIndentations: true,
             removeLineBreaks: true,
             removeHTMLComments: false,

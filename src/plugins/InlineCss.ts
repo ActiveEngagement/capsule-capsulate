@@ -1,9 +1,16 @@
 import { CheerioAPI } from 'cheerio';
-import juice from 'juice';
+import juice, { type Options } from 'juice';
 import BasePlugin from '../Plugin';
 import { cheerio } from '../helpers';
 
-export default class InlineCss extends BasePlugin {
+export default class InlineCss extends BasePlugin<Options> {
+
+    defaultOptions(): Options {
+        return {
+            applyStyleTags: true,
+            removeStyleTags: true,
+        };
+    }
 
     async process($: CheerioAPI) {
         return await this.inlineCss($);
@@ -15,7 +22,7 @@ export default class InlineCss extends BasePlugin {
 
     protected async inlineCss($: CheerioAPI) {
         try {
-            return cheerio(juice($.html()));
+            return cheerio(juice($.html(), this.options));
         }
         catch (e) {
             throw new Error('There is invalid CSS or <link> tags in this document.');

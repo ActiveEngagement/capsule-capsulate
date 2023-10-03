@@ -10,8 +10,35 @@ import padding from './cheerio/padding';
 import style from './cheerio/style';
 import width from './cheerio/width';
 
+export function encodeFreemarkerTags(src: string | AnyNode[]) {
+    if(Array.isArray(src)) {
+        return src;
+    }
+
+    return src.replace(/<(\/)?#(.+)?>/g, '{{$1%$2%}}');
+}
+
+export function decodeHtmlEntities(str: string) {
+    const txt = document.createElement('textarea');
+    txt.innerHTML = str;
+    return txt.value;
+}
+
+export function decodeFreemarkerTags(src: string) {
+    const pattern = /{{(\/)?%(.+?)%}}/g;
+    const matches = src.match(pattern);
+
+    if(matches) {
+        for(const match of matches) {
+            src = src.replace(match, decodeHtmlEntities(match).replace(pattern, '<$1#$2>'));
+        }
+    }
+
+    return src;
+}
+
 export function cheerio(src?: string | AnyNode[], options: CheerioOptions = {}): CheerioAPI {
-    const $ = load(src ?? [], options, typeof src === 'string' && !isFragment(src));
+    const $ = load(encodeFreemarkerTags(src) ?? [], options, typeof src === 'string' && !isFragment(src));
 
     $.prototype.float = float;
     $.prototype.height = height;
@@ -20,11 +47,6 @@ export function cheerio(src?: string | AnyNode[], options: CheerioOptions = {}):
     $.prototype.padding = padding;
     $.prototype.style = style;
     $.prototype.width = width;
-    
-    // $.prototype.float = require('./$/float');
-    // $.prototype.height = require('./$/height');
-    // $.prototype.mso = require('./$/mso').mso;
-    // $.prototype.width = require('./$/width');
 
     return $;
 };

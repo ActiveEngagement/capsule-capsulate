@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.12...v0.3.0) (2023-10-03)
+
+
+### Features
+
+* added new rule to fix incorrectly formatted query strings in href's ([c4259b7](https://github.com/ActiveEngagement/capsule-capsulate/commit/c4259b731a90c63e38b9899c781c584d565e67d8))
+
 ## [0.2.12](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.11...v0.2.12) (2023-10-03)
 
 

@@ -4,7 +4,7 @@ import BaseDomPlugin from '../DomPlugin';
 export default class FixFloatAlignment extends BaseDomPlugin {
 
     async process($el: Cheerio<AnyNode>) {
-        let align = $el.attr('align');
+        const align = $el.attr('align');
     
         if(align && this.shouldApplyFloatToParent($el)) {
             $el.parent().attr('align', align);

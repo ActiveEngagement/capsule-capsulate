@@ -1,3 +1,12 @@
+## [0.2.12](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.11...v0.2.12) (2023-10-03)
+
+
+### Bug Fixes
+
+* added cheerio that deleted in commit ([0e7d166](https://github.com/ActiveEngagement/capsule-capsulate/commit/0e7d1669f72e1ba57cf306ed9786555e395cfa21))
+* issues with html line wrapping and css inlining ([9131624](https://github.com/ActiveEngagement/capsule-capsulate/commit/9131624bf184ed6bd91ae7190600d8a762e47f42))
+* npm audit deps ([fbd50fe](https://github.com/ActiveEngagement/capsule-capsulate/commit/fbd50fecf5bb090c5a6db4e065281fa6e93e8227))
+
 ## [0.2.11](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.10...v0.2.11) (2023-09-29)
 
 

@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.1...v0.4.2) (2023-10-04)
+
+
+### Bug Fixes
+
+* refactored ReplaceQueryStrings and added tests ([5bd760d](https://github.com/ActiveEngagement/capsule-capsulate/commit/5bd760d5e8f3a3a2a2b2142d883f2c06ea3b75ae))
+
 ## [0.4.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.0...v0.4.1) (2023-10-04)
 
 

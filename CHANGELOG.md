@@ -1,3 +1,11 @@
+## [0.4.4](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.3...v0.4.4) (2023-10-04)
+
+
+### Bug Fixes
+
+* broken test ([c3f869f](https://github.com/ActiveEngagement/capsule-capsulate/commit/c3f869ff49cd2b89de5b84f01403435a8069540d))
+* yet another encoding issue and added tests to cover it ([a0a5a6e](https://github.com/ActiveEngagement/capsule-capsulate/commit/a0a5a6ec36689267c5e82490c908823cf0e96ee0))
+
 ## [0.4.3](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.2...v0.4.3) (2023-10-04)
 
 

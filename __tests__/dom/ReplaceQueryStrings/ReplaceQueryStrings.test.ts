@@ -13,6 +13,8 @@ test('wrapping mso on correct divs', async() => {
     );
 
     expect(await manipulate(error, [new ReplaceQueryStrings([
+        { key: 'a', from: '1', to: '2' },
+        { key: 'utm_test', from: '${Gears.foo}', to: '${Gears.bar}' },
         { key: 'source_code', from: 'xxxxx', to: 'xxxxx-updated' },
         { key: 'source_code', from: 'yyyyy', to: 'yyyyy-updated' },
         { key: 'source_code', from: 'zzzzz', to: 'zzzzz-updated' }

@@ -15,11 +15,15 @@ export function replaceQueryString(href: string, replacements: SourceCode[]) {
 
     for(const { key, from, to } of replacements) {
         if(url.searchParams.get(key) === from) {
-            url.searchParams.set(key, to);
+            url.searchParams.set(key, to);            
         }
     }
 
-    return url.toString();
+    const rawQueryString = '?' + [...url.searchParams.entries()].map(([key, value]) => {
+        return `${key}=${value}`;
+    }).join('&');
+
+    return url.toString().replace(url.search, rawQueryString);
 }
 
 export default class ReplaceQueryStrings extends BaseDomPlugin<ReplaceQueryStringOptions> {

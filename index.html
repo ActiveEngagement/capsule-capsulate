@@ -9,26 +9,7 @@
         <div id="app">
 <textarea style="width: 100%; height: 500px">
 <div>
-    <div>
-        <a href="https://google.com?source_code=ignore">ignore</a>
-        <a href="https://google.com?source_code=xxxxx">xxxxx</a>
-        <!--[if mso]><v:roundrect href="https://google.com?source_code=xxxxx"><![endif]-->
-        <div>
-            <a href="https://google.com?source_code=yyyyy">yyyyy</a>
-            <!--[if mso]><v:roundrect href="https://google.com?source_code=yyyyy"><![endif]-->
-            <div>
-                <a href="https://google.com?source_code=zzzzz">zzzzz</a>
-                <!--[if mso]><v:roundrect href="https://google.com?source_code=zzzzz"><![endif]-->
-            </div>
-        </div>
-    </div>
-
-    <!-- this should not change since its a text node and not a comment -->
-    https://google.com?source_code=xxxxx 
-
-    <!--[if mso]><v:roundrect href="https://google.com?source_code=xxxxx"><![endif]-->
-    <!--[if mso]><v:roundrect href="https://google.com?source_code=yyyyy"><![endif]-->
-    <!--[if mso]><v:roundrect href="https://google.com?source_code=zzzzz"><![endif]-->
+    <a href="https://google.com/?test=${Gears.whatever}">test</a>
 </div>
 </textarea>
         </div>
@@ -48,9 +29,7 @@
 
             console.log(await manipulate(src, [
                 new ReplaceQueryStrings([
-                    {key: 'source_code', from: 'xxxxx', to: 'xxxxx-updated'},
-                    {key: 'source_code', from: 'yyyyy', to: 'yyyyy-updated'},
-                    {key: 'source_code', from: 'zzzzz', to: 'zzzzz-updated'}
+                    {key: 'test', from: '${Gears.whatever}', to: '${Gears.updated}'},
                 ])
             ]));
 
@@ -60,7 +39,7 @@
             //     // new PreserveHeadTag,
             //     new Template({
             //         data: {
-            //             title: 'Test'
+        //             title: 'Test'
             //         }
             //     })
             // ]);

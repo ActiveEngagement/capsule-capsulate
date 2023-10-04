@@ -1,23 +1,12 @@
-import Plugin from './Plugin';
+import { type Plugin } from './Plugin';
 import { cheerio, decodeFreemarkerTags } from './helpers';
 
-export type TaskRunnerOptions = {
-    fragment?: boolean
-}
-
 export type TaskRunnerReduceFunction<T> = (carry: Awaited<T>, task: Plugin) => Promise<T>
-
-// function encode(str: string) {
-//     return str.replace(/[\u00A0-\u9999<>\&]/g, function(i) {
-//         return '&#'+i.charCodeAt(0)+';';
-//     });
-// }
 
 export default class TaskRunner {
 
     constructor(
-        protected tasks: Plugin[],
-        protected options: TaskRunnerOptions = {}
+        protected tasks: Plugin[]
     ) {
         //
     }

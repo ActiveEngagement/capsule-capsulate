@@ -1,6 +1,7 @@
 import { load, type AnyNode, type CheerioAPI, type CheerioOptions } from 'cheerio';
 import { type DomPlugin } from './DomPlugin';
 import ManipulateDom from './ManipulateDom';
+import { type Plugin } from './Plugin';
 import TaskRunner from './TaskRunner';
 import float from './cheerio/float';
 import height from './cheerio/height';
@@ -55,10 +56,14 @@ export function isFragment(src?: string) {
     return src && !src.match(/<(body|html).+?>?/);
 };
 
-export async function manipulate(src: string, plugins: DomPlugin[]) {
-    const runner = new TaskRunner([
-        new ManipulateDom(plugins)
-    ]);
+export async function run(src: string, plugins: Plugin[]) {
+    const runner = new TaskRunner(plugins);
 
     return await runner.process(src);
+}
+
+export async function manipulate(src: string, plugins: DomPlugin[]) {
+    return await run(src, [
+        new ManipulateDom(plugins)
+    ]);
 }

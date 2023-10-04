@@ -1,3 +1,15 @@
+# [0.4.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.3.0...v0.4.0) (2023-10-04)
+
+
+### Bug Fixes
+
+* broken exports ([3aadc8a](https://github.com/ActiveEngagement/capsule-capsulate/commit/3aadc8a311ed4c9e160ffa8638b03fe1ef353102))
+
+
+### Features
+
+* added new plugin to replace query strings ([03dc5c5](https://github.com/ActiveEngagement/capsule-capsulate/commit/03dc5c593eb336c42efd597241060d0487430ee1))
+
 # [0.3.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.2.12...v0.3.0) (2023-10-03)
 
 

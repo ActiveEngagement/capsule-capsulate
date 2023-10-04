@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.0...v0.4.1) (2023-10-04)
+
+
+### Bug Fixes
+
+* issues with helpers ([ebc704b](https://github.com/ActiveEngagement/capsule-capsulate/commit/ebc704b603241cbf80ee254109acbcd5c4a1a851))
+
 # [0.4.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.3.0...v0.4.0) (2023-10-04)
 
 

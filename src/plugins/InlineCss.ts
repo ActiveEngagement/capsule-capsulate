@@ -3,9 +3,11 @@ import juice, { type Options } from 'juice';
 import BasePlugin from '../Plugin';
 import { cheerio } from '../helpers';
 
-export default class InlineCss extends BasePlugin<Options> {
+export type InlineCssOptions = Options;
 
-    defaultOptions(): Options {
+export default class InlineCss extends BasePlugin<InlineCssOptions> {
+
+    defaultOptions(): InlineCssOptions {
         return {
             applyStyleTags: true,
             removeStyleTags: true,

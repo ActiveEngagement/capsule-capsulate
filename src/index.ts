@@ -27,7 +27,14 @@ import PreserveHeadTag from './plugins/PreserveHeadTag';
 import Template from './plugins/Template';
 
 export * from './capsulate';
+export * from './dom/ConvertListsToTables';
+export * from './dom/FixResponsiveImages';
+export * from './dom/ReplaceQueryStrings';
 export * from './helpers';
+export * from './plugins/ExtractTarget';
+export * from './plugins/HtmlMinifier';
+export * from './plugins/InlineCss';
+export * from './plugins/Template';
 
 export {
     ApplyHeadStyles,

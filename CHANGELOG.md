@@ -1,3 +1,10 @@
+## [0.4.3](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.2...v0.4.3) (2023-10-04)
+
+
+### Bug Fixes
+
+* missing exports and missing options in InlineCss ([4ee23da](https://github.com/ActiveEngagement/capsule-capsulate/commit/4ee23dac72039b8a7d20dfa094cc156dc0828102))
+
 ## [0.4.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.1...v0.4.2) (2023-10-04)
 
 

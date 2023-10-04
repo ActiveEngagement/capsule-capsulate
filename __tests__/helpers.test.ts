@@ -15,8 +15,10 @@ test('extracting source codes.', async() => {
             'zzzzz'
         ],
         a: [
-            'b',
-            'c'
+            '1'
+        ],
+        'utm_test':  [
+            '${Gears.foo}',
         ]
     });
 });

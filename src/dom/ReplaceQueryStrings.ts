@@ -1,5 +1,6 @@
 import { AnyNode, Cheerio } from 'cheerio';
 import BaseDomPlugin from '../DomPlugin';
+import { extractMsoCommentNodes, extractUrlsFromMsoCommentNode } from '../helpers';
 
 export type SourceCode = {
     key: string,
@@ -30,11 +31,19 @@ export default class ReplaceQueryStrings extends BaseDomPlugin<ReplaceQueryStrin
     async process($el: Cheerio<AnyNode>) {
         const href = $el.attr('href');
 
-        if(!href) {
-            return;
+        if(href) {
+            $el.attr('href', replaceQueryString($el.attr('href'), this.options));
+        }        
+    
+        const nodes = extractMsoCommentNodes($el);
+
+        for(const node of nodes) {
+            const urls = extractUrlsFromMsoCommentNode(node);
+
+            for(const url of urls) {
+                node.data = node.data.replace(url, replaceQueryString(url, this.options));
+            }
         }
-        
-        $el.attr('href', replaceQueryString($el.attr('href'), this.options));    
     }
     
 }

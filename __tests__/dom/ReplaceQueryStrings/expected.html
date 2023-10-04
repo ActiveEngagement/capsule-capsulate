@@ -1,0 +1,24 @@
+<div>
+	<div>
+		<a href="https://google.com/?source_code=ignore">ignore</a>
+		<a href="https://google.com/?a=b">a=b</a>
+		<a href="https://google.com/?a=c">a=c</a>
+		<a href="https://google.com/?source_code=xxxxx-updated">xxxxx</a>
+		<!--[if mso]><v:roundrect href="https://google.com/?source_code=xxxxx-updated"><![endif]-->
+		<div>
+			<a href="https://google.com/?source_code=yyyyy-updated">yyyyy</a>
+			<!--[if mso]><v:roundrect href="https://google.com/?source_code=yyyyy-updated"><![endif]-->
+			<div>
+				<a href="https://google.com/?source_code=zzzzz-updated">zzzzz</a>
+				<!--[if mso]><v:roundrect href="https://google.com/?source_code=zzzzz-updated"><![endif]-->
+			</div>
+		</div>
+	</div>
+
+	<!-- this should not change since its a text node and not a comment -->
+	https://google.com/?source_code=xxxxx
+
+	<!--[if mso]><v:roundrect href="https://google.com/?source_code=xxxxx-updated"><![endif]-->
+	<!--[if mso]><v:roundrect href="https://google.com/?source_code=yyyyy-updated"><![endif]-->
+	<!--[if mso]><v:roundrect href="https://google.com/?source_code=zzzzz-updated"><![endif]-->
+</div>

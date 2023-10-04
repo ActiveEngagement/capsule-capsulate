@@ -1,5 +1,5 @@
 import { CheerioAPI } from 'cheerio';
-import { DomPlugin } from './DomPlugin';
+import { type DomPlugin } from './DomPlugin';
 import BasePlugin from './Plugin';
 
 export default class ManipulateDom extends BasePlugin {

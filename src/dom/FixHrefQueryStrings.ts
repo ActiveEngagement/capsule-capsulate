@@ -1,7 +1,7 @@
 import { AnyNode, Cheerio } from 'cheerio';
 import BaseDomPlugin from '../DomPlugin';
 
-export default class FixFontColor extends BaseDomPlugin {
+export default class FixHrefQueryStrings extends BaseDomPlugin {
 
     async process($el: Cheerio<AnyNode>) {
         const href = $el.attr('href');

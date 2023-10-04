@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { TaskRunner } from '../../../src/TaskRunner';
+import TaskRunner from '../../../src/TaskRunner';
 import Beautify from '../../../src/plugins/Beautify';
 import Template from '../../../src/plugins/Template';
 

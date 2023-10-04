@@ -13,7 +13,7 @@ export type TaskRunnerReduceFunction<T> = (carry: Awaited<T>, task: Plugin) => P
 //     });
 // }
 
-export class TaskRunner {
+export default class TaskRunner {
 
     constructor(
         protected tasks: Plugin[],

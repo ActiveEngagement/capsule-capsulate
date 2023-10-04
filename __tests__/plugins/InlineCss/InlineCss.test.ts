@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { TaskRunner } from '../../../src/TaskRunner';
+import TaskRunner from '../../../src/TaskRunner';
 import Beautify from '../../../src/plugins/Beautify';
 import InlineCss from '../../../src/plugins/InlineCss';
 

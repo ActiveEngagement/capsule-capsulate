@@ -8,24 +8,19 @@
     <body>
         <div id="app">
             <textarea>
-                <a href="https://google.com?a=1&b=2?c=3?d=4">google.com</a>
+                <a href="https://google.com?a=1&amp;b=2?c=3?d=4">test</a>
             </textarea>
         </div>
         
         <script type="module">
             import { cheerio, manipulate } from './src/helpers';
             import FixMsoWrapper from './src/dom/FixMsoWrapper';
-            import { TaskRunner } from './src/TaskRunner';
+            import TaskRunner from './src/TaskRunner';
             import Beautify from './src/plugins/Beautify';
             import PreserveBodyAttributes from './src/plugins/PreserveBodyAttributes';
             import PreserveHeadTag from './src/plugins/PreserveHeadTag';
             import Template from './src/plugins/Template';
             import { capsulate } from './src/capsulate';
-
-            const template = `<div>\{{ contents }}</div>`;
-
-            const html = `<div style="width:0;overflow:hidden;float:left;
-display:none;max-height:0px;"></div>`;
 
             // const runner = new TaskRunner([
             //     new Beautify,
@@ -40,7 +35,22 @@ display:none;max-height:0px;"></div>`;
         
             // const response = await runner.process(html);
             
-            console.log(await capsulate(document.querySelector('textarea').value));
+            console.log(await capsulate(document.querySelector('textarea').value, {
+                dom: {
+                    replaceQueryStrings: [
+                        {
+                            key: 'a',
+                            from: '1',
+                            to: '1-updated'
+                        },
+                        {
+                            key: 'b',
+                            from: '2',
+                            to: '2-updated'
+                        }
+                    ]
+                }
+            }));
 
             // capsulate(html).then(response => console.log(response))
         </script>

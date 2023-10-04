@@ -19,7 +19,16 @@ export default class BaseDomPlugin<T extends object = object> implements DomPlug
     protected options: T;
 
     constructor(options?: T) {
-        this.options = Object.assign({}, this.defaultOptions(), options ?? {} as T);
+        const defaultOptions = this.defaultOptions();
+
+        if(Array.isArray(options) || Array.isArray(defaultOptions)) {
+            this.options = options ?? this.defaultOptions();
+        }
+        else {
+            this.options = Object.assign(
+                {}, defaultOptions, options ?? {} as T
+            );
+        }
     }
 
     defaultOptions(): T {

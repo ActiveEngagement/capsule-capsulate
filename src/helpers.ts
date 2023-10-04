@@ -1,7 +1,7 @@
-import { AnyNode, CheerioAPI, CheerioOptions, load } from 'cheerio';
-import { DomPlugin } from './DomPlugin';
+import { load, type AnyNode, type CheerioAPI, type CheerioOptions } from 'cheerio';
+import { type DomPlugin } from './DomPlugin';
 import ManipulateDom from './ManipulateDom';
-import { TaskRunner } from './TaskRunner';
+import TaskRunner from './TaskRunner';
 import float from './cheerio/float';
 import height from './cheerio/height';
 import margin from './cheerio/margin';

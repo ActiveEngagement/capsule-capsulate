@@ -1,7 +1,7 @@
 import { CheerioAPI, Element } from 'cheerio';
 import BaseDomPlugin from '../DomPlugin';
 
-export class ApplyHeadStyles extends BaseDomPlugin {
+export default class ApplyHeadStyles extends BaseDomPlugin {
 
     protected nodes: Element[];
 

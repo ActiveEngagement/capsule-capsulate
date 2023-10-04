@@ -2,7 +2,7 @@ import { CheerioAPI } from 'cheerio';
 import fs from 'node:fs';
 import path from 'node:path';
 import BasePlugin from '../../../src/Plugin';
-import { TaskRunner } from '../../../src/TaskRunner';
+import TaskRunner from '../../../src/TaskRunner';
 import Beautify from '../../../src/plugins/Beautify';
 import PreserveBodyAttributes from '../../../src/plugins/PreserveBodyAttributes';
 

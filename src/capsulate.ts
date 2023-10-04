@@ -1,5 +1,5 @@
 import ManipulateDom from './ManipulateDom';
-import { TaskRunner } from './TaskRunner';
+import TaskRunner from './TaskRunner';
 import FixBackgroundColor from './dom/FixBackgroundColor';
 import FixFloatAlignment from './dom/FixFloatAlignment';
 import FixFontColor from './dom/FixFontColor';
@@ -9,6 +9,7 @@ import FixResponsiveImages, { FixResponsiveImagesOptions } from './dom/FixRespon
 import FixTableAlignment from './dom/FixTableAlignment';
 import RemoveDisplayNone from './dom/RemoveDisplayNone';
 import RemoveScriptTags from './dom/RemoveScriptTags';
+import { default as ReplaceQueryString, ReplaceQueryStringOptions } from './dom/ReplaceQueryStrings';
 import DecodeHrefAmpersands from './plugins/DecodeHrefAmpersands';
 import ExtractTarget, { ExtractTargetOptions } from './plugins/ExtractTarget';
 import HtmlMinifier, { HtmlMinifierOptions } from './plugins/HtmlMinifier';
@@ -22,7 +23,8 @@ export type CapsulateOptions = {
     htmlMinifier?: HtmlMinifierOptions,
     template?: TemplateOptions,
     dom?: {
-        fixResponsiveImages?: FixResponsiveImagesOptions
+        fixResponsiveImages?: FixResponsiveImagesOptions,
+        replaceQueryStrings?: ReplaceQueryStringOptions
     }
 }
 
@@ -42,7 +44,8 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
             new FixResponsiveImages(options.dom?.fixResponsiveImages),
             new FixTableAlignment,
             new RemoveDisplayNone,
-            new RemoveScriptTags
+            new RemoveScriptTags,
+            new ReplaceQueryString(options.dom?.replaceQueryStrings)
         ]),
         new DecodeHrefAmpersands,
         new HtmlMinifier(options.htmlMinifier),

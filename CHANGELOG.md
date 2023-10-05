@@ -1,3 +1,10 @@
+## [0.4.7](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.6...v0.4.7) (2023-10-05)
+
+
+### Bug Fixes
+
+* lint and misc issues ([f510c20](https://github.com/ActiveEngagement/capsule-capsulate/commit/f510c207ff7e36f6b18837ec2327d1d18ab8b01d))
+
 ## [0.4.6](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.5...v0.4.6) (2023-10-05)
 
 

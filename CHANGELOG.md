@@ -1,3 +1,10 @@
+## [0.4.5](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.4...v0.4.5) (2023-10-05)
+
+
+### Bug Fixes
+
+* issues with encoding/decoding entities inside of freemarker tags ([9673f47](https://github.com/ActiveEngagement/capsule-capsulate/commit/9673f47f6a62ece92cda7ed9f913031f5d3524a5))
+
 ## [0.4.4](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.3...v0.4.4) (2023-10-04)
 
 

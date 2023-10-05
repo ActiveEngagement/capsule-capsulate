@@ -1,3 +1,10 @@
+## [0.4.6](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.5...v0.4.6) (2023-10-05)
+
+
+### Bug Fixes
+
+* more encoding issues ([eeda225](https://github.com/ActiveEngagement/capsule-capsulate/commit/eeda2253afe27db636b6a773f332839f692271e8))
+
 ## [0.4.5](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.4...v0.4.5) (2023-10-05)
 
 

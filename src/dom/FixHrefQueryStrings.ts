@@ -12,6 +12,8 @@ export default class FixHrefQueryStrings extends BaseDomPlugin {
 
         const matches = href.match(/(?<=\?)(.+\?*)/g);
 
-        $el.attr('href', href.replace(matches[0], matches[0].replace(/\?/g, '&')));
+        if(matches) {
+            $el.attr('href', href.replace(matches[0], matches[0].replace(/\?/g, '&')));
+        }
     }
 };

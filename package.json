@@ -50,7 +50,7 @@
     "vite-plugin-dts": "^3.6.0"
   },
   "dependencies": {
-    "capsule-lint": "^0.3.7",
+    "capsule-lint": "^0.3.8",
     "cheerio": "1.0.0-rc.12",
     "css-shorthand-parser": "^0.3.9",
     "css-shorthand-properties": "^1.1.1",

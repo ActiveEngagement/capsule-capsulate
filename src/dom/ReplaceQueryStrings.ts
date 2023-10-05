@@ -10,8 +10,15 @@ export type SourceCode = {
 
 export type ReplaceQueryStringOptions = SourceCode[];
 
-export function replaceQueryString(href: string, replacements: SourceCode[]) {            
-    const url = new URL(href);
+export function replaceQueryString(href: string, replacements: SourceCode[]) {
+    let url: URL;
+    
+    try {
+        url = new URL(href);
+    }
+    catch (e) {
+        return href;
+    }
 
     for(const { key, from, to } of replacements) {
         if(url.searchParams.get(key) === from) {

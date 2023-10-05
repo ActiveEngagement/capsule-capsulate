@@ -25,7 +25,15 @@
 
             const src = document.querySelector('textarea').value;
 
-            console.log(await capsulate('<div><#if a>test</#if><div>'));
+            console.log(await capsulate('<div><#if a>test</#if><a href="{{ unsubscribe_url }}">{{ unsubscribe_label }}</a><div>', {
+                template: {
+                    src: '<html><body>{{ contents }}</body></html>',
+                    data: {
+                        unsubscribe_url: '${Gears.unsubscribe()}',
+                        unsubscribe_label: 'unsubscribe'
+                    }
+                }
+            }));
 
             // console.log(await capsulate('<div><#if (a>b)>test</#if></div>'));
             

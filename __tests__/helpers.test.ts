@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { extractSourceCodes } from '../src/helpers';
+import { decodeFreemarkerTags, encodeFreemarkerTags, extractSourceCodes } from '../src/helpers';
 
 test('extracting source codes.', async() => {
     const html = fs.readFileSync(
@@ -21,4 +21,45 @@ test('extracting source codes.', async() => {
             '${Gears.foo}',
         ]
     });
+});
+
+test('encoding and decoding freemarker tags', () => {
+    const raw = `
+    <div><#if a>test</#if></div>
+    <#if (c > a == b < d)>
+        inner then
+        
+        <#if (c < a == b > d)>
+            inner then
+        <#else>
+            inner else
+        </#if>
+    <#elseif a>
+        inner elseif
+    <#else>
+        else
+    </#if>
+    after
+    `;
+
+    const encoded = `
+    <div>{{#if a#}}test{{/#if#}}</div>
+    {{#if (c &gt; a == b &lt; d)#}}
+        inner then
+        
+        {{#if (c &lt; a == b &gt; d)#}}
+            inner then
+        {{#else#}}
+            inner else
+        {{/#if#}}
+    {{#elseif a#}}
+        inner elseif
+    {{#else#}}
+        else
+    {{/#if#}}
+    after
+    `;
+    
+    expect(encodeFreemarkerTags(raw)).toBe(encoded);
+    expect(decodeFreemarkerTags(encoded)).toBe(raw);
 });

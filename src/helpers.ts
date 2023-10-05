@@ -1,3 +1,4 @@
+import { parse } from 'capsule-lint';
 import { Cheerio, CheerioAPI, load, type AnyNode, type CheerioOptions } from 'cheerio';
 import { Comment } from 'domhandler';
 import { type DomPlugin } from './DomPlugin';
@@ -17,26 +18,42 @@ export function encodeFreemarkerTags(src: string | AnyNode[]) {
         return src;
     }
 
-    return src.replace(/<(\/)?#(.+)?>/g, '{{$1%$2%}}');
-}
+    for(const item of parse(src)) {
+        if(!item.match(/<\/?#\w+/)) {
+            continue;
+        }
+        
+        src = src.replace(item, encodeHtmlEntities(
+            item.replace(/^<(\/?#.+)>/, '{{$1#}}')
+        ));
+    }
 
-export function decodeHtmlEntities(str: string): string {
-    const txt = document.createElement('textarea');
-    txt.innerHTML = str;
-    return txt.value;
+    return src;
 }
 
 export function decodeFreemarkerTags(src: string): string {
-    const pattern = /{{(\/)?%(.+?)%}}/g;
+    const pattern = /{{(\/)?#(.+?)#}}/g;
     const matches = src.match(pattern);
 
     if(matches) {
         for(const match of matches) {
-            src = src.replace(match, decodeHtmlEntities(match).replace(pattern, '<$1#$2>'));
+            src = src.replace(match, decodeHtmlEntities(
+                match.replace(pattern, '<$1#$2>')
+            ));
         }
     }
 
     return src;
+}
+
+const $textarea = cheerio('<textarea/>')('textarea');
+
+export function decodeHtmlEntities(str: string) {
+    return $textarea.html(str).text();
+}
+
+export function encodeHtmlEntities(str: string) {
+    return $textarea.text(str).html();
 }
 
 export function cheerio(src?: string | AnyNode[], options: CheerioOptions = {}): CheerioAPI {

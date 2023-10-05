@@ -8,14 +8,12 @@
     <body>
         <div id="app">
 <textarea style="width: 100%; height: 500px">
-<div>
-    <a href="https://google.com/?test=${Gears.whatever}">test</a>
-</div>
+<#if a></#if>
 </textarea>
         </div>
         
         <script type="module">
-            import { cheerio, manipulate, extractSourceCodes } from './src/helpers';
+            import { cheerio, manipulate, decodeHtmlEntities, encodeHtmlEntities, encodeFreemarkerTags, extractSourceCodes } from './src/helpers';
             import FixMsoWrapper from './src/dom/FixMsoWrapper';
             import ReplaceQueryStrings from './src/dom/ReplaceQueryStrings';
             import TaskRunner from './src/TaskRunner';
@@ -27,11 +25,15 @@
 
             const src = document.querySelector('textarea').value;
 
-            console.log(await manipulate(src, [
-                new ReplaceQueryStrings([
-                    {key: 'test', from: '${Gears.whatever}', to: '${Gears.updated}'},
-                ])
-            ]));
+            console.log(await capsulate('<div><#if (a>b == c<d)>test</#if></div>'));
+
+            // console.log(await capsulate('<div><#if (a>b)>test</#if></div>'));
+            
+            // console.log(await manipulate(src, [
+            //     new ReplaceQueryStrings([
+            //         {key: 'test', from: '${Gears.whatever}', to: '${Gears.updated}'},
+            //     ])
+            // ]));
 
             // const runner = new TaskRunner([
             //     new Beautify,

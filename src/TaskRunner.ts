@@ -1,5 +1,5 @@
 import { type Plugin } from './Plugin';
-import { cheerio, decodeFreemarkerTags } from './helpers';
+import { cheerio } from './helpers';
 
 export type TaskRunnerReduceFunction<T> = (carry: Awaited<T>, task: Plugin) => Promise<T>
 
@@ -30,9 +30,9 @@ export default class TaskRunner {
             $, async (carry, task) => await task.postprocess(carry)
         );
 
-        return decodeFreemarkerTags(await this.reduce(
+        return await this.reduce(
             $.html(), async (carry, task) => await task.transform(carry)
-        ));
+        );
     }
 
     reduce<T>(value: T, fn: TaskRunnerReduceFunction<T>) {        

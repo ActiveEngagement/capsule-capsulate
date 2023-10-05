@@ -13,11 +13,7 @@ import padding from './cheerio/padding';
 import style from './cheerio/style';
 import width from './cheerio/width';
 
-export function encodeFreemarkerTags(src: string | AnyNode[]) {
-    if(Array.isArray(src)) {
-        return src;
-    }
-
+export function encodeFreemarkerTags(src: string): string {
     for(const item of parse(src)) {
         if(!item.match(/<\/?#\w+/)) {
             continue;
@@ -42,7 +38,7 @@ export function decodeFreemarkerTags(src: string): string {
             ));
         }
     }
-
+    
     return src;
 }
 
@@ -57,7 +53,11 @@ export function encodeHtmlEntities(str: string) {
 }
 
 export function cheerio(src?: string | AnyNode[], options: CheerioOptions = {}): CheerioAPI {
-    const $ = load(encodeFreemarkerTags(src) ?? [], options, typeof src === 'string' && !isFragment(src));
+    if(typeof src === 'string') {
+        src = encodeFreemarkerTags(src);
+    }
+
+    const $ = load(src ?? [], options, typeof src === 'string' && !isFragment(src));
 
     $.prototype.float = float;
     $.prototype.height = height;
@@ -67,6 +67,12 @@ export function cheerio(src?: string | AnyNode[], options: CheerioOptions = {}):
     $.prototype.style = style;
     $.prototype.width = width;
 
+    const html = $.html;
+
+    $.html = (...args) => {
+        return decodeFreemarkerTags(html.call($, ...args));
+    };
+    
     return $;
 };
 

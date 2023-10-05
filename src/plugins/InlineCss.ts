@@ -1,7 +1,7 @@
 import { CheerioAPI } from 'cheerio';
 import juice, { type Options } from 'juice';
 import BasePlugin from '../Plugin';
-import { cheerio } from '../helpers';
+import { cheerio, encodeFreemarkerTags } from '../helpers';
 
 export type InlineCssOptions = Options;
 
@@ -24,7 +24,7 @@ export default class InlineCss extends BasePlugin<InlineCssOptions> {
 
     protected async inlineCss($: CheerioAPI) {
         try {
-            return cheerio(juice($.html(), this.options));
+            return cheerio(juice(encodeFreemarkerTags($.html()), this.options));
         }
         catch (e) {
             throw new Error('There is invalid CSS or <link> tags in this document.');

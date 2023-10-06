@@ -1,3 +1,10 @@
+## [0.4.9](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.8...v0.4.9) (2023-10-06)
+
+
+### Bug Fixes
+
+* html minify issues ([5982e8d](https://github.com/ActiveEngagement/capsule-capsulate/commit/5982e8df4294b4d3ece22dab77a42c9d9e14713d))
+
 ## [0.4.8](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.7...v0.4.8) (2023-10-06)
 
 

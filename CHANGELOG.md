@@ -1,3 +1,10 @@
+## [0.4.8](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.7...v0.4.8) (2023-10-06)
+
+
+### Bug Fixes
+
+* issues with !important css breaking ([c4d4abb](https://github.com/ActiveEngagement/capsule-capsulate/commit/c4d4abbb4b64b4a42fe3108adeffa26bebfe943d))
+
 ## [0.4.7](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.6...v0.4.7) (2023-10-05)
 
 

@@ -22,7 +22,7 @@ export default class FixResponsiveImages extends BaseDomPlugin<FixResponsiveImag
                 continue;
             }
 
-            const { unit, value } = units.parse($el.css('width') ?? 0);
+            const { unit, value } = units.parse($el.css('width').replace('!important', '').trim() ?? 0);
 
             if(unit === '%') {
                 $el.attr('width', String(this.options.maxWidth * (100 / value)));

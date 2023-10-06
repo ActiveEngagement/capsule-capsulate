@@ -21,7 +21,7 @@ export default function() {
 };
 
 function unit(value) {
-    const parsed = units.parse(value);
+    const parsed = units.parse(value.replace('!important', '').trim());
 
     if(!parsed.unit) {
         return `${value}px`;

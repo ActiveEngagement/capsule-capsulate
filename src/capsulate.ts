@@ -31,11 +31,10 @@ export type CapsulateOptions = {
 
 export async function capsulate(src: string, options: CapsulateOptions = {}) {
     return await run(src, [
-        new PreserveBodyAttributes,
-        new PreserveHeadTag,
+        new HtmlMinifier(options.htmlMinifier),
+        new InlineCss(options.inlineCss),
         new ExtractTarget(options.extractTarget),
         new Template(options.template),
-        new InlineCss(options.inlineCss),
         new ManipulateDom([
             new FixHrefQueryStrings,
             new FixBackgroundColor,
@@ -48,7 +47,8 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
             new RemoveScriptTags,
             new ReplaceQueryString(options.dom?.replaceQueryStrings)
         ]),
+        new PreserveBodyAttributes,
+        new PreserveHeadTag,
         new DecodeHrefAmpersands,
-        new HtmlMinifier(options.htmlMinifier),
     ]);
 };

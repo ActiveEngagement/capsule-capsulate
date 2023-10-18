@@ -31,9 +31,9 @@ export type CapsulateOptions = {
 
 export async function capsulate(src: string, options: CapsulateOptions = {}) {
     return await run(src, [
+        new ExtractTarget(options.extractTarget),
         new HtmlMinifier(options.htmlMinifier),
         new InlineCss(options.inlineCss),
-        new ExtractTarget(options.extractTarget),
         new Template(options.template),
         new ManipulateDom([
             new FixHrefQueryStrings,

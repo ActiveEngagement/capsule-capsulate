@@ -8,18 +8,18 @@ test('extracting source codes.', async() => {
     );
 
     expect(extractSourceCodes(html)).toEqual({
-        source_code: [
-            'ignore',
-            'xxxxx',
-            'yyyyy',
-            'zzzzz'
-        ],
-        a: [
-            '1'
-        ],
-        'utm_test':  [
-            '${Gears.foo}',
-        ]
+        'source_code': {
+            'ignore': 1,
+            'xxxxx': 3,
+            'yyyyy': 3,
+            'zzzzz': 3,
+        },
+        'a': {
+            '1': 1
+        },
+        'utm_test':  {
+            '${Gears.foo}': 2,
+        }
     });
 });
 

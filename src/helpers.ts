@@ -152,7 +152,11 @@ export function extractUrls(html: string | CheerioAPI | Cheerio<AnyNode>): strin
     return extractUrlsFromElement(html);
 }
 
-export type ExtractedSourceCodes = Record<string,string[]>;
+export type ExtractedSourceCodes = {
+    [param: string]: {
+        [param: string]: number
+    }
+}
 
 export function extractSourceCodes(html: string | CheerioAPI): ExtractedSourceCodes {
     const $ = typeof html === 'string' ? cheerio(html) : html;
@@ -162,11 +166,14 @@ export function extractSourceCodes(html: string | CheerioAPI): ExtractedSourceCo
             
         for(const [key, value] of url.searchParams.entries()) {
             if(!(key in carry)) {
-                carry[key] = [];
+                carry[key] = {};
             }
 
-            if(!carry[key].includes(value)) {
-                carry[key].push(value);
+            if(!(value in carry[key])) {
+                carry[key][value] = 1;
+            }
+            else {
+                carry[key][value]++;
             }
         }       
 

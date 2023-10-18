@@ -5,7 +5,8 @@ import { extractMsoCommentNodes, extractUrlsFromMsoCommentNode } from '../helper
 export type SourceCode = {
     key: string,
     from: string,
-    to: string
+    to: string,
+    count: number
 }
 
 export type ReplaceQueryStringOptions = SourceCode[];

@@ -1,3 +1,11 @@
+## [0.4.10](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.9...v0.4.10) (2023-10-18)
+
+
+### Bug Fixes
+
+* added counts to extractSourceCodes ([3938e06](https://github.com/ActiveEngagement/capsule-capsulate/commit/3938e06bbf5f1bdf67e205fb289979c6d76143fb))
+* updated pnpm ([0a45749](https://github.com/ActiveEngagement/capsule-capsulate/commit/0a4574993ef7af735f1851337c27d24c09cb9dfc))
+
 ## [0.4.9](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.8...v0.4.9) (2023-10-06)
 
 

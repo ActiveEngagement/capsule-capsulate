@@ -6,7 +6,7 @@ export type SourceCode = {
     key: string,
     from: string,
     to: string,
-    count: number
+    count?: number
 }
 
 export type ReplaceQueryStringOptions = SourceCode[];
@@ -25,6 +25,10 @@ export function replaceQueryString(href: string, replacements: SourceCode[]) {
         if(url.searchParams.get(key) === from) {
             url.searchParams.set(key, to);            
         }
+    }
+
+    if(!url.searchParams.size) {
+        return url.toString();
     }
 
     const rawQueryString = '?' + [...url.searchParams.entries()].map(([key, value]) => {

@@ -1,3 +1,11 @@
+## [0.4.11](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.10...v0.4.11) (2023-10-27)
+
+
+### Bug Fixes
+
+* issue with adding ? before urls without query strings ([5d4c154](https://github.com/ActiveEngagement/capsule-capsulate/commit/5d4c154239b48ca60025b4762c2620fc16a34d4b))
+* missing type prop on SourceCode ([ecd76ab](https://github.com/ActiveEngagement/capsule-capsulate/commit/ecd76ab58c56509e44e16b94853847116560109b))
+
 ## [0.4.10](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.9...v0.4.10) (2023-10-18)
 
 

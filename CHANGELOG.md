@@ -1,3 +1,10 @@
+## [0.4.12](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.11...v0.4.12) (2023-11-13)
+
+
+### Bug Fixes
+
+* alignment issue on self closing tags ([0548554](https://github.com/ActiveEngagement/capsule-capsulate/commit/05485540bcc34a65ac4a9795ca576e1bf7db2d5f))
+
 ## [0.4.11](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.10...v0.4.11) (2023-10-27)
 
 

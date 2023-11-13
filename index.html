@@ -6,19 +6,61 @@
         <title>Capsulate</title>
     </head>
     <body>
-        <div id="app">
+        <div id="app" style="display: flex;">
+            <div style="flex: 1">
 <textarea style="width: 100%; height: 500px">
-<a href="https://preborn.baby/AEL10723EME1-letter" target="_blank" style="text-decoration: underline; color: #1a8fce;" rel="noopener">
-    Will you do me a
-    favor and sign a note of support to
-    an expectant mother? My goal is to
-    get 53,452 notes signed — one for
-    every baby we saved in 2022 — to
-    share with women who come into our
-    200+ PreBorn! Network
-    Clinics.
-</a>
+<!doctype html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>The Leadership Institute</title>
+    <style>
+        
+        /* This should also be a block element, so that it will fill 100% of the .container */
+        .content {
+        box-sizing: border-box;
+        display: block;
+        Margin: 0 auto;
+        max-width: 580px;
+        padding: 10px; }
+    </style>
+    
+</head>
+    <body>
+            <!-- START CENTERED WHITE CONTAINER -->
+            <table>
+
+                <!-- START MAIN CONTENT AREA -->
+                <tr>
+                <td class="wrapper">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td><center><a href="https://secured.leadershipinstitute.org/rgc-082424/?utm_campaign=riley_appeal&utm_source=prospecting&utm_medium=email&utm_content=v2-AE_"><img style="width: 300px;" src="https://3452602.fs1.hubspotusercontent-na1.net/hubfs/3452602/NA%20Hosted%20Public%20Domain%20Photos/The%20Riley%20Gaines%20Center%20Logo.png" alt="The Riley Gaines Center" width="300" /></a></center><br/>
+<p>&nbsp;</p>
+<p>Hi Fellow American,<br/><br/>Below is an email I&rsquo;m circulating to outstanding leaders and principled conservatives like you. I think you may be interested in seeing it.<br/><br/>Please review the message at your earliest convenience and let me know if you would like to participate. <br/><br/>Best wishes,<br/><br/>Riley Gaines<br/><br/>P.S. The deadline is approaching to raise $1.5 million to host my upcoming college campus tour. If you&rsquo;d like to give online, here&rsquo;s a secure link for you: <br/><b><a href="https://secured.leadershipinstitute.org/rgc-082424/?utm_campaign=riley_appeal&utm_source=prospecting&utm_medium=email&utm_content=v2-AE_">https://secured.leadershipinstitute.org/rgc-082424/</a></b><br/><br/></p>
+<hr align="center" color="black" size="4" width="85%" />
+<p><br/>From: Riley Gaines &lt;rileygaines@email.leadershipinstitute.org&gt;<br/>Send Date: August 9, 2023 9:55 AM<br/>Subject: Did you see my announcement?<br/><br/>Dear Friend,<br/><br/>I hope you saw my announcement on Sean Hannity&rsquo;s show that I&rsquo;ve partnered with the Leadership Institute to launch the Riley Gaines Center. <br/><br/>I&rsquo;m the 12-time All-American swimmer who speaks out against transgender ideology and fights to defend basic truths &ndash; that men are men and women are women. <br/><br/>The Riley Gaines Center at the Leadership Institute is now the exclusive headquarters of my work to lead conservatives of all types &ndash; patriots who will not be silenced by the weight of the left&rsquo;s cultural pressure and who want to learn how to defend America&rsquo;s freedoms. <br/><br/>When the left tries to shout you down profanely, when they viciously attack you &ndash; that&rsquo;s when you know you&rsquo;re saying the right things. <br/><br/>For those who are attacked, vilified, and persecuted for their support of America&rsquo;s founding principles and traditional American values, the Riley Gaines Center sends a message that they are not alone &ndash; because I will stand bravely with them. <br/><br/>To train as many young people as I can to stand up for conservative principles, I must have the help of strong Leadership Institute supporters like you. <br/><br/><b><a href="https://secured.leadershipinstitute.org/rgc-082424/?utm_campaign=riley_appeal&utm_source=prospecting&utm_medium=email&utm_content=v2-AE_">Will you help turn young men and women into Leaders for America?</a></b><br/><br/>The Riley Gaines Center is the exclusive home of my work to lead this crucial cause through: <br/></p>
+<ul style="margin-top: 15px;margin-bottom: 15px;">
+<li>Speaking events and media appearances to rally everyday Americans to defend women&rsquo;s identity and uphold vital truths. <br/><br/></li>
+<li>A coalition of women, student athletes, parents, and those who have been harmed by radical transgender ideology, to join me in speaking out across the country. <br/><br/></li>
+<li>A fast-growing team of speakers and grassroots organizers, who will help turn those ready to defend freedom into champions who put their principles into action.</li>
+</ul></td>
+                    </tr>
+                    </table>
+                </td>
+                </tr>
+
+            <!-- END MAIN CONTENT AREA -->
+            </table>
+            
+    </body>
+</html>
 </textarea>
+            </div>
+            <div style="flex: 1">
+                <iframe style="width: 100%; height: 100%"></iframe>
+            </div>
         </div>
         
         <script type="module">
@@ -34,9 +76,9 @@
 
             const src = document.querySelector('textarea').value;
 
-            console.log(await capsulate(src));
+            document.querySelector('iframe').srcdoc = await capsulate(src);
 
-            // console.log(await capsulate('<div><#if (a>b)>test</#if></div>'));
+            // console.log();
             
             // console.log(await manipulate(src, [
             //     new ReplaceQueryStrings([

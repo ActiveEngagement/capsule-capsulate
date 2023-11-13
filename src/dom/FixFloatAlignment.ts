@@ -1,5 +1,21 @@
-import { AnyNode, Cheerio } from 'cheerio';
+import { AnyNode, Cheerio, Element } from 'cheerio';
 import BaseDomPlugin from '../DomPlugin';
+
+function isVoidElement($el: Cheerio<AnyNode>) {
+    const voidElements = [
+        'area', 'base', 'br', 'col', 'command',
+        'embed', 'hr', 'img', 'input', 'keygen',
+        'link', 'meta', 'param', 'source', 'track', 'wbr'
+    ];
+  
+    const el = $el.get(0);
+
+    if(el.nodeType === 1) {
+        return voidElements.includes((el as Element).tagName);
+    }
+
+    return false;
+}
 
 export default class FixFloatAlignment extends BaseDomPlugin {
 
@@ -12,7 +28,7 @@ export default class FixFloatAlignment extends BaseDomPlugin {
     }
     
     shouldApplyFloatToParent($el: Cheerio<AnyNode>) {
-        if(!$el.parent().length) {
+        if(isVoidElement($el) || !$el.parent().length) {
             return false;
         }
 

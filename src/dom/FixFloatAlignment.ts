@@ -17,28 +17,26 @@ function isVoidElement($el: Cheerio<AnyNode>) {
     return false;
 }
 
-export default class FixFloatAlignment extends BaseDomPlugin {
+function shouldApplyFloatToParent($el: Cheerio<AnyNode>) {
+    if(isVoidElement($el) || !$el.parent().length) {
+        return false;
+    }
 
+    return (
+        !$el.parent().css('float') && 
+        !$el.parent().attr('align') && (
+            $el.parent().get(0).name !== 'a' ||
+            $el.parent().css('display') !== 'inline'
+        )
+    );
+}
+
+export default class FixFloatAlignment extends BaseDomPlugin {
     async process($el: Cheerio<AnyNode>) {
         const align = $el.attr('align');
     
-        if(align && this.shouldApplyFloatToParent($el)) {
+        if(align && shouldApplyFloatToParent($el)) {
             $el.parent().attr('align', align);
         }
-    }
-    
-    shouldApplyFloatToParent($el: Cheerio<AnyNode>) {
-        if(isVoidElement($el) || !$el.parent().length) {
-            return false;
-        }
-
-        return (
-            !$el.parent().css('float') && 
-            !$el.parent().attr('align') && (
-                $el.parent().get(0).name !== 'a' ||
-                $el.parent().css('display') !== 'inline'
-            )
-        );
-    }
-
+    }    
 };

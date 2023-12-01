@@ -18,11 +18,13 @@ export default class FixResponsiveImages extends BaseDomPlugin<FixResponsiveImag
         for(const el of $('img')) {
             const $el = $(el);
 
-            if($el.attr('width')) {
+            if($el.attr('width') || !$el.css('width')) {
                 continue;
             }
 
-            const { unit, value } = units.parse($el.css('width').replace('!important', '').trim() ?? 0);
+            const { unit, value } = units.parse(
+                $el.css('width').replace('!important', '').trim() ?? 0
+            );
 
             if(unit === '%') {
                 $el.attr('width', String(this.options.maxWidth * (100 / value)));

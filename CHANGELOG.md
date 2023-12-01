@@ -1,3 +1,10 @@
+## [0.4.13](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.12...v0.4.13) (2023-12-01)
+
+
+### Bug Fixes
+
+* another bug with fix responsive images ([8704feb](https://github.com/ActiveEngagement/capsule-capsulate/commit/8704febf77316ba9a37b89496fde341a40b84e88))
+
 ## [0.4.12](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.11...v0.4.12) (2023-11-13)
 
 

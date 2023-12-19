@@ -1,3 +1,10 @@
+## [0.4.14](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.13...v0.4.14) (2023-12-19)
+
+
+### Bug Fixes
+
+* issue with template plugin stripping preview text without a template src ([6511ec5](https://github.com/ActiveEngagement/capsule-capsulate/commit/6511ec534dfb8cb5e0f37bd9092a0e7352b31522))
+
 ## [0.4.13](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.12...v0.4.13) (2023-12-01)
 
 

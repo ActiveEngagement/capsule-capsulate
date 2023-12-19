@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   capsule-lint:
-    specifier: ^0.3.12
-    version: 0.3.12(peggy@3.0.2)
+    specifier: ^0.3.13
+    version: 0.3.13(peggy@3.0.2)
   cheerio:
     specifier: 1.0.0-rc.12
     version: 1.0.0-rc.12
@@ -3342,8 +3342,8 @@ packages:
     resolution: {integrity: sha512-+3e0ASu4sw1SWaoCtvPeyXp+5PsjigkSt8OXZbF9StH5pQWbxEjLAZE3n8Aup5udop1uRiKA7a4utUk/uoSpUw==}
     dev: true
 
-  /capsule-lint@0.3.12(peggy@3.0.2):
-    resolution: {integrity: sha512-FG2vvRTxCmqNGmzwIrM/a0lbWCzH/fboJBnUqC6SC+aESQPgatVF1bEgo+rJiSxC1mjbnATI7RJvCuGfqAMVDQ==}
+  /capsule-lint@0.3.13(peggy@3.0.2):
+    resolution: {integrity: sha512-19BWY7z1C11GIDFBCAdOb8UziVnEwdo6pV5rjrATRQzXUD32jDM7QBjIHAcMvqXAxNVJdpaA/5CZGvOWvKQGXA==}
     hasBin: true
     dependencies:
       htmlhint: 1.1.4

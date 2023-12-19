@@ -24,11 +24,7 @@ export default class Template extends BasePlugin<TemplateOptions> {
     }
 
     async initialize(src: string) {
-        if(!this.options.src) {
-            return src;
-        }
-
-        return this.compile(src.replace(this.options.previewText, ''));
+        return this.compile(src);
     }
 
     async process($: CheerioAPI) {
@@ -36,7 +32,11 @@ export default class Template extends BasePlugin<TemplateOptions> {
             return $;
         }
 
-        const contents = isFragment($.html()) ? $.html() : $('body').html();
+        let contents = isFragment($.html()) ? $.html() : $('body').html();
+
+        if(this.options.previewText) {
+            contents = contents.replace(this.options.previewText, '');
+        }
 
         let wrapped = this.compile(this.options.src, { contents });
 

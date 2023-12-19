@@ -120,3 +120,54 @@ test('compiling a template without a doctype', async() => {
 
     expect(await runner.process(error)).toBe(expected);
 });
+
+test('the preview text on document without a template wrapper', async() => {
+    const error = fs.readFileSync(
+        path.resolve('__tests__/plugins/Template/UnwrappedDocumentWithPreviewText/error.html'), 'utf8'
+    );
+    
+    const expected = fs.readFileSync(
+        path.resolve('__tests__/plugins/Template/UnwrappedDocumentWithPreviewText/expected.html'), 'utf8'
+    );
+
+    const runner = new TaskRunner([
+        new Beautify,
+        new Template({
+            previewText: '<div style="display:none">test</div>',
+            data: {
+                title: 'Some Title',
+                subtitle: 'Subtitle'
+            }
+        })
+    ]);
+
+    expect(await runner.process(error)).toBe(expected);
+});
+
+test('the preview text on document with a template wrapper', async() => {
+    const src = fs.readFileSync(
+        path.resolve('__tests__/plugins/Template/WrappedDocumentWithPreviewText/wrapper.html'), 'utf8'
+    );
+    
+    const error = fs.readFileSync(
+        path.resolve('__tests__/plugins/Template/WrappedDocumentWithPreviewText/error.html'), 'utf8'
+    );
+    
+    const expected = fs.readFileSync(
+        path.resolve('__tests__/plugins/Template/WrappedDocumentWithPreviewText/expected.html'), 'utf8'
+    );
+
+    const runner = new TaskRunner([
+        new Beautify,
+        new Template({
+            src,
+            previewText: '<div style="display:none">test</div>',
+            data: {
+                title: 'Some Title',
+                subtitle: 'Subtitle'
+            }
+        })
+    ]);
+
+    expect(await runner.process(error)).toBe(expected);
+});

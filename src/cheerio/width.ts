@@ -31,5 +31,10 @@ function unit(value) {
         return value;
     }
 
-    return units.convert('px', value);
+    try {
+        return units.convert('px', value);
+    }
+    catch(e) {
+        return value;
+    }
 }

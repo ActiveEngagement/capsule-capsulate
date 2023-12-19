@@ -22,19 +22,24 @@ export default class FixResponsiveImages extends BaseDomPlugin<FixResponsiveImag
                 continue;
             }
 
-            const { unit, value } = units.parse(
-                $el.css('width').replace('!important', '').trim() ?? 0
-            );
+            try {
+                const { unit, value } = units.parse(
+                    $el.css('width').replace('!important', '').trim() ?? 0
+                );
 
-            if(unit === '%') {
-                $el.attr('width', String(this.options.maxWidth * (100 / value)));
+                if(unit === '%') {
+                    $el.attr('width', String(this.options.maxWidth * (100 / value)));
+                }
+                else if(value) {
+                    $el.attr('width', units.convert('px', `${value}${unit || 'px'}`));
+                }
+                    
+                if(!$el.css('width') && $el.attr('width')) {
+                    $el.css('width', `${$el.attr('width')}px`);
+                }
             }
-            else if(value) {
-                $el.attr('width', units.convert('px', `${value}${unit || 'px'}`));
-            }
-                
-            if(!$el.css('width') && $el.attr('width')) {
-                $el.css('width', `${$el.attr('width')}px`);
+            catch(e) {
+                // do nothing after the error
             }
         }
 

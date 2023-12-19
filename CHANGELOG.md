@@ -1,3 +1,10 @@
+## [0.4.16](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.15...v0.4.16) (2023-12-19)
+
+
+### Bug Fixes
+
+* issue with converting incompatible units ([6b754ef](https://github.com/ActiveEngagement/capsule-capsulate/commit/6b754ef77d307d09d9fbe510a705665ef6cd26eb))
+
 ## [0.4.15](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.14...v0.4.15) (2023-12-19)
 
 

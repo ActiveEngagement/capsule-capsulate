@@ -24,6 +24,10 @@ export default class Template extends BasePlugin<TemplateOptions> {
     }
 
     async initialize(src: string) {
+        if(!this.options.src) {
+            return src;
+        }
+
         return this.compile(src.replace(this.options.previewText, ''));
     }
 

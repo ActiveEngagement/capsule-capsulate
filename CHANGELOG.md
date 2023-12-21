@@ -1,3 +1,10 @@
+## [0.4.17](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.16...v0.4.17) (2023-12-21)
+
+
+### Bug Fixes
+
+* updated capsule-lint ([d240dad](https://github.com/ActiveEngagement/capsule-capsulate/commit/d240dad23260b55fcdab15209d1ceffe8870ed25))
+
 ## [0.4.16](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.15...v0.4.16) (2023-12-19)
 
 

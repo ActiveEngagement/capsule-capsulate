@@ -7,7 +7,7 @@ settings:
 dependencies:
   capsule-lint:
     specifier: ^0.4.0
-    version: 0.4.6(peggy@3.0.2)
+    version: 0.4.7(peggy@3.0.2)
   cheerio:
     specifier: 1.0.0-rc.12
     version: 1.0.0-rc.12
@@ -88,6 +88,9 @@ devDependencies:
   babel-jest:
     specifier: ^29.7.0
     version: 29.7.0(@babel/core@7.23.6)
+  change-case:
+    specifier: ^5.3.0
+    version: 5.3.0
   commitlint:
     specifier: ^17.8.1
     version: 17.8.1
@@ -3292,7 +3295,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001571
-      electron-to-chromium: 1.4.615
+      electron-to-chromium: 1.4.616
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
     dev: true
@@ -3342,8 +3345,8 @@ packages:
     resolution: {integrity: sha512-tYq/6MoXhdezDLFZuCO/TKboTzuQ/xR5cFdgXPfDtM7/kchBO3b4VWghE/OAi/DV7tTdhmLjZiZBZi1fA/GheQ==}
     dev: true
 
-  /capsule-lint@0.4.6(peggy@3.0.2):
-    resolution: {integrity: sha512-509Msli/2+Ig/lOKXHbXnv3wmT/5kq9Vj8WXRbd0tehyRZaOrqyGCEKwCdgztZqhK4JwyJwEpa5iLc7YDpMkNA==}
+  /capsule-lint@0.4.7(peggy@3.0.2):
+    resolution: {integrity: sha512-LJpJfGRgoRtYElAqekY+c0PLhW9Y7rd8BZZU8qOsNnSd2UuYY4OO74ZcsezKmSuQU4vRr/ElkOdbQ+rZZdNxXQ==}
     hasBin: true
     dependencies:
       htmlhint: 1.1.4
@@ -3380,6 +3383,10 @@ packages:
   /chalk@5.3.0:
     resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: true
+
+  /change-case@5.3.0:
+    resolution: {integrity: sha512-Eykca0fGS/xYlx2fG5NqnGSnsWauhSGiSXYhB1kO6E909GUfo8S54u4UZNS7lMJmgZumZ2SUpWaoLgAcfQRICg==}
     dev: true
 
   /char-regex@1.0.2:
@@ -3909,8 +3916,8 @@ packages:
       semver: 7.5.4
     dev: false
 
-  /electron-to-chromium@1.4.615:
-    resolution: {integrity: sha512-/bKPPcgZVUziECqDc+0HkT87+0zhaWSZHNXqF8FLd2lQcptpmUFwoCSWjCdOng9Gdq+afKArPdEg/0ZW461Eng==}
+  /electron-to-chromium@1.4.616:
+    resolution: {integrity: sha512-1n7zWYh8eS0L9Uy+GskE0lkBUNK83cXTVJI0pU3mGprFsbfSdAc15VTFbo+A+Bq4pwstmL30AVcEU3Fo463lNg==}
     dev: true
 
   /emittery@0.13.1:

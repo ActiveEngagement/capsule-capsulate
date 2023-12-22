@@ -1,14 +1,16 @@
 import vue from '@vitejs/plugin-vue';
+import { pascalCase } from 'change-case';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import pkg from './package.json';
+
+const external = [
+    // ...(pkg.dependencies ? Object.keys(pkg.dependencies) : []),
+    ...(pkg.peerDependencies ? Object.keys(pkg.peerDependencies) : [])
+];
 
 // vite.config.js
 export default defineConfig(config => ({
-    resolve: {
-        alias: {
-            // 'html-minifier': 'https://cdnjs.cloudflare.com/ajax/libs/html-minifier/4.0.0/htmlminifier.js'
-        }
-    },
     build: {
         sourcemap: config.mode === 'production',
         lib: {
@@ -19,16 +21,14 @@ export default defineConfig(config => ({
             fileName: 'capsule-capsulate',
         },
         rollupOptions: {
-            // make sure to externalize deps that shouldn't be bundled
-            // into your library
-            external: ['vue'],
+            external,
             output: {
-                // Provide global variables to use in the UMD build
-                // for externalized deps
-                globals: {
-                    vue: 'Vue',
-                },
-            },
+                globals: external.reduce((carry, dep) => {
+                    return Object.assign(carry, {
+                        [dep]: pascalCase(dep)
+                    });
+                }, {}),
+            }
         },
     },
     plugins: [vue()],

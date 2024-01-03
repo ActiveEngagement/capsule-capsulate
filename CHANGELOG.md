@@ -1,3 +1,10 @@
+## [0.4.20](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.19...v0.4.20) (2024-01-03)
+
+
+### Bug Fixes
+
+* added missing ts definition files ([f86f25c](https://github.com/ActiveEngagement/capsule-capsulate/commit/f86f25c8ba4d7131be152c61bd7b37cc0d717a79))
+
 ## [0.4.19](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.18...v0.4.19) (2024-01-03)
 
 

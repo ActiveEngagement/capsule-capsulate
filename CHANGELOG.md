@@ -1,3 +1,10 @@
+## [0.4.19](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.18...v0.4.19) (2024-01-03)
+
+
+### Bug Fixes
+
+* implemented a more string TS policy, and fixed issues with preview text ([271f93d](https://github.com/ActiveEngagement/capsule-capsulate/commit/271f93df9db367779333ef389581848fa0e4b21e))
+
 ## [0.4.18](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.17...v0.4.18) (2023-12-22)
 
 

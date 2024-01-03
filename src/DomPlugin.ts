@@ -32,7 +32,7 @@ export default class BaseDomPlugin<T extends object = object> implements DomPlug
     }
 
     defaultOptions(): T {
-        return;
+        return {} as T;
     }
 
     async initialize(src: string): Promise<string> {
@@ -43,7 +43,7 @@ export default class BaseDomPlugin<T extends object = object> implements DomPlug
         return Promise.resolve($);
     }
 
-    async process($el: Cheerio<AnyNode>, $: CheerioAPI) {
+    async process(_$el: Cheerio<AnyNode>, _$: CheerioAPI) {
         //
     }
 

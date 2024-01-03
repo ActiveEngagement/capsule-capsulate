@@ -1,3 +1,5 @@
+import { Cheerio, type AnyNode } from 'cheerio';
+// @ts-ignore
 import * as units from 'units-css';
 
 declare module 'cheerio' {
@@ -6,7 +8,7 @@ declare module 'cheerio' {
     }
 }
 
-export default function() {
+export default function(this: Cheerio<AnyNode>) {
     if(this.attr('width')) {
         return this.attr('width');
     }
@@ -20,8 +22,8 @@ export default function() {
     }
 };
 
-function unit(value) {
-    const parsed = units.parse(value.replace('!important', '').trim());
+function unit(value?: string) {
+    const parsed = units.parse(value?.replace('!important', '').trim());
 
     if(!parsed.unit) {
         return `${value}px`;
@@ -34,7 +36,7 @@ function unit(value) {
     try {
         return units.convert('px', value);
     }
-    catch(e) {
-        return value;
+    catch (e) {
+        return value; 
     }
 }

@@ -18,7 +18,12 @@ export default class ConvertListsToTables extends BaseDomPlugin<ConvertListsToTa
         for(const el of $('ol,ul')) {
             const $el = $(el), $table = $('<table border="0" cellspacing="0" cellpadding="0"><tbody/></table>');
             
-            $table.first().attr($el.attr());
+            const attr = $el.attr();
+
+            if(attr) {
+                $table.first().attr(attr);
+            }
+            
             $table.first().addClass(el.tagName);
 
             let i = 0;
@@ -31,8 +36,8 @@ export default class ConvertListsToTables extends BaseDomPlugin<ConvertListsToTa
                     .appendTo($tr);
 
                 $('<td valign="top" style="padding-bottom: 1em" />')
-                    .css($(child).css())
-                    .html($(child).html())
+                    .css($(child).css() ?? {})
+                    .html($(child).html() ?? '')
                     .appendTo($tr);
 
                 i++;

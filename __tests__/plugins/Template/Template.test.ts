@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import TaskRunner from '../../../src/TaskRunner';
 import Beautify from '../../../src/plugins/Beautify';
+import PreviewText from '../../../src/plugins/PreviewText';
 import Template from '../../../src/plugins/Template';
 
 test('compiling a template without a wrapper', async() => {
@@ -42,6 +43,7 @@ test('compiling a template with a wrapper fragment', async() => {
     const runner = new TaskRunner([
         new Beautify,
         new Template({
+            src,
             data: {
                 title: 'Title',
                 subtitle: 'Subtitle'
@@ -132,8 +134,10 @@ test('the preview text on document without a template wrapper', async() => {
 
     const runner = new TaskRunner([
         new Beautify,
+        new PreviewText({
+            html: '<div style="display:none">test</div>',
+        }),
         new Template({
-            previewText: '<div style="display:none">test</div>',
             data: {
                 title: 'Some Title',
                 subtitle: 'Subtitle'
@@ -159,9 +163,11 @@ test('the preview text on document with a template wrapper', async() => {
 
     const runner = new TaskRunner([
         new Beautify,
+        new PreviewText({
+            html: '<div style="display:none">test</div>',
+        }),
         new Template({
             src,
-            previewText: '<div style="display:none">test</div>',
             data: {
                 title: 'Some Title',
                 subtitle: 'Subtitle'

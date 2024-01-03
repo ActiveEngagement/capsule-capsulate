@@ -1,4 +1,5 @@
 import { CheerioAPI } from 'cheerio';
+// @ts-ignore
 import * as units from 'units-css';
 import BaseDomPlugin from '../DomPlugin';
 
@@ -24,7 +25,7 @@ export default class FixResponsiveImages extends BaseDomPlugin<FixResponsiveImag
 
             try {
                 const { unit, value } = units.parse(
-                    $el.css('width').replace('!important', '').trim() ?? 0
+                    $el.css('width')?.replace('!important', '').trim() ?? 0
                 );
 
                 if(unit === '%') {
@@ -38,7 +39,7 @@ export default class FixResponsiveImages extends BaseDomPlugin<FixResponsiveImag
                     $el.css('width', `${$el.attr('width')}px`);
                 }
             }
-            catch(e) {
+            catch (e) {
                 // do nothing after the error
             }
         }

@@ -3,7 +3,7 @@ import BaseDomPlugin from '../DomPlugin';
 
 export default class ApplyHeadStyles extends BaseDomPlugin {
 
-    protected nodes: Element[];
+    protected nodes: Element[] = [];
 
     async preprocess($: CheerioAPI) {
         for(const el of $('head style')) {

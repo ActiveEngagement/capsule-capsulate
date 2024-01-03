@@ -23,7 +23,7 @@ export default abstract class BasePlugin<T extends object = object> implements P
     }
 
     defaultOptions(): T {
-        return;
+        return {} as T;
     }
 
     async initialize(src: string): Promise<string> {

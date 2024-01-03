@@ -19,9 +19,15 @@ export function encodeFreemarkerTags(src: string): string {
             continue;
         }
         
-        src = src.replace(item, encodeHtmlEntities(
+        const replacement = encodeHtmlEntities(
             item.replace(/^<(\/?#.+)>/, '{{$1#}}')
-        ));
+        );
+
+        if(!replacement) {
+            continue;
+        }
+
+        src = src.replace(item, replacement);
     }
 
     return src;
@@ -69,7 +75,7 @@ export function cheerio(src?: string | AnyNode[], options: CheerioOptions = {}):
 
     const html = $.html;
 
-    $.html = (...args) => {
+    $.html = (...args: any[]) => {
         return decodeFreemarkerTags(html.call($, ...args));
     };
     
@@ -77,7 +83,11 @@ export function cheerio(src?: string | AnyNode[], options: CheerioOptions = {}):
 };
 
 export function isFragment(src?: string): boolean {
-    return src && !src.match(/<(body|html).+?>?/);
+    if(!src) {
+        return true;
+    }
+
+    return !src.match(/<(body|html).+?>?/)?.length;
 };
 
 export async function run(src: string, plugins: Plugin[]): Promise<string> {
@@ -136,7 +146,7 @@ export function extractUrlsFromElement($el: Cheerio<AnyNode>) {
     return [
         $el.attr('href'),
         ...extractMsoCommentUrlsFromElement($el)
-    ].filter(Boolean);
+    ].filter(Boolean) as string[];
 }
 
 export function extractUrls(html: string | CheerioAPI | Cheerio<AnyNode>): string[] {
@@ -144,7 +154,7 @@ export function extractUrls(html: string | CheerioAPI | Cheerio<AnyNode>): strin
         const $ = typeof html === 'string' ? cheerio(html) : html;
 
         return $('[href]')
-            .map((i, el) => extractUrlsFromElement($(el)))
+            .map((_, el) => extractUrlsFromElement($(el)))
             .toArray()
             .concat(extractMsoCommentUrls($));
     }

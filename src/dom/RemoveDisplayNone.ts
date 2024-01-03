@@ -6,8 +6,10 @@ export default class RemoveDisplayNone extends BaseDomPlugin {
     protected nodes: AnyNode[] = [];
 
     async process($el: Cheerio<AnyNode>) {
-        if($el.css('display') === 'none') {
-            this.nodes.push($el.get(0));
+        const child = $el.get(0);
+
+        if($el.css('display') === 'none' && child) {
+            this.nodes.push(child);
         }
     }
 

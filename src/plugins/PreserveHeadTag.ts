@@ -4,7 +4,7 @@ import { cheerio, isFragment } from '../helpers';
 
 export default class PreserveHeadTag extends BasePlugin {
 
-    protected head: Cheerio<AnyNode>;
+    protected head?: Cheerio<AnyNode>;
 
     async preprocess($: CheerioAPI) {
         this.head = $('head');
@@ -13,7 +13,7 @@ export default class PreserveHeadTag extends BasePlugin {
     }
 
     async postprocess($: CheerioAPI) {
-        if(!this.head.length) {
+        if(!this.head?.length) {
             return $;
         }
         
@@ -28,13 +28,17 @@ export default class PreserveHeadTag extends BasePlugin {
             return doc;
         }
 
+        if(!this.head) {
+            return $;
+        }
+
         // If the head tag doesn't exist create one.
         if(!$('head').length) {
             $('html').prepend(this.head);
         }
         // Otherwise merge the head tags together.
         else {
-            $('head').append(this.head.html());
+            $('head').append(this.head.html() ?? '');
         }
 
         return $;

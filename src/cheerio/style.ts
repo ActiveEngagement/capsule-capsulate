@@ -1,4 +1,7 @@
+import { Cheerio, type AnyNode } from 'cheerio';
+// @ts-ignore
 import parse from 'css-shorthand-parser';
+// @ts-ignore
 import cssShorthandProps from 'css-shorthand-properties';
 import camelCase from 'lodash.camelcase';
 import pickBy from 'lodash.pickby';
@@ -16,11 +19,11 @@ class ComputedStyle {
         for(const [key, value] of Object.entries(props)) {
             Object.defineProperty(this, key, {
                 get: () => value
-            })
+            });
 
             Object.defineProperty(this, camelCase(key), {
                 get: () => value
-            })
+            });
         }
     }
 
@@ -29,16 +32,24 @@ class ComputedStyle {
     }
 }
 
-export default function style(attr: string): ComputedStyle {
+export default function style(this: Cheerio<AnyNode>, attr: string): ComputedStyle {
     if(!cssShorthandProps.isShorthand(attr)) {
-        return new ComputedStyle({ [attr]: this.css(attr) });
+        const css = this.css(attr);
+
+        if(!css) {
+            return new ComputedStyle({ });
+        }
+
+        return new ComputedStyle({ [attr]: css });
     }
 
     const shorthand = this.css(attr) && parse(attr, this.css(attr));
     
-    const longhand = pickBy(cssShorthandProps.expand(attr).reduce((carry, key) => {
-        return Object.assign(carry, { [key]: this.css(key) });
-    }, {}));
+    const longhand = pickBy(
+        cssShorthandProps.expand(attr).reduce((carry: any, key: any) => {
+            return Object.assign(carry, { [key]: this.css(key) });
+        }, {})
+    );
 
     return new ComputedStyle(Object.assign({}, shorthand, longhand));
 }

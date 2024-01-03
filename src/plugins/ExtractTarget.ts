@@ -12,8 +12,10 @@ export default class ExtractTarget extends BasePlugin<ExtractTargetOptions> {
         if(this.options.selector) {
             const $el = $(this.options.selector);
 
-            if($el.length) {
-                return cheerio([ $el.get(0) ]);
+            const child = $el.get(0);
+
+            if(child) {
+                return cheerio([ child ]);
             }
         }
 

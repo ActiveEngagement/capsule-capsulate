@@ -5,7 +5,7 @@ import BaseDomPlugin from '../DomPlugin';
 export default class FixMsoWrapper extends BaseDomPlugin {
 
     async postprocess($: CheerioAPI) {
-        $('div').each((i, el) => {
+        $('div').each((_, el) => {
             const $el = $(el);
 
             if($el.mso()) {
@@ -24,20 +24,22 @@ export default class FixMsoWrapper extends BaseDomPlugin {
                 border: (float || width) ? '0' : undefined,
                 cellpadding: (float || width) ? '0' : undefined,
                 cellspacing: (float || width) ? '0' : undefined
-            }));
+            }) as Record<string,string>);
     
             const $td = $table.find('td');
             
             $td.attr('height', height).css(pickBy({
                 margin: $(el).css('margin'),
                 padding: $(el).css('padding')
-            }));
+            }) as Record<string,string>);
 
-            if(Object.keys($table.find('table').attr()).length || Object.keys($td.attr()).length > 0) {
-                const matches = $($table).html().match(/(.+?)(<\/.+)/);
+            if(Object.keys($table.find('table').attr() ?? {}).length || Object.keys($td.attr() ?? {}).length > 0) {
+                const matches = $($table).html()?.match(/(.+?)(<\/.+)/);
     
-                $(`<!--[if mso]>${matches[1].replace('<tbody>', '')}<![endif]-->\n`).insertBefore(el);
-                $(`\n<!--[if mso]>${matches[2].replace('</tbody>', '')}<![endif]-->`).insertAfter(el);
+                if(matches) {
+                    $(`<!--[if mso]>${matches[1].replace('<tbody>', '')}<![endif]-->\n`).insertBefore(el);
+                    $(`\n<!--[if mso]>${matches[2].replace('</tbody>', '')}<![endif]-->`).insertAfter(el);
+                }
             }
         });
 

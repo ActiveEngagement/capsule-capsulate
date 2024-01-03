@@ -1,4 +1,4 @@
-import { AnyNode, Element } from "cheerio";
+import { Cheerio, type AnyNode, type ParentNode } from 'cheerio';
 
 declare module 'cheerio' {
     interface Cheerio<T> {
@@ -6,19 +6,19 @@ declare module 'cheerio' {
     }
 }
 
-export default function mso() {
-    const el: Element = this.get(0);
+export default function mso(this: Cheerio<AnyNode>) {
+    const el = this.get(0);
 
-    const opening = openingMso(el, el.parent);
-    const closing = closingMso(el, el.parent);
+    const opening = openingMso(el, el?.parent);
+    const closing = closingMso(el, el?.parent);
 
     if(opening && closing) {
         return [opening, closing];
     };
 };
 
-function openingMso(el, parent) {
-    return traverse(el, parent && parent.children, -1, (sibling) => {
+function openingMso(el?: AnyNode|null, parent?: ParentNode|null) {
+    return traverse(el, parent?.children, -1, (sibling: any) => {
         if(sibling.type === 'tag') {
             return false;
         }
@@ -33,24 +33,25 @@ function openingMso(el, parent) {
     });
 }
 
-function closingMso(el, parent) {
-    return traverse(el, parent && parent.children, 1, (sibling) => {
+function closingMso(el?: AnyNode|null, parent?: ParentNode|null) {
+
+    return traverse(el, parent?.children, 1, (sibling) => {
         if(sibling.type === 'tag') {
             return false;
         }
 
-        if(isOpeningMso(sibling.data)) {
+        if(sibling && 'data' in sibling && isOpeningMso(sibling.data)) {
             return false;
         }
 
-        if(isClosingMso(sibling.data)) {
+        if(sibling && 'data' in sibling && isClosingMso(sibling.data)) {
             return sibling;
         }
     });
 }
 
-function traverse(el, children, modifier, fn) {
-    if(!children) {
+function traverse(el: AnyNode|null|undefined, children: AnyNode[]|null|undefined, modifier: number, fn?: (node: AnyNode, index: number) => AnyNode|boolean|undefined) {
+    if(!el || !children) {
         return;
     }
 
@@ -69,10 +70,10 @@ function traverse(el, children, modifier, fn) {
     }
 };
 
-function isClosingMso(value) {
+function isClosingMso(value?: AnyNode|string|null) {
     return value?.toString().match(/\[(\s)?if(.+)?>(\s+)?<\/(.+)?/m);
 }
 
-function isOpeningMso(value) {
+function isOpeningMso(value?: AnyNode|string|null) {
     return value?.toString().match(/\[(\s)?if(.+)?>(.+)?<table.+/m);
 }

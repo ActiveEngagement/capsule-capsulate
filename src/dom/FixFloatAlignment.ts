@@ -10,7 +10,7 @@ function isVoidElement($el: Cheerio<AnyNode>) {
   
     const el = $el.get(0);
 
-    if(el.nodeType === 1) {
+    if(el && el?.nodeType === 1) {
         return voidElements.includes((el as Element).tagName);
     }
 
@@ -25,7 +25,7 @@ function shouldApplyFloatToParent($el: Cheerio<AnyNode>) {
     return (
         !$el.parent().css('float') && 
         !$el.parent().attr('align') && (
-            $el.parent().get(0).name !== 'a' ||
+            $el.parent().get(0)?.name !== 'a' ||
             $el.parent().css('display') !== 'inline'
         )
     );

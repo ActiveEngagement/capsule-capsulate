@@ -48,7 +48,7 @@ export default class ReplaceQueryStrings extends BaseDomPlugin<ReplaceQueryStrin
         const href = $el.attr('href');
 
         if(href) {
-            $el.attr('href', replaceQueryString($el.attr('href'), this.options));
+            $el.attr('href', replaceQueryString(href, this.options));
         }        
     
         const nodes = extractMsoCommentNodes($el);

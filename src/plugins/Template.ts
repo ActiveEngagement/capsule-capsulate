@@ -5,8 +5,7 @@ import { cheerio, isFragment } from '../helpers';
 
 export type TemplateOptions = {
     data?: object,
-    previewText?: string,
-    src?: string,
+    src?: string | null,
     nunjucks?: nunjucks.ConfigureOptions
 }
 
@@ -15,8 +14,7 @@ export default class Template extends BasePlugin<TemplateOptions> {
     defaultOptions() {
         return {
             data: {},
-            src: null,
-            previewText: undefined,
+            src: undefined,
             nunjucks: {
                 autoescape: false
             }
@@ -32,11 +30,11 @@ export default class Template extends BasePlugin<TemplateOptions> {
             return $;
         }
 
-        let contents = isFragment($.html()) ? $.html() : $('body').html();
+        const contents = isFragment($.html()) ? $.html() : $('body').html();
 
-        if(this.options.previewText) {
-            contents = contents.replace(this.options.previewText, '');
-        }
+        // if(this.options.previewText) {
+        //     contents = contents?.replace(this.options.previewText, '') ?? null;
+        // }
 
         let wrapped = this.compile(this.options.src, { contents });
 
@@ -46,18 +44,15 @@ export default class Template extends BasePlugin<TemplateOptions> {
             const index = wrapped.indexOf(bodyTag[0]) + bodyTag[0].length;
 
             wrapped = wrapped.slice(0, index)
-                + (this.options.previewText ?? '')
+                // + (this.options.previewText ?? '')
                 + wrapped.slice(index);
-        }
-        else {
-            wrapped = (this.options.previewText ?? '') + wrapped;
         }
 
         return cheerio(wrapped);
     }
 
     compile(src: string, data?: object) {
-        nunjucks.configure(this.options.nunjucks);
+        nunjucks.configure(this.options.nunjucks ?? {});
 
         try {
             return nunjucks.renderString(

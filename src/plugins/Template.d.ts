@@ -1,12 +1,12 @@
 import { CheerioAPI } from 'cheerio';
 import nunjucks from 'nunjucks';
-import BasePlugin from '../Plugin';
+import { BasePlugin } from '../Plugin';
 export type TemplateOptions = {
     data?: object;
     src?: string | null;
     nunjucks?: nunjucks.ConfigureOptions;
 };
-export default class Template extends BasePlugin<TemplateOptions> {
+export class Template extends BasePlugin<TemplateOptions> {
     defaultOptions(): {
         data: {};
         src: undefined;

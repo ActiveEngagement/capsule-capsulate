@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import FixLineHeight from '../../../src/dom/FixLineHeight';
+import { FixLineHeight } from '../../../src/dom/FixLineHeight';
 import { manipulate } from '../../../src/helpers';
 
 test('fixing line heights', async() => {

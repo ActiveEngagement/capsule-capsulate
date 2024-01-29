@@ -1,8 +1,8 @@
 import { CheerioAPI } from 'cheerio';
 import { type DomPlugin } from './DomPlugin';
-import BasePlugin from './Plugin';
+import { BasePlugin } from './Plugin';
 
-export default class ManipulateDom extends BasePlugin {
+export class ManipulateDom extends BasePlugin {
 
     constructor(
         protected plugins: DomPlugin[]

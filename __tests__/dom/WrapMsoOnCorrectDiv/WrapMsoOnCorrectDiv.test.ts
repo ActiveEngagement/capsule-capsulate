@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import FixMsoWrapper from '../../../src/dom/FixMsoWrapper';
+import { FixMsoWrapper } from '../../../src/dom/FixMsoWrapper';
 import { manipulate } from '../../../src/helpers';
 
 test('wrapping mso on correct divs', async() => {

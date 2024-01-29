@@ -1,5 +1,5 @@
 import { AnyNode, Cheerio, Element } from 'cheerio';
-import BaseDomPlugin from '../DomPlugin';
+import { BaseDomPlugin } from '../DomPlugin';
 
 function isVoidElement($el: Cheerio<AnyNode>) {
     const voidElements = [
@@ -31,7 +31,7 @@ function shouldApplyFloatToParent($el: Cheerio<AnyNode>) {
     );
 }
 
-export default class FixFloatAlignment extends BaseDomPlugin {
+export class FixFloatAlignment extends BaseDomPlugin {
     async process($el: Cheerio<AnyNode>) {
         const align = $el.attr('align');
     

@@ -1,8 +1,8 @@
 import { CheerioAPI } from 'cheerio';
 import pickBy from 'lodash.pickby';
-import BaseDomPlugin from '../DomPlugin';
+import { BaseDomPlugin } from '../DomPlugin';
 
-export default class FixMsoWrapper extends BaseDomPlugin {
+export class FixMsoWrapper extends BaseDomPlugin {
 
     async postprocess($: CheerioAPI) {
         $('div').each((_, el) => {

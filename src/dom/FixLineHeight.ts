@@ -1,7 +1,7 @@
 import { AnyNode, Cheerio } from 'cheerio';
-import BaseDomPlugin from '../DomPlugin';
+import { BaseDomPlugin } from '../DomPlugin';
 
-export default class FixLineHeight extends BaseDomPlugin {
+export class FixLineHeight extends BaseDomPlugin {
 
     async process($el: Cheerio<AnyNode>) {
         if($el.css('line-height') && !$el.css('mso-line-height-rule')) {

@@ -1,5 +1,5 @@
 import { Cheerio, CheerioAPI, Element } from 'cheerio';
-import BasePlugin from '../Plugin';
+import { BasePlugin } from '../Plugin';
 
 export type PreviewTextOptions = {
     html?: string | (($: CheerioAPI) => PreviewTextHtml);
@@ -19,7 +19,7 @@ function toString(subject: PreviewTextHtml): string|undefined {
     return subject;
 }
 
-export default class PreviewText extends BasePlugin<PreviewTextOptions> {
+export class PreviewText extends BasePlugin<PreviewTextOptions> {
 
     protected html: string|undefined = undefined;
 

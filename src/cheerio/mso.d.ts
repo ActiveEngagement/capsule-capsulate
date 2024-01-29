@@ -4,4 +4,4 @@ declare module 'cheerio' {
         mso(this: Cheerio<T>): [AnyNode, AnyNode] | undefined;
     }
 }
-export default function mso(this: Cheerio<AnyNode>): (true | AnyNode)[] | undefined;
+export function mso(this: Cheerio<AnyNode>): (true | AnyNode)[] | undefined;

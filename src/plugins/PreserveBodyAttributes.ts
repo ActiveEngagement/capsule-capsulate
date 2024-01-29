@@ -1,7 +1,7 @@
 import { CheerioAPI } from 'cheerio';
-import BasePlugin from '../Plugin';
+import { BasePlugin } from '../Plugin';
 
-export default class PreserveBodyAttributes extends BasePlugin {
+export class PreserveBodyAttributes extends BasePlugin {
 
     protected classes: string[] = [];
 

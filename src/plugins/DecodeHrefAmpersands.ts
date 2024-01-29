@@ -1,6 +1,6 @@
-import BasePlugin from '../Plugin';
+import { BasePlugin } from '../Plugin';
 
-export default class DecodeHrefAmpersands extends BasePlugin {
+export class DecodeHrefAmpersands extends BasePlugin {
 
     async transform(src: string) {
         const matches = src.match(/(?<attr>href=(?<quote>["']).*?\2)/gm);

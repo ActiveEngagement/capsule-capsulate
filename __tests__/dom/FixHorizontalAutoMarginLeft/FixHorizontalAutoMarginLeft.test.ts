@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import FixTableAlignment from '../../../src/dom/FixTableAlignment';
+import { FixTableAlignment } from '../../../src/dom/FixTableAlignment';
 import { manipulate } from '../../../src/helpers';
 
 test('adding left alignment on table', async() => {

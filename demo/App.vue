@@ -12,6 +12,13 @@ const converted = ref<string>();
 
 watchEffect(async () => {
     converted.value = await capsulate(document.value, {
+        dom: {
+            replaceQueryStrings: [{
+                key: 'utm_source',
+                from: 'xxxxx',
+                to: 'test'
+            }]
+        },
         template: {
             src: wrapper.value,
             data: {
@@ -31,13 +38,16 @@ watchEffect(async () => {
     <div class="flex flex-col gap-4 p-4">
         <TextareaField
             v-model="wrapper"
-            label="Template" />
+            label="Template"
+            :autogrow="false" />
         <TextareaField
             v-model="document"
-            label="Document" />
+            label="Document"
+            :autogrow="false" />
         <TextareaField
             v-if="converted"
             v-model="converted"
-            label="Converted" />
+            label="Converted"
+            :autogrow="false" />
     </div>
 </template>

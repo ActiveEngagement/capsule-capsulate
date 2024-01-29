@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import FixMsoButtons from '../../../src/dom/FixMsoButtons';
+import { FixMsoButtons } from '../../../src/dom/FixMsoButtons';
 import { manipulate } from '../../../src/helpers';
 
 test('omitting mso button with children', async() => {

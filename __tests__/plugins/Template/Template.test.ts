@@ -1,9 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import TaskRunner from '../../../src/TaskRunner';
-import Beautify from '../../../src/plugins/Beautify';
-import PreviewText from '../../../src/plugins/PreviewText';
-import Template from '../../../src/plugins/Template';
+import { TaskRunner } from '../../../src/TaskRunner';
+import { Beautify } from '../../../src/plugins/Beautify';
+import { PreviewText } from '../../../src/plugins/PreviewText';
+import { Template } from '../../../src/plugins/Template';
 
 test('compiling a template without a wrapper', async() => {
     const error = fs.readFileSync(

@@ -1,8 +1,8 @@
 import { AnyNode, Cheerio, CheerioAPI } from 'cheerio';
-import BasePlugin from '../Plugin';
+import { BasePlugin } from '../Plugin';
 import { cheerio, isFragment } from '../helpers';
 
-export default class PreserveHeadTag extends BasePlugin {
+export class PreserveHeadTag extends BasePlugin {
 
     protected head?: Cheerio<AnyNode>;
 

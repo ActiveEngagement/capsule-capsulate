@@ -6,7 +6,7 @@ declare module 'cheerio' {
     }
 }
 
-export default function float(this: Cheerio<AnyNode>): string|undefined {
+export function float(this: Cheerio<AnyNode>): string|undefined {
     if(this.attr('align')) {
         return this.attr('align');
     }

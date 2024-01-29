@@ -1,5 +1,5 @@
 import { AnyNode, Cheerio } from 'cheerio';
-import BaseDomPlugin from '../DomPlugin';
+import { BaseDomPlugin } from '../DomPlugin';
 import { extractMsoCommentNodes, extractUrlsFromMsoCommentNode } from '../helpers';
 
 export type SourceCode = {
@@ -38,7 +38,7 @@ export function replaceQueryString(href: string, replacements: SourceCode[]) {
     return url.toString().replace(url.search, rawQueryString);
 }
 
-export default class ReplaceQueryStrings extends BaseDomPlugin<ReplaceQueryStringOptions> {
+export class ReplaceQueryStrings extends BaseDomPlugin<ReplaceQueryStringOptions> {
 
     defaultOptions(): ReplaceQueryStringOptions {
         return [];

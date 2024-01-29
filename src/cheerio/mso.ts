@@ -6,7 +6,7 @@ declare module 'cheerio' {
     }
 }
 
-export default function mso(this: Cheerio<AnyNode>) {
+export function mso(this: Cheerio<AnyNode>) {
     const el = this.get(0);
 
     const opening = openingMso(el, el?.parent);

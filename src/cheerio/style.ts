@@ -32,7 +32,7 @@ class ComputedStyle {
     }
 }
 
-export default function style(this: Cheerio<AnyNode>, attr: string): ComputedStyle {
+export function style(this: Cheerio<AnyNode>, attr: string): ComputedStyle {
     if(!cssShorthandProps.isShorthand(attr)) {
         const css = this.css(attr);
 

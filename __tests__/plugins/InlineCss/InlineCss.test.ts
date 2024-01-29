@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import TaskRunner from '../../../src/TaskRunner';
-import Beautify from '../../../src/plugins/Beautify';
-import InlineCss from '../../../src/plugins/InlineCss';
+import { TaskRunner } from '../../../src/TaskRunner';
+import { Beautify } from '../../../src/plugins/Beautify';
+import { InlineCss } from '../../../src/plugins/InlineCss';
 
 test('inlining the CSS in a template', async() => {
     const error = fs.readFileSync(

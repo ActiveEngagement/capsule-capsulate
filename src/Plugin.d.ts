@@ -6,7 +6,7 @@ export interface Plugin {
     postprocess($: CheerioAPI): Promise<CheerioAPI>;
     transform(src: string): Promise<string>;
 }
-export default abstract class BasePlugin<T extends object = object> implements Plugin {
+export abstract class BasePlugin<T extends object = object> implements Plugin {
     protected options: T;
     constructor(options?: T);
     defaultOptions(): T;

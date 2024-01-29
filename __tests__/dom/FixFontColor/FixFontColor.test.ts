@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import FixFontColor from '../../../src/dom/FixFontColor';
+import { FixFontColor } from '../../../src/dom/FixFontColor';
 import { manipulate } from '../../../src/helpers';
 
 test('fixing font color', async() => {

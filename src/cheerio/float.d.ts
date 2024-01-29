@@ -4,4 +4,4 @@ declare module 'cheerio' {
         float(this: Cheerio<T>): string | undefined;
     }
 }
-export default function float(this: Cheerio<AnyNode>): string | undefined;
+export function float(this: Cheerio<AnyNode>): string | undefined;

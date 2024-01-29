@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import FixBackgroundColor from '../../../src/dom/FixBackgroundColor';
+import { FixBackgroundColor } from '../../../src/dom/FixBackgroundColor';
 import { manipulate } from '../../../src/helpers';
 
 test('fixing background color', async() => {

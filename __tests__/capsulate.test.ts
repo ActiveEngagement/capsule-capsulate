@@ -1,8 +1,8 @@
-import ManipulateDom from '../src/ManipulateDom';
+import { ManipulateDom } from '../src/ManipulateDom';
 import { capsulate } from '../src/capsulate';
-import ReplaceQueryStrings from '../src/dom/ReplaceQueryStrings';
+import { ReplaceQueryStrings } from '../src/dom/ReplaceQueryStrings';
 import { run } from '../src/helpers';
-import DecodeHrefAmpersands from '../src/plugins/DecodeHrefAmpersands';
+import { DecodeHrefAmpersands } from '../src/plugins/DecodeHrefAmpersands';
 
 test('that the capsulate() function', async() => {
     const results = await capsulate('<div id="contents">Contents</div>', {

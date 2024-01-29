@@ -1,6 +1,6 @@
 import { type Plugin } from './Plugin';
 export type TaskRunnerReduceFunction<T> = (carry: Awaited<T>, task: Plugin) => Promise<T>;
-export default class TaskRunner {
+export class TaskRunner {
     protected tasks: Plugin[];
     constructor(tasks: Plugin[]);
     process(src: string): Promise<string>;

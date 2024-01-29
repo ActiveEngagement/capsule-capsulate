@@ -1,12 +1,12 @@
 import { CheerioAPI } from 'cheerio';
 import { html_beautify } from 'js-beautify';
-import BaseDomPlugin from '../DomPlugin';
+import { BaseDomPlugin } from '../DomPlugin';
 
 export type ConvertListsToTablesOptions = {
     symbol: string
 }
 
-export default class ConvertListsToTables extends BaseDomPlugin<ConvertListsToTablesOptions> {
+export class ConvertListsToTables extends BaseDomPlugin<ConvertListsToTablesOptions> {
 
     defaultOptions(): ConvertListsToTablesOptions {
         return {

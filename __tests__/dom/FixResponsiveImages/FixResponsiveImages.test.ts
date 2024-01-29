@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import FixResponsiveImages from '../../../src/dom/FixResponsiveImages';
+import { FixResponsiveImages } from '../../../src/dom/FixResponsiveImages';
 import { manipulate } from '../../../src/helpers';
 
 test('fixing responsive images', async() => {

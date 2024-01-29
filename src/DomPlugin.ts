@@ -14,7 +14,7 @@ export interface DomPlugin {
     
 };
 
-export default class BaseDomPlugin<T extends object = object> implements DomPlugin {
+export class BaseDomPlugin<T extends object = object> implements DomPlugin {
 
     protected options: T;
 

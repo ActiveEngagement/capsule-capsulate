@@ -1,7 +1,7 @@
 import { CheerioAPI } from 'cheerio';
-import BaseDomPlugin from '../DomPlugin';
+import { BaseDomPlugin } from '../DomPlugin';
 
-export default class FixTableAlignment extends BaseDomPlugin {
+export class FixTableAlignment extends BaseDomPlugin {
 
     async postprocess($: CheerioAPI) {
         for(const el of $('table')) {

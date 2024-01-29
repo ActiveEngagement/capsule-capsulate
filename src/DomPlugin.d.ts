@@ -6,7 +6,7 @@ export interface DomPlugin {
     postprocess($: CheerioAPI): Promise<CheerioAPI>;
     transform(src: string): Promise<string>;
 }
-export default class BaseDomPlugin<T extends object = object> implements DomPlugin {
+export class BaseDomPlugin<T extends object = object> implements DomPlugin {
     protected options: T;
     constructor(options?: T);
     defaultOptions(): T;

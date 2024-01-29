@@ -1,13 +1,13 @@
 import { CheerioAPI } from 'cheerio';
 // @ts-ignore
 import * as units from 'units-css';
-import BaseDomPlugin from '../DomPlugin';
+import { BaseDomPlugin } from '../DomPlugin';
 
 export type FixResponsiveImagesOptions = {
     maxWidth: number
 }
 
-export default class FixResponsiveImages extends BaseDomPlugin<FixResponsiveImagesOptions> {
+export class FixResponsiveImages extends BaseDomPlugin<FixResponsiveImagesOptions> {
 
     defaultOptions() {
         return {

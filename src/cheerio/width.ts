@@ -8,7 +8,7 @@ declare module 'cheerio' {
     }
 }
 
-export default function(this: Cheerio<AnyNode>) {
+export function width(this: Cheerio<AnyNode>) {
     if(this.attr('width')) {
         return this.attr('width');
     }

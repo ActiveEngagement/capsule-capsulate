@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import FixFloatAlignment from '../../../src/dom/FixFloatAlignment';
+import { FixFloatAlignment } from '../../../src/dom/FixFloatAlignment';
 import { manipulate } from '../../../src/helpers';
 
 test('do not add float to align left paragraphs', async() => {

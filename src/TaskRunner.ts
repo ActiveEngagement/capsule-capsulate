@@ -3,7 +3,7 @@ import { cheerio } from './helpers';
 
 export type TaskRunnerReduceFunction<T> = (carry: Awaited<T>, task: Plugin) => Promise<T>
 
-export default class TaskRunner {
+export class TaskRunner {
 
     constructor(
         protected tasks: Plugin[]

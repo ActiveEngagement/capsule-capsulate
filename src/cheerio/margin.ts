@@ -7,7 +7,7 @@ declare module 'cheerio' {
     }
 }
 
-export default function margin(this: Cheerio<AnyNode>) {
+export function margin(this: Cheerio<AnyNode>) {
     const props: Record<string, string> = {};
     
     for(const [ key, value ] of Object.entries<string>(this.first().css() ?? {})) {

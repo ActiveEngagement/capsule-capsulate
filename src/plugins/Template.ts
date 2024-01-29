@@ -1,6 +1,6 @@
 import { CheerioAPI } from 'cheerio';
 import nunjucks from 'nunjucks';
-import BasePlugin from '../Plugin';
+import { BasePlugin } from '../Plugin';
 import { cheerio, isFragment } from '../helpers';
 
 export type TemplateOptions = {
@@ -9,7 +9,7 @@ export type TemplateOptions = {
     nunjucks?: nunjucks.ConfigureOptions
 }
 
-export default class Template extends BasePlugin<TemplateOptions> {
+export class Template extends BasePlugin<TemplateOptions> {
 
     defaultOptions() {
         return {

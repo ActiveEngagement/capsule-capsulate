@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import ConvertListsToTables from '../../../src/dom/ConvertListsToTables';
+import { ConvertListsToTables } from '../../../src/dom/ConvertListsToTables';
 import { manipulate } from '../../../src/helpers';
 
 test('converting unordered list with paragraphs to table', async() => {

@@ -1,11 +1,11 @@
 import { CheerioAPI } from 'cheerio';
 import juice, { type Options } from 'juice';
-import BasePlugin from '../Plugin';
+import { BasePlugin } from '../Plugin';
 import { cheerio, encodeFreemarkerTags } from '../helpers';
 
 export type InlineCssOptions = Options;
 
-export default class InlineCss extends BasePlugin<InlineCssOptions> {
+export class InlineCss extends BasePlugin<InlineCssOptions> {
 
     defaultOptions(): InlineCssOptions {
         return {

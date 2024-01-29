@@ -4,4 +4,4 @@ declare module 'cheerio' {
         width(this: Cheerio<T>): string | undefined;
     }
 }
-export default function (this: Cheerio<AnyNode>): any;
+export function (this: Cheerio<AnyNode>): any;

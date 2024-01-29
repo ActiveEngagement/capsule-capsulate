@@ -1,4 +1,4 @@
-import BasePlugin from '../Plugin';
+import { BasePlugin } from '../Plugin';
 export type HtmlMinifierOptions = {
     lineLengthLimit: number;
     removeIndentations: boolean;
@@ -11,7 +11,7 @@ export type HtmlMinifierOptions = {
     breakToTheLeftOf: string[];
     mindTheInlineTags: string[];
 };
-export default class HtmlMinifier extends BasePlugin<Partial<HtmlMinifierOptions>> {
+export class HtmlMinifier extends BasePlugin<Partial<HtmlMinifierOptions>> {
     defaultOptions(): Partial<HtmlMinifierOptions>;
     transform(src: string): Promise<string>;
 }

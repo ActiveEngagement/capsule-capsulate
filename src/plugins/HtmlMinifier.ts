@@ -1,5 +1,5 @@
 import { crush } from 'html-crush';
-import BasePlugin from '../Plugin';
+import { BasePlugin } from '../Plugin';
 
 export type HtmlMinifierOptions = {    
   lineLengthLimit: number;
@@ -14,7 +14,7 @@ export type HtmlMinifierOptions = {
   mindTheInlineTags: string[];
 };
 
-export default class HtmlMinifier extends BasePlugin<Partial<HtmlMinifierOptions>> {
+export class HtmlMinifier extends BasePlugin<Partial<HtmlMinifierOptions>> {
 
     defaultOptions(): Partial<HtmlMinifierOptions> {
         // More options can be found here:

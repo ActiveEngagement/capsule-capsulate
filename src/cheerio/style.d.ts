@@ -9,5 +9,5 @@ declare class ComputedStyle {
     constructor(props: Record<string, string>);
     get keys(): string[];
 }
-export default function style(this: Cheerio<AnyNode>, attr: string): ComputedStyle;
+export function style(this: Cheerio<AnyNode>, attr: string): ComputedStyle;
 export {};

@@ -1,17 +1,20 @@
 import { parse } from 'capsule-lint';
 import { Cheerio, CheerioAPI, load, type AnyNode, type CheerioOptions } from 'cheerio';
 import { Comment } from 'domhandler';
+import { computed, ref } from 'vue';
 import { type DomPlugin } from './DomPlugin';
-import ManipulateDom from './ManipulateDom';
+import { ManipulateDom } from './ManipulateDom';
 import { type Plugin } from './Plugin';
-import TaskRunner from './TaskRunner';
-import float from './cheerio/float';
-import height from './cheerio/height';
-import margin from './cheerio/margin';
-import mso from './cheerio/mso';
-import padding from './cheerio/padding';
-import style from './cheerio/style';
-import width from './cheerio/width';
+import { TaskRunner } from './TaskRunner';
+import { float } from './cheerio/float';
+import { height } from './cheerio/height';
+import { margin } from './cheerio/margin';
+import { mso } from './cheerio/mso';
+import { padding } from './cheerio/padding';
+import { style } from './cheerio/style';
+import { width } from './cheerio/width';
+import { ReplaceQueryStrings, SourceCode } from './dom/ReplaceQueryStrings';
+import { DecodeHrefAmpersands } from './plugins/DecodeHrefAmpersands';
 
 export function encodeFreemarkerTags(src: string): string {
     for(const item of parse(src)) {
@@ -155,6 +158,14 @@ export function extractUrls(html: string | CheerioAPI | Cheerio<AnyNode>): strin
 
         return $('[href]')
             .map((_, el) => extractUrlsFromElement($(el)))
+            .filter((_, value) => {
+                try {
+                    return !!(new URL(value.toString()));
+                }
+                catch (e) {
+                    return false;
+                }
+            })
             .toArray()
             .concat(extractMsoCommentUrls($));
     }
@@ -189,4 +200,50 @@ export function extractSourceCodes(html: string | CheerioAPI): ExtractedSourceCo
 
         return carry;
     }, {});
+}
+
+export function useReplaceQueryStrings(src: string) {
+    const sourceCodes = ref(Object.entries(
+        extractSourceCodes(src)
+    ).map<[string, (SourceCode & {count: number})[]]>(([key, value]) => {
+        return [key, Object.entries(value).map(([value, count]) => ({
+            key,
+            from: value,
+            to: value,
+            count
+        }))];
+    }));
+
+    
+    // const originalSourceCodes = JSON.parse(JSON.stringify(sourceCodes.value));
+
+    // const hasUnsavedChanges = computed(() => {
+    //     for(const i in sourceCodes.value) {
+    //         if(originalSourceCodes[i][1] !== sourceCodes.value[i][1]) {
+    //             return false;
+    //         }
+    //     }
+
+    //     return true;
+    // });
+
+    const model = computed(() => {
+        return sourceCodes.value.map(([, value]) => value).flat(1);
+    });
+
+    async function replace() {
+        return await run(src, [
+            new ManipulateDom([
+                new ReplaceQueryStrings(model.value)
+            ]),
+            new DecodeHrefAmpersands
+        ]);
+    }
+
+    return {
+        // hasUnsavedChanges,
+        model,
+        sourceCodes,
+        replace
+    };
 }

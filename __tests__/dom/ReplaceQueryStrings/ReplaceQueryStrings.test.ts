@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import ReplaceQueryStrings from '../../../src/dom/ReplaceQueryStrings';
+import { ReplaceQueryStrings } from '../../../src/dom/ReplaceQueryStrings';
 import { manipulate } from '../../../src/helpers';
 
 test('wrapping mso on correct divs', async() => {

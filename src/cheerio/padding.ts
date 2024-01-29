@@ -6,7 +6,7 @@ declare module 'cheerio' {
     }
 }
 
-export default function padding(this: Cheerio<AnyNode>) {
+export function padding(this: Cheerio<AnyNode>) {
     const props: Record<string, string> = {};
     
     for(const [ key, value ] of Object.entries<string>(this.first().css() ?? {})) {

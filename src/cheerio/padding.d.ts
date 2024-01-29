@@ -4,4 +4,4 @@ declare module 'cheerio' {
         padding(this: Cheerio<T>): string | undefined;
     }
 }
-export default function padding(this: Cheerio<AnyNode>): string | undefined;
+export function padding(this: Cheerio<AnyNode>): string | undefined;

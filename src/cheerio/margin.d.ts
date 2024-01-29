@@ -4,4 +4,4 @@ declare module 'cheerio' {
         margin(this: Cheerio<T>): string | undefined;
     }
 }
-export default function margin(this: Cheerio<AnyNode>): string | undefined;
+export function margin(this: Cheerio<AnyNode>): string | undefined;

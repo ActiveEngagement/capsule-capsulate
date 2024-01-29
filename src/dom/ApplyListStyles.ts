@@ -1,7 +1,7 @@
 import { CheerioAPI } from 'cheerio';
-import BaseDomPlugin from '../DomPlugin';
+import { BaseDomPlugin } from '../DomPlugin';
 
-export default class ApplyListStyles extends BaseDomPlugin {
+export class ApplyListStyles extends BaseDomPlugin {
 
     async postprocess($: CheerioAPI) {
         for(const el of $('ul,ol')) {

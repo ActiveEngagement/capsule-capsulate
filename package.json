@@ -68,8 +68,7 @@
     "lodash.camelcase": "^4.3.0",
     "lodash.pickby": "^4.6.0",
     "nunjucks": "^3.2.4",
-    "units-css": "^0.4.0",
-    "vue": "^3.4.15"
+    "units-css": "^0.4.0"
   },
   "peerDependencies": {
     "capsule-lint": "^0.4.0",

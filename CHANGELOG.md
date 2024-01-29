@@ -1,3 +1,10 @@
+## [0.4.21](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.20...v0.4.21) (2024-01-29)
+
+
+### Bug Fixes
+
+* issues with source code replacement ([c73a64e](https://github.com/ActiveEngagement/capsule-capsulate/commit/c73a64e7949ee8cce29f17e183e844177365d23b))
+
 ## [0.4.20](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.19...v0.4.20) (2024-01-03)
 
 

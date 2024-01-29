@@ -1,3 +1,10 @@
+## [0.4.22](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.21...v0.4.22) (2024-01-29)
+
+
+### Bug Fixes
+
+* update peer dependency ([1d4faf4](https://github.com/ActiveEngagement/capsule-capsulate/commit/1d4faf47077e76ba084867fea1bdae6386a4ceb8))
+
 ## [0.4.21](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.20...v0.4.21) (2024-01-29)
 
 

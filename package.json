@@ -34,7 +34,7 @@
     "@types/js-beautify": "^1.14.3",
     "@types/lodash.camelcase": "^4.3.9",
     "@types/lodash.pickby": "^4.6.9",
-    "@types/node": "^20.11.10",
+    "@types/node": "^20.11.14",
     "@types/nunjucks": "^3.2.6",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vue-interface/eslint-config": "1.0.0-beta.4",

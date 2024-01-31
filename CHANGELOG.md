@@ -1,3 +1,11 @@
+## [0.4.23](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.22...v0.4.23) (2024-01-31)
+
+
+### Bug Fixes
+
+* regressed back to vue 3.3 ([da91e8d](https://github.com/ActiveEngagement/capsule-capsulate/commit/da91e8dd1b3b17570e881873da728328544adc57))
+* removed the FixFloatAlignment rule because no tests exists to prove one way or the other ([fa1d64e](https://github.com/ActiveEngagement/capsule-capsulate/commit/fa1d64e5812e2914598b766a47d4f4431f3e7405))
+
 ## [0.4.22](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.21...v0.4.22) (2024-01-29)
 
 

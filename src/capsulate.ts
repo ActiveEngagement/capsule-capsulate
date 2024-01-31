@@ -1,6 +1,5 @@
 import { ManipulateDom } from './ManipulateDom';
 import { FixBackgroundColor } from './dom/FixBackgroundColor';
-import { FixFloatAlignment } from './dom/FixFloatAlignment';
 import { FixFontColor } from './dom/FixFontColor';
 import { FixHrefQueryStrings } from './dom/FixHrefQueryStrings';
 import { FixMsoWrapper } from './dom/FixMsoWrapper';
@@ -40,7 +39,10 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
         new ManipulateDom([
             new FixHrefQueryStrings,
             new FixBackgroundColor,
-            new FixFloatAlignment,
+            // @note - Removing this code for now, because it doesn't have
+            // proper tests. If Mark or client reports more alignment issues,
+            // we should re-examine this code and write new tests.
+            // new FixFloatAlignment,
             new FixFontColor,
             new FixMsoWrapper,
             new FixResponsiveImages(options.dom?.fixResponsiveImages),

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import App from './SourceCodes.vue';
+import App from './App.vue';
 </script>
 
 <template>

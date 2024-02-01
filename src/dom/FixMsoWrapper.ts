@@ -1,5 +1,7 @@
-import { CheerioAPI } from 'cheerio';
+import { type Cheerio, type CheerioAPI, type Element } from 'cheerio';
 import pickBy from 'lodash.pickby';
+// @ts-ignore
+import * as units from 'units-css';
 import { BaseDomPlugin } from '../DomPlugin';
 
 export class FixMsoWrapper extends BaseDomPlugin {
@@ -8,7 +10,7 @@ export class FixMsoWrapper extends BaseDomPlugin {
         $('div').each((_, el) => {
             const $el = $(el);
 
-            if($el.mso()) {
+            if(!this.shouldWrapWithMso($el)) {
                 return;
             }
 
@@ -46,4 +48,43 @@ export class FixMsoWrapper extends BaseDomPlugin {
         return $;
     }
 
+    shouldWrapWithMso($el: Cheerio<Element>) {
+        // If the element already has an mso wrapper, do not wrap.
+        if($el.mso()) {
+            return false;
+        }
+
+        // If the element has a width, height, or float, it should be wrapped.
+        if($el.width() || $el.float()) {
+            return true;
+        }
+        
+        if($el.margin() && units.parse($el.margin()?.replace(/(\s+)?\!important/, '')).value !== 0) {
+            return true;
+        }
+
+        if($el.padding() && units.parse($el.padding()?.replace(/(\s+)?\!important/, '')).value !== 0) {
+            return true;
+        }
+        
+        // if(unit$el.margin() || $el.padding())
+        
+        return false;
+    }
+
+    // hasCssProperty($el: Cheerio<Element>, prop: string) {
+    //     const expanded = expand(prop, $el.css(prop));
+
+    //     if(Array.isArray(expanded)) {
+    //         return false;
+    //     }
+
+    //     for(const [, value] of Object.entries(expanded)) {
+    //         if(value !== '0') {
+    //             return true;
+    //         }
+    //     }
+
+    //     return false;
+    // }
 };

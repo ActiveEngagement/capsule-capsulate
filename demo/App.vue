@@ -33,6 +33,10 @@ watchEffect(async () => {
         }
     });
 });
+
+function onClickCopy() {
+    navigator.clipboard.writeText(converted.value);
+}
 </script>
 
 <template>
@@ -50,6 +54,10 @@ watchEffect(async () => {
             v-model="converted"
             label="Converted"
             :autogrow="false" /> -->
+        <button @click="onClickCopy">
+            Copy HTML
+        </button>
+
         <iframe
             :srcdoc="converted"
             style="height:1000px" />

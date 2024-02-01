@@ -1,3 +1,10 @@
+## [0.4.24](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.23...v0.4.24) (2024-02-01)
+
+
+### Bug Fixes
+
+* fixed an issue with mso wrappers being applied when they shouldn’t ([80c03d5](https://github.com/ActiveEngagement/capsule-capsulate/commit/80c03d55e3bf955cd46baf4e4991b05e1798429f))
+
 ## [0.4.23](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.22...v0.4.23) (2024-01-31)
 
 

@@ -54,11 +54,11 @@ export class FixMsoWrapper extends BaseDomPlugin {
             return false;
         }
 
-        // If the element has a width, height, or float, it should be wrapped.
+        // If the element has a width or float, it should be wrapped.
         if($el.width() || $el.float()) {
             return true;
         }
-        
+
         if($el.margin() && units.parse($el.margin()?.replace(/(\s+)?\!important/, '')).value !== 0) {
             return true;
         }
@@ -67,24 +67,6 @@ export class FixMsoWrapper extends BaseDomPlugin {
             return true;
         }
         
-        // if(unit$el.margin() || $el.padding())
-        
         return false;
     }
-
-    // hasCssProperty($el: Cheerio<Element>, prop: string) {
-    //     const expanded = expand(prop, $el.css(prop));
-
-    //     if(Array.isArray(expanded)) {
-    //         return false;
-    //     }
-
-    //     for(const [, value] of Object.entries(expanded)) {
-    //         if(value !== '0') {
-    //             return true;
-    //         }
-    //     }
-
-    //     return false;
-    // }
 };

@@ -36,4 +36,12 @@ export class ManipulateDom extends BasePlugin {
         return $;
     }
 
+    async transform(src: string) {
+        for(const plugin of this.plugins) {
+            src = await plugin.transform(src);
+        }
+
+        return src;
+    }
+
 };

@@ -12,7 +12,7 @@
   "test": "jest",
   "scripts": {
     "dev": "vite dev",
-    "build": "tsc && vite build && tsc --emitDeclarationOnly --project tsconfig.types.json",
+    "build": "tsc --noEmit && vite build && tsc --emitDeclarationOnly --project tsconfig.types.json",
     "test": "jest"
   },
   "repository": {

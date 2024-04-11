@@ -7,6 +7,7 @@ import { FixResponsiveImages, type FixResponsiveImagesOptions } from './dom/FixR
 import { FixTableAlignment } from './dom/FixTableAlignment';
 import { RemoveDisplayNone } from './dom/RemoveDisplayNone';
 import { RemoveScriptTags } from './dom/RemoveScriptTags';
+import { ReplaceNonAsciiCharsWithEntities } from './dom/ReplaceNonAsciiCharsWithEntities';
 import { ReplaceQueryStrings, type ReplaceQueryStringOptions } from './dom/ReplaceQueryStrings';
 import { run } from './helpers';
 import { DecodeHrefAmpersands } from './plugins/DecodeHrefAmpersands';
@@ -49,7 +50,8 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
             new FixTableAlignment,
             new RemoveDisplayNone,
             new RemoveScriptTags,
-            new ReplaceQueryStrings(options.dom?.replaceQueryStrings)
+            new ReplaceQueryStrings(options.dom?.replaceQueryStrings),
+            new ReplaceNonAsciiCharsWithEntities()
         ]),
         new PreserveBodyAttributes,
         new PreserveHeadTag,

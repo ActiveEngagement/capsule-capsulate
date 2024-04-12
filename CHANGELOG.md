@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.5.0...v0.6.0) (2024-04-12)
+
+
+### Features
+
+* add plugin to decode html entities inside of style attributes ([74552bf](https://github.com/ActiveEngagement/capsule-capsulate/commit/74552bf6cca1d52a8fc772b421795c649c9c89ef))
+
 # [0.5.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.24...v0.5.0) (2024-04-12)
 
 

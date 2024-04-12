@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.24...v0.5.0) (2024-04-12)
+
+
+### Features
+
+* add plugin to replace non-ascii characters with html entities ([3b70a4e](https://github.com/ActiveEngagement/capsule-capsulate/commit/3b70a4eec0a6013d3042f31a734ebbcf18a3c3c3))
+
 ## [0.4.24](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.4.23...v0.4.24) (2024-02-01)
 
 

@@ -53,9 +53,8 @@
     "ts-jest": "^29.1.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
-    "vite": "^5.0.12",
-    "vite-plugin-dts": "^3.7.2",
-    "vue-tsc": "^1.8.27"
+    "vite": "^5.2.8",
+    "vue-tsc": "^2.0.12"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.12",

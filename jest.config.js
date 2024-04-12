@@ -10,5 +10,5 @@ export default {
     },
     transformIgnorePatterns: [
         'node_modules/(?!(html-chunk)/)'
-    ]
+    ],
 };

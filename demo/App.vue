@@ -21,10 +21,10 @@ watchEffect(async () => {
             }]
         },
         template: {
-            src: wrapper.value,
-            data: {
-                test: 123
-            }
+            // src: wrapper.value,
+            // data: {
+            //     test: 123
+            // }
         },
         previewText: {
             html: ($) => {

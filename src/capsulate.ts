@@ -1,4 +1,5 @@
 import { ManipulateDom } from './ManipulateDom';
+import { DecodeEntitiesInStyleAttributes } from './dom/DecodeEntitiesInStyleAttributes';
 import { FixBackgroundColor } from './dom/FixBackgroundColor';
 import { FixFontColor } from './dom/FixFontColor';
 import { FixHrefQueryStrings } from './dom/FixHrefQueryStrings';
@@ -38,6 +39,7 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
         new InlineCss(options.inlineCss),
         new Template(options.template),
         new ManipulateDom([
+            new DecodeEntitiesInStyleAttributes,
             new FixHrefQueryStrings,
             new FixBackgroundColor,
             // @note - Removing this code for now, because it doesn't have
@@ -51,7 +53,7 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
             new RemoveDisplayNone,
             new RemoveScriptTags,
             new ReplaceQueryStrings(options.dom?.replaceQueryStrings),
-            new ReplaceNonAsciiCharsWithEntities()
+            new ReplaceNonAsciiCharsWithEntities,
         ]),
         new PreserveBodyAttributes,
         new PreserveHeadTag,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue';
-import { capsulate } from '../src/index';
+import { capsulate, useReplaceQueryStrings } from '../src/index';
 
 // @ts-ignore
 import input from './input.html?raw';
@@ -10,6 +10,14 @@ import template from './template.html?raw';
 const document = ref<string>(input);
 const wrapper = ref<string>(template);
 const converted = ref<string>();
+
+const { replace, model } = useReplaceQueryStrings(document.value);
+
+model.value[0].to = 'xxxxx-updated';
+
+(async () => {
+    console.log(await replace());
+})();
 
 watchEffect(async () => {
     converted.value = await capsulate(document.value, {

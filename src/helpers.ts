@@ -121,7 +121,7 @@ export function extractMsoCommentNodes(node: Cheerio<AnyNode>): Cheerio<Comment>
 }
 
 export function extractUrlsFromMsoCommentNode(node: Comment): string[] {
-    const matches = node.data.match(/^\[if\s+mso\]>(.+)\<\!\[endif\]/);
+    const matches = node.data.match(/^\[if\s+mso\]>(.+)\<\!\[endif\]/s);
 
     if(!matches) {
         return [];
@@ -213,19 +213,6 @@ export function useReplaceQueryStrings(src: string) {
             count
         }))];
     }));
-
-    
-    // const originalSourceCodes = JSON.parse(JSON.stringify(sourceCodes.value));
-
-    // const hasUnsavedChanges = computed(() => {
-    //     for(const i in sourceCodes.value) {
-    //         if(originalSourceCodes[i][1] !== sourceCodes.value[i][1]) {
-    //             return false;
-    //         }
-    //     }
-
-    //     return true;
-    // });
 
     const model = computed(() => {
         return sourceCodes.value.map(([, value]) => value).flat(1);

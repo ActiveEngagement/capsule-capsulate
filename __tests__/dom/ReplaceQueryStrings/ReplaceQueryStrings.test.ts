@@ -17,6 +17,7 @@ test('wrapping mso on correct divs', async() => {
         { key: 'utm_test', from: '${Gears.foo}', to: '${Gears.bar}' },
         { key: 'source_code', from: 'xxxxx', to: 'xxxxx-updated' },
         { key: 'source_code', from: 'yyyyy', to: 'yyyyy-updated' },
-        { key: 'source_code', from: 'zzzzz', to: 'zzzzz-updated' }
+        { key: 'source_code', from: 'zzzzz', to: 'zzzzz-updated' },
+        { key: 'segmentCode', from: 'xxxxx', to: 'xxxxx-updated' }
     ])])).toBe(expected);
 });

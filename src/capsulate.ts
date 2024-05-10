@@ -36,7 +36,7 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
     return await run(src, [
         new ExtractTarget(options.extractTarget),
         new HtmlMinifier(options.htmlMinifier),
-        new InlineCss(options.inlineCss),
+        new PreserveHeadTag,
         new Template(options.template),
         new ManipulateDom([
             new DecodeEntitiesInStyleAttributes,
@@ -56,8 +56,9 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
             new ReplaceNonAsciiCharsWithEntities,
         ]),
         new PreserveBodyAttributes,
-        new PreserveHeadTag,
         new PreviewText(options.previewText),
         new DecodeHrefAmpersands,
+        // Must go last to ensure all CSS is inlined
+        new InlineCss(options.inlineCss),
     ]);
 };

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue';
-import { capsulate, useReplaceQueryStrings } from '../src/index';
+import { capsulate } from '../src/index';
 
 // @ts-ignore
 import input from './input.html?raw';
@@ -11,34 +11,28 @@ const document = ref<string>(input);
 const wrapper = ref<string>(template);
 const converted = ref<string>();
 
-const { replace, model } = useReplaceQueryStrings(document.value);
-
-model.value[0].to = 'xxxxx-updated';
-
-(async () => {
-    console.log(await replace());
-})();
+console.log(wrapper.value);
 
 watchEffect(async () => {
     converted.value = await capsulate(document.value, {
-        dom: {
-            replaceQueryStrings: [{
-                key: 'utm_source',
-                from: 'xxxxx',
-                to: 'test'
-            }]
-        },
+        // dom: {
+        //     replaceQueryStrings: [{
+        //         key: 'utm_source',
+        //         from: 'xxxxx',
+        //         to: 'test'
+        //     }]
+        // },
         template: {
-            // src: wrapper.value,
-            // data: {
-            //     test: 123
-            // }
-        },
-        previewText: {
-            html: ($) => {
-                return $('#preview-text');
+            src: wrapper.value,
+            data: {
+                test: 123
             }
-        }
+        },
+        // previewText: {
+        //     html: ($) => {
+        //         return $('#preview-text');
+        //     }
+        // }
     });
 });
 

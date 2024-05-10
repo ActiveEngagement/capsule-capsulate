@@ -1,3 +1,10 @@
+## [0.6.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.0...v0.6.1) (2024-05-10)
+
+
+### Bug Fixes
+
+* fix issue with replacing multi-line mso codes ([2db1a52](https://github.com/ActiveEngagement/capsule-capsulate/commit/2db1a526411c3f4c1dbb77812b2fc05f21589a6b))
+
 # [0.6.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.5.0...v0.6.0) (2024-04-12)
 
 

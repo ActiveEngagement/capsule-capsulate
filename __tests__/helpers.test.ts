@@ -14,6 +14,9 @@ test('extracting source codes.', async() => {
             'yyyyy': 3,
             'zzzzz': 3,
         },
+        'segmentCode':  {
+            'xxxxx': 1,
+        },
         'a': {
             '1': 1
         },

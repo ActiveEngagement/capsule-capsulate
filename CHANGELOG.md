@@ -1,3 +1,10 @@
+## [0.6.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.1...v0.6.2) (2024-05-10)
+
+
+### Bug Fixes
+
+* fix issue with inline css dropping media queries ([906da3d](https://github.com/ActiveEngagement/capsule-capsulate/commit/906da3df2bed34f5a54cab3b352985ff859daa2e))
+
 ## [0.6.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.0...v0.6.1) (2024-05-10)
 
 

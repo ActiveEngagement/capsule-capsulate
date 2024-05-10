@@ -1,3 +1,10 @@
+## [0.6.3](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.2...v0.6.3) (2024-05-10)
+
+
+### Bug Fixes
+
+* fix issue with preview text breaking freemarker tags ([5364daf](https://github.com/ActiveEngagement/capsule-capsulate/commit/5364daf4d60f1cf414235963f8459d602bd1cb12))
+
 ## [0.6.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.1...v0.6.2) (2024-05-10)
 
 

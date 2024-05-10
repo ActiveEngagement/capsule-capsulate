@@ -1,517 +1,97 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>Hillsdale College</title>
-    <meta property="og:title" content="Only hours left…">
-    <meta name="twitter:title" content="Only hours left…">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style type="text/css" id="hs-inline-css">/*<![CDATA[*/
-      /* everything in this node will be inlined */
-      /* ==== Page Styles==== */
-      body, #backgroundTable {
-        background-color: #f2f2f2;
-        /* Use body to determine background color */
-        font-family: sans-serif;
-      }
-      #templateTable {
-        width: 600px;
-        background-color: #ffffff;
-        -webkit-font-smoothing: antialiased;
-      }
-      h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-        color:#444444;
-        display:block;
-        font-family: sans-serif;
-        font-weight:bold;
-        line-height:100%;
-        margin-top:0;
-        margin-right:0;
-        margin-bottom:10px;
-        margin-left:0;
-        text-align:left;
-      }
-      h1, .h1 {
-        font-size:26px;
-      }
-      h2, .h2 {
-        font-size:20px;
-      }
-      h3, .h3 {
-        font-size:15px;
-      }
-      h4, .h4 {
-        font-size:13px;
-      }
-      h5, .h5 {
-        font-size:11px;
-      }
-      h6, .h6 {
-        font-size:10px;
-      }
-      /* ==== Header Styles==== */
-      #headerTable {
-        background-color: #f2f2f2;
-        color:#444444;
-        font-family:sans-serif;
-        font-size:10px;
-        line-height:120%;
-        text-align:right;
-        border-collapse: separate !important;
-        padding-right: 0px;
-      }
-      #headerTable a:link, #headerTable a:visited, /* Yahoo! Mail Override */ #headerTable a .yshortcuts /* Yahoo! Mail Override */{
-        font-weight:normal;
-        text-decoration:underline;
-      }
-      /* ==== Template Wrapper Styles==== */
-      #contentCell {
-        padding: 10px 20px;
-        background-color: #f2f2f2;
-      }
-      #contentTableOuter {
-        border-collapse: separate !important;
-        background-color: #ffffff;
-        box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
-        padding: 0px;
-      }
-      #contentTableInner {
-        width: 600px;
-      }
-      /* ==== Body Styles==== */
-      .bodyContent {
-        color:#444444;
-        font-family:sans-serif;
-        font-size: 15px;
-        line-height:150%;
-        text-align:left;
-      }
-      /* ==== Column Styles==== */
-      table.columnContentTable {
-        border-collapse:separate !important;
-        border-spacing:0;
-        background-color: #ffffff;
-      }
-      td[class~="columnContent"] {
-        color:#444444;
-        font-family:sans-serif;
-        font-size:15px;
-        line-height:120%;
-        padding-top:20px;
-        padding-right:20px;
-        padding-bottom:20px;
-        padding-left:20px;
-      }
-      /* ==== Footer Styles==== */
-      #footerTable {
-        background-color: #f2f2f2;
-      }
-      #footerTable a {
-        color: #999999;
-      }
-      #footerTable {
-        color:#999999;
-        font-family:sans-serif;
-        font-size:12px;
-        line-height:120%;
-        padding-top:20px;
-        padding-right:20px;
-        padding-bottom:20px;
-        padding-left:20px;
-        text-align:center;
-      }
-      #footerTable a:link, #footerTable a:visited, /* Yahoo! Mail Override */ #footerTable a .yshortcuts /* Yahoo! Mail Override */{
-        font-weight:normal;
-        text-decoration:underline;
-      }
-      .hs-image-social-sharing-24 {
-        max-width: 24px;
-        max-height: 24px;
-      }
-      /* ==== Standard Resets==== */
-      .ExternalClass{
-        width:100%;
-      }
-      /* Force Hotmail to display emails at full width */
-      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
-        line-height: 100%;
-      }
-      /* Force Hotmail to display normal line spacing */
-      body, table, td, p, a, li, blockquote{
-        -webkit-text-size-adjust:100%;
-        -ms-text-size-adjust:100%;
-      }
-      /* Prevent WebKit and Windows mobile changing default text sizes */
-      table, td {
-        mso-table-lspace:0pt;
-        mso-table-rspace:0pt;
-      }
-      /* Remove spacing between tables in Outlook 2007 and up */
-      img {
-        vertical-align: bottom;
-        -ms-interpolation-mode:bicubic;
-      }
-      /* Allow smoother rendering of resized image in Internet Explorer */
-      /* Reset Styles */
-      body {
-        margin:0;
-        padding:0;
-      }
-      table {
-        border-collapse:collapse !important;
-      }
-      body, #backgroundTable, #bodyCell{
-        height:100% !important;
-        margin:0;
-        padding:0;
-        width:100% !important;
-      }
-      a:link, a:visited {
-        border-bottom: none;
-      }
-      /* iOS automatically adds a link to addresses */
-      /* Style the footer with the same color as the footer text */
-      #footer a {
-        color: #999999;
-        ;
-        -webkit-text-size-adjust: none;
-        text-decoration: underline;
-        font-weight: normal
-      }
-      /* Hide preview text on rendering */
-      #preview_text {
-        display: none;
-      }
-      /*]]>*/
+<html>
+<head>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<style type="text/css">
+      ReadMsgBody{ width: 100%;}
+      .ExternalClass {width: 100%;}
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+      body {-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;margin:0 !important;}
+      p { margin: 1em 0;}
+      table td { border-collapse: collapse;}
+      img {outline:0;}
+      a img {border:none;}
+      @-ms-viewport{ width: device-width;}
     </style>
-    <style type="text/css">/*<![CDATA[*/
-      /* ==== Mobile Styles==== */
-      /* Constrain email width for small screens */
-      @media screen and (max-width: 650px) {
-        table[id="backgroundTable"] {
-          width: 95% !important;
-        }
-        table[id="templateTable"] {
-          max-width:600px !important;
-          width:100% !important;
-        }
-        table[id="contentTableInner"] {
-          max-width:600px !important;
-          width:100% !important;
-        }
-        #contentCell {
-          padding: 10px 10px !important;
-        }
-        #headerTable {
-          padding-right: 0.0px !important;
-        }
-        #contentTableOuter {
-          padding: 0.0px !important;
-        }
-      }
+<style type="text/css">
       @media only screen and (max-width: 480px) {
-        /* ==== Client-Specific Mobile Styles==== */
-        body, table, td, p, a, li, blockquote{
-          -webkit-text-size-adjust:none !important;
-        }
-        /* Prevent Webkit platforms from changing default text sizes */
-        body{
-          width:100% !important;
-          min-width:100% !important;
-        }
-        /* Prevent iOS Mail from adding padding to the body */
-        /* ==== Mobile Reset Styles==== */
-        td[id="bodyCell"] {
-          padding:10px !important;
-        }
-        /* ==== Mobile Template Styles==== */
-        table[id="templateTable"] {
-          max-width:600px !important;
-          width:100% !important;
-        }
-        table[id="contentTableInner"] {
-          max-width:600px !important;
-          width:100% !important;
-        }
-        /* ==== Image Alignment Styles==== */
-        h1, .h1 {
-          font-size:26px !important;
-          line-height:125% !important;
-        }
-        h2, .h2 {
-          font-size:20px !important;
-          line-height:125% !important;
-        }
-        h3, .h3 {
-          font-size:15px !important;
-          line-height:125% !important;
-        }
-        h4, .h4 {
-          font-size:13px !important;
-          line-height:125% !important;
-        }
-        h5, .h5 {
-          font-size:11px !important;
-          line-height:125% !important;
-        }
-        h6, .h6 {
-          font-size:10px !important;
-          line-height:125% !important;
-        }
-        .hide {
-          display:none !important;
-        }
-        /* Hide to save space */
-        /* ==== Body Styles==== */
-        td[class="bodyContent"] {
-          font-size:16px !important;
-          line-height:145% !important;
-        }
-        /* ==== Footer Styles==== */
-        td[id="footerTable"]{
-          padding-left: 0px !important;
-          padding-right: 0px !important;
-          font-size:12px !important;
-          line-height:145% !important;
-        }
-        /* ==== Image Alignment Styles==== */
-        table[class="alignImageTable"] {
+        .container {width: 320px !important;}
+        .footer { width:auto !important; margin-left:0; }
+        .mobile-hidden { display:none !important; }
+        .logo { display:block !important; padding:0 !important; }
+        img { max-width:100% !important; height:auto !important; max-height:auto !important;}
+        .header img{max-width:100% !important;height:auto !important; max-height:auto !important;}
+        .photo img { width:100% !important; max-width:100% !important; height:auto !important;}
+        .drop { display:block !important; width: 100% !important; float:left; clear:both;}
+        .footerlogo { display:block !important; width: 100% !important; padding-top:15px; float:left; clear:both;}
+        .nav4, .nav5, .nav6 { display: none !important; }
+        .tableBlock {width:100% !important;}
+        .responsive-td {width:100% !important; display:block !important; padding-left:00px !important;padding-right:00px !important; }
+        .fluid, .fluid-centered {
           width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
-        td[class="imageTableTop"] {
-          display: none !important;
-          /*padding-top: 10px !important;*/
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
-        td[class="imageTableRight"] {
-          display: none !important;
+        /* MOBILE GLOBAL STYLES - DO NOT CHANGE */
+        body { padding: 0px !important; font-size: 16=8px !important; line-height: 150% !important;}
+        h1 { font-size: 22px !important; line-height: normal !important;}
+        h2 { font-size: 20px !important; line-height: normal !important;}
+        h3 { font-size: 18px !important; line-height: normal !important;}
+        .buttonstyles {
+          font-family:arial,helvetica,sans-serif !important;
+          font-size: 18px !important;
+          color: #FFFFFF !important;
+          padding: 10px !important;
         }
-        td[class="imageTableBottom"] {
-          padding-bottom: 10px !important;
-        }
-        td[class="imageTableLeft"] {
-          display: none !important;
-        }
-        /* ==== Column Styles==== */
-        td[class~="column"] {
-          display: block !important;
+        /* END OF MOBILE GLOBAL STYLES - DO NOT CHANGE */
+      }
+      @media only screen and (max-width: 640px) {
+        .container { width:100% !important; }
+        .mobile-hidden { display:none !important; }
+        .logo { display:block !important; padding:0 !important; }
+        .photo img { width:100% !important; height:auto !important;}
+        .nav5, .nav6 { display: none !important;}
+        .fluid, .fluid-centered {
           width: 100% !important;
-          padding-top: 0 !important;
-          padding-right: 0 !important;
-          padding-bottom: 0 !important;
-          padding-left: 0 !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
-        td[class~=columnContent] {
-          font-size:14px !important;
-          line-height:145% !important;
-          padding-top: 10px !important;
-          padding-right: 10px !important;
-          padding-bottom: 10px !important;
-          padding-left: 10px !important;
-        }
-        #contentCell {
-          padding: 10px 0px !important;
-        }
-        #headerTable {
-          padding-right: 0.0px !important;
-        }
-        #contentTableOuter {
-          padding: 0.0px !important;
-        }
-        .expand {
-          width:100% !important;
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
       }
-      #preview_text {
-        display: none;
-      }
-      /*]]>*/
     </style>
-    <!-- http://www.emailon@cid.com/blog/details/C13/ensure_that_your_entire_email_is_rendered_by_default_in_the_iphone_ipad --><!-- --><!-- --><!-- _/ _/ _/ _/_/_/ _/ --><!-- _/ _/ _/ _/ _/_/_/ _/ _/_/_/ _/_/ _/_/_/_/ --><!-- _/_/_/_/ _/ _/ _/ _/ _/_/ _/ _/ _/ _/ _/ --><!-- _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ --><!-- _/ _/ _/_/_/ _/_/_/ _/_/_/ _/_/_/ _/_/ _/_/ --><!-- _/ --><!-- _/ --><!-- --><!-- Extra White Space! --><!-- --><!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  </head>
-  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color:#f2f2f2; font-family:sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; height:100% !important; margin:0; padding:0; width:100% !important" bgcolor="#f2f2f2" height="100% !important" width="100% !important">
-    <div style="width:0;overflow:hidden;float:left;display:none;max-height:0px;">I'd like to invite you to join me in Hillsdale College's newest free course studying the greatest Christian apologist of the 20th century, C.S. Lewis.
-    </div>
-    <!-- Preview text (text which appears right after subject) -->
-    <div id="preview_text" style="display:none!important">
-    </div>
-    <!-- The backgroundTable table manages the color of the background and then the templateTable maintains the body of 
-the email template, including preheader & footer. This is the only table you set the width of to, everything else is set to 
-100% and in the CSS above. Having the width here within the table is just a small win for Lotus Notes. --><!-- Begin backgroundTable -->
-    <table align="center" bgcolor="#f2f2f2" border="0" cellpadding="0" cellspacing="0" height="100% !important" width="100% !important" id="backgroundTable" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; background-color:#f2f2f2; font-family:sans-serif; height:100% !important; margin:0; padding:0; width:100% !important">
-      <tbody>
-        <tr>
-          <td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; height:100% !important; margin:0; padding:0; width:100% !important" height="100% !important" width="100% !important"><!-- When nesting tables within a TD, align center keeps it well, centered. --><!-- Begin Template Container --><!-- This holds everything together in a nice container -->
-            <table border="0" cellpadding="0" cellspacing="0" id="templateTable" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; width:600px; background-color:#ffffff; -webkit-font-smoothing:antialiased" width="600" bgcolor="#ffffff">
-              <tbody>
-                <tr>
-                  <td align="center" valign="top" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt"><!-- Begin Template Preheader -->
-                    <div class="header-container-wrapper">
-                    </div>
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="headerTable" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#f2f2f2; color:#444444; font-family:sans-serif; font-size:10px; line-height:120%; text-align:right; border-collapse:separate !important; padding-right:0px" bgcolor="#f2f2f2" align="right">
-                      <tbody>
-                        <tr>
-                          <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:sans-serif; font-size:15px; line-height:150%; text-align:left">
-                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
-                              <tbody>
-                                <tr>
-                                  <td align="left" valign="top" colspan="12" width="100.0%" class="column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:sans-serif; font-size:15px; line-height:1.5em; color:#444444">
-                                    <div class="widget-span widget-type-email_view_as_web_page " style="" data-widget-type="email_view_as_web_page">
-                                    </div>
-                                    <!--end widget-span --></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <!--end header wrapper -->
-                      </tbody>
-                    </table>
-                    <!-- End Template Preheader --></td>
-                </tr>
-                <tr>
-                  <td align="center" valign="top" id="contentCell" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; padding:10px 20px; background-color:#f2f2f2" bgcolor="#f2f2f2"><!-- Begin Template Wrapper --><!-- This separates the preheader which usually contains the "open in browser, etc" content
-from the actual body of the email. Can alternatively contain the footer too, but I choose not
-to so that it stays outside of the border. -->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="contentTableOuter" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:separate !important; background-color:#ffffff; box-shadow:0px 1px rgba(0, 0, 0, 0.1); padding:0px; border:1px solid #cccccc; border-bottom:1px solid #acacac" bgcolor="#ffffff">
-                      <tbody>
-                        <tr>
-                          <td align="center" valign="top" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
-                            <div class="body-container-wrapper">
-                            </div>
-                            <table border="0" cellpadding="0" cellspacing="0" id="contentTableInner" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; width:600px" width="600">
-                              <tbody>
-                                <tr>
-                                  <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:sans-serif; font-size:15px; line-height:150%; text-align:left">
-                                    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
-                                      <tbody>
-                                        <tr>
-                                          <td align="left" valign="top" colspan="12" width="100.0%" class="column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:sans-serif; font-size:15px; line-height:1.5em; color:#444444">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:separate !important; border-spacing:0; background-color:#ffffff" class="columnContentTable" bgcolor="#ffffff">
-                                              <tbody>
-                                                <tr>
-                                                  <td align="left" valign="top" class="columnContent widget-span widget-type-rich_text" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; padding:0; font-family:sans-serif; font-size:15px; line-height:1.5em; color:#444444; padding:0px 25px 25px 25px" data-widget-type="rich_text">
-                                                    <div>
-                                                    </div>
-                                                    <div class="layout-widget-wrapper">
-                                                      <div id="hs_cos_wrapper_module_1426009925052517" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="color: inherit; font-size: inherit; line-height: inherit; margin: inherit; padding: inherit" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text">
-                                                        <p>
-                                                        </p>
-                                                        <center><a href="https://online.hillsdale.edu/landing/an-introduction-to-c-s-lewis?sc=00707N0242LEDDODEES&utm_source=prospecting&utm_medium=email&utm_campaign=cslewis_oc&utm_content=ae-"><img height="74" width="263" alt="" src="https://397762.fs1.hubspotusercontent-na1.net/hubfs/397762/Logo/HillsdaleLogoHorz295.jpg" /></a></center>
-                                                        <p>
-                                                        </p>
-                                                        <p><a href="https://online.hillsdale.edu/landing/an-introduction-to-c-s-lewis?sc=00707N0242LEDDODEES&utm_source=prospecting&utm_medium=email&utm_campaign=cslewis_oc&utm_content=ae-"><img width="100%" alt="" src="http://cdn2.hubspot.net/hubfs/397762/CS_Lewis_Banner-1.jpg" /></a>
-                                                        </p>
-                                                        <table>
-                                                          <tbody>
-                                                            <tr>
-                                                              <td style="width: 50%" rowspan="2" class="expand">
-                                                                <p style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%">Dear Fellow American,
-                                                                </p>
-                                                                <p style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%">I invite you to join me in <b><a href="https://online.hillsdale.edu/landing/an-introduction-to-c-s-lewis?sc=00707N0242LEDDODEES&utm_source=prospecting&utm_medium=email&utm_campaign=cslewis_oc&utm_content=ae-">Hillsdale College’s free course</a></b> studying the greatest Christian apologist of the 20th century, C.S. Lewis.
-                                                                </p>
-                                                                <p style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%">C.S. Lewis, best known as the author of <i>The Chronicles of Narnia</i>, also authored works on apologetics and philosophy, including <i>The Abolition of Man</i> and <i>Mere Christianity</i>. <b><a href="https://online.hillsdale.edu/landing/an-introduction-to-c-s-lewis?sc=00707N0242LEDDODEES&utm_source=prospecting&utm_medium=email&utm_campaign=cslewis_oc&utm_content=ae-">This free online course</a></b> will study both Lewis’s apologetics and his fiction, as well as his philosophical and literary writings, and their continuing significance today.
-                                                                </p>
-                                                                <p style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%">This free online course consists of nine lessons delivered by Hillsdale College President Larry P. Arnn, Professor of English David Whalen, and Professor Michael Ward–a leading expert on the works of C.S. Lewis at the University of Oxford. I hope you enjoy the course.
-                                                                </p>
-                                                                <p style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%"><strong><a href="https://online.hillsdale.edu/landing/an-introduction-to-c-s-lewis?sc=00707N0242LEDDODEES&utm_source=prospecting&utm_medium=email&utm_campaign=cslewis_oc&utm_content=ae-">Activate your course today, for free.</a></strong>
-                                                                </p>
-                                                              </td>
-                                                              <td valign="top" class="hide">
-                                                                <div style="text-align: center; margin:30px 0 0 10px; border:1px solid #CCC; background:#efefef; padding:10px;">
-                                                                  <h2 align="center">What students are saying
-                                                                  </h2>
-                                                                  <p align="left" style="font-size:1em;">“Hillsdale College's online offerings have deepened my education and enriched my life.”
-                                                                  </p>
-                                                                  <p align="right" style="font-size:1em;"><strong>- Fred D.</strong>
-                                                                  </p>
-                                                                  <p align="left" style="font-size:1em;">“Extraordinary in their simplicity and so fulfilling in their content. Thank you for creating this avenue to knowledge.”
-                                                                  </p>
-                                                                  <p align="right" style="font-size:1em;"><strong>- John C.</strong>
-                                                                  </p>
-                                                                </div>
-                                                              </td>
-                                                            </tr>
-                                                            <tr>
-                                                              <td valign="top" class="hide">
-                                                                <div style="text-align: center; margin:30px 0 0 10px; border:1px solid #CCC; background:#efefef; padding:10px;">
-                                                                  <p style="font-weight: bold; font-size:1.4em; text-align: left; margin: 10px 0; text-align: center;">Time is Running Out
-                                                                  </p>
-                                                                  <a target="_blank" href="https://online.hillsdale.edu/landing/an-introduction-to-c-s-lewis?sc=00707N0242LEDDODEES&utm_source=prospecting&utm_medium=email&utm_campaign=cslewis_oc&utm_content=ae-"><img alt="" style="max-width:300px;width:100%" title="Lecture One" class="CToWUd" width="100%" src="https://gw3.s3.amazonaws.com/rightfree/higher-ed-3-image-4-animated.gif" /></a>
-                                                                  <br />
-                                                                  <a target="_blank" style="text-decoration: none; font-weight: bold; margin-top:10px; display:block;" href="https://online.hillsdale.edu/landing/an-introduction-to-c-s-lewis?sc=00707N0242LEDDODEES&utm_source=prospecting&utm_medium=email&utm_campaign=cslewis_oc&utm_content=ae-">Don't wait—activate your free <em>C.S Lewis</em> course now!</a>
-                                                                </div>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                        <p style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%">Warm regards,
-                                                        </p>
-                                                        <div>Kyle Murnen '09
-                                                        </div>
-                                                        <div>Director of Online Learning, Hillsdale College
-                                                        </div>
-                                                        <div>Pursuing Truth—Defending Liberty since 1844
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <!--end layout-widget-wrapper --></td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                            <!--end widget-table --></td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                                <!--end body wrapper -->
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <!-- End Template Wrapper --></td>
-                </tr>
-                <tr>
-                  <td align="center" valign="top" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt"><!-- Begin Template Footer -->
-                    <div class="footer-container-wrapper">
-                    </div>
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="footerTable" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; background-color:#f2f2f2; color:#999999; font-family:sans-serif; font-size:12px; line-height:120%; padding-top:20px; padding-right:20px; padding-bottom:20px; padding-left:20px; text-align:center" bgcolor="#f2f2f2" align="center">
-                      <tbody>
-                        <tr>
-                          <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:sans-serif; font-size:15px; line-height:150%; text-align:left">
-                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
-                              <tbody>
-                                <tr>
-                                  <td align="left" valign="top" colspan="12" width="100.0%" class="column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:sans-serif; font-size:15px; line-height:1.5em; color:#444444">
-                                    <div class="widget-span widget-type-email_can_spam " style="" data-widget-type="email_can_spam">
-                                      <p id="footer" style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; font-family:Geneva, Verdana, Arial, Helvetica, sans-serif; text-align:center; font-size:12px; line-height:1.34em; color:#999999; display:block" align="center">Hillsdale College &nbsp;&nbsp;33 East College St &nbsp; &nbsp;Hillsdale, &nbsp;MI &nbsp;&nbsp;49242 &nbsp;&nbsp;USA
-                                        <br />
-                                        &nbsp;
-                                      </p>
-                                    </div>
-                                    <br />
-                                    <br />
-                                    <!--end widget-span --></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <!--end footer wrapper -->
-                        <tr>
-                          <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <!-- End Template Footer --></td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- End Template Container --></td>
-        </tr>
-      </tbody>
-    </table>
-    <!-- end coded_template: id:2746383813 path:generated_layouts/2746383803.html --></body>
+<!--[if mso]>
+      <style type="text/css">
+          /* Begin Outlook Font Fix */
+          body, table, td {
+              font-family: Arial, Helvetica, sans-serif ;
+              font-size:18px;
+              color:#000000;
+              line-height:1;
+          }
+          /* End Outlook Font Fix */
+      </style>
+    <![endif]-->
+</head>
+<body bgcolor="#FFFFFF" style="background-color: #FFFFFF; color: #000000; padding: 0px; -webkit-text-size-adjust:none; font-size: 18px; font-family:arial,helvetica,sans-serif;" text="#000000">
+<!-- start PREVIEW TEXT SPACER --><div style="display:none;">Hey, it’s Vivek – never before in the history of the world has a truly great country fallen so far from grace in such a short time. &#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;
+</div>
+<!--[if !mso]><! -->
+
+    <#if (Recipient.FirstName?has_content) && (Recipient.FirstName?trim?length > 0)>${Recipient.FirstName}<#else>Fellow American</#if>
+
+    <br><br>
+    
+    My fellow Americans:&nbsp;<br/>
+<br/></span></body>
 </html>

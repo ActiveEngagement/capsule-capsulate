@@ -1,5 +1,6 @@
 import { Cheerio, CheerioAPI, Element } from 'cheerio';
 import { BasePlugin } from '../Plugin';
+import { cheerio } from '../helpers';
 
 export type PreviewTextOptions = {
     html?: string | (($: CheerioAPI) => PreviewTextHtml);
@@ -36,7 +37,7 @@ export class PreviewText extends BasePlugin<PreviewTextOptions> {
 
         this.html = html;
         
-        return $.load($.html().replace(html, ''));
+        return cheerio($.html().replace(html, ''));
     }
 
     async postprocess($: CheerioAPI) {

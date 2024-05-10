@@ -11,8 +11,6 @@ const document = ref<string>(input);
 const wrapper = ref<string>(template);
 const converted = ref<string>();
 
-console.log(wrapper.value);
-
 watchEffect(async () => {
     converted.value = await capsulate(document.value, {
         // dom: {
@@ -22,18 +20,18 @@ watchEffect(async () => {
         //         to: 'test'
         //     }]
         // },
-        template: {
-            src: wrapper.value,
-            data: {
-                test: 123
-            }
-        },
-        // previewText: {
-        //     html: ($) => {
-        //         return $('#preview-text');
+        // template: {
+        //     src: wrapper.value,
+        //     data: {
+        //         test: 123
         //     }
-        // }
+        // },
+        previewText: {
+            html: 'some preview text'
+        }
     });
+
+    console.log(converted.value);
 });
 
 function onClickCopy() {

@@ -1,3 +1,10 @@
+## [0.6.4](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.3...v0.6.4) (2024-05-21)
+
+
+### Bug Fixes
+
+* add ReplaceNonAsciiCharsWithEntities to exports ([71a684a](https://github.com/ActiveEngagement/capsule-capsulate/commit/71a684a03561998163cd9991ede24f72d3fd8f00))
+
 ## [0.6.3](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.2...v0.6.3) (2024-05-10)
 
 

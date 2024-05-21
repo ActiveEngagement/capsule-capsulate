@@ -19,6 +19,7 @@ export * from './dom/FixResponsiveImages';
 export * from './dom/FixTableAlignment';
 export * from './dom/RemoveDisplayNone';
 export * from './dom/RemoveScriptTags';
+export * from './dom/ReplaceNonAsciiCharsWithEntities';
 export * from './dom/ReplaceQueryStrings';
 
 export * from './plugins/Beautify';
@@ -30,3 +31,4 @@ export * from './plugins/PreserveBodyAttributes';
 export * from './plugins/PreserveHeadTag';
 export * from './plugins/PreviewText';
 export * from './plugins/Template';
+

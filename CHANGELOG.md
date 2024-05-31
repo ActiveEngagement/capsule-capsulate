@@ -1,3 +1,10 @@
+## [0.6.5](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.4...v0.6.5) (2024-05-29)
+
+
+### Bug Fixes
+
+* fix peer deps ([10d1fe9](https://github.com/ActiveEngagement/capsule-capsulate/commit/10d1fe96d660689974e35cfa3b8c2d6e23d7ae8c))
+
 ## [0.6.4](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.3...v0.6.4) (2024-05-21)
 
 

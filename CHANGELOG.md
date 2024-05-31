@@ -1,3 +1,10 @@
+## [0.6.6](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.5...v0.6.6) (2024-05-31)
+
+
+### Bug Fixes
+
+* fixed issue with capsule-lint and freemarker tags ([c503192](https://github.com/ActiveEngagement/capsule-capsulate/commit/c503192f35398ab540e1a7d4d312dc99836cd28a))
+
 ## [0.6.5](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.4...v0.6.5) (2024-05-29)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "capsule-capsulate",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "The official Capsule document converter.",
   "type": "module",
   "main": "./dist/capsule-capsulate.umd.cjs",

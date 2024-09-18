@@ -1,3 +1,10 @@
+## [0.6.8](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.7...v0.6.8) (2024-06-11)
+
+
+### Bug Fixes
+
+* updated capsule-lint to peer dep ([376424e](https://github.com/ActiveEngagement/capsule-capsulate/commit/376424e7cdaab24f00e7e634c2327b754d171f6b))
+
 ## [0.6.7](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.6...v0.6.7) (2024-06-11)
 
 

@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.8...v0.7.0) (2024-09-18)
+
+
+### Features
+
+* updated juice to v11 and updated capsule-lint to v0.5 ([d62a53f](https://github.com/ActiveEngagement/capsule-capsulate/commit/d62a53f590019445d70d63ac8f88418a3bc79677))
+
 ## [0.6.8](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.7...v0.6.8) (2024-06-11)
 
 

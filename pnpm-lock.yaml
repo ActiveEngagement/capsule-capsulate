@@ -7,7 +7,7 @@ settings:
 dependencies:
   capsule-lint:
     specifier: ^0.5.0
-    version: 0.5.0(peggy@3.0.2)
+    version: 0.5.1(peggy@3.0.2)
   cheerio:
     specifier: 1.0.0-rc.12
     version: 1.0.0-rc.12
@@ -2886,7 +2886,7 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.6.3
-      tsutils: 3.21.0(typescript@4.9.5)
+      tsutils: 3.21.0(typescript@5.6.2)
       typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
@@ -3559,8 +3559,8 @@ packages:
     resolution: {integrity: sha512-GacvNTTuATm26qC74pt+ad1fW15mlQ/zuTzzY1ZoIzECTP8HURDfF43kNxPgf7H1jmelCBQTTbBNxdSXOA7Bqg==}
     dev: true
 
-  /capsule-lint@0.5.0(peggy@3.0.2):
-    resolution: {integrity: sha512-SaOoo/KSlAR15JOCyXiKUC/j/MFim1EsG3XQCVH9FlMiK3Ro3sWuBP2nrfaawyClXbp8g64tQoi82wwdv0q6eA==}
+  /capsule-lint@0.5.1(peggy@3.0.2):
+    resolution: {integrity: sha512-WYZefB75oVEhUaVx0w07VOYFoDwwDOi3E4VcNSGVnGX16FDVSXfWtpTHz4ENbW/cwLqJGydHJDaiuMvn5qstUg==}
     hasBin: true
     dependencies:
       htmlhint: 1.1.4

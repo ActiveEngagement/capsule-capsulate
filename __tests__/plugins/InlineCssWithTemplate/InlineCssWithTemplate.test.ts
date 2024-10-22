@@ -30,7 +30,5 @@ test('inlining the CSS in a template', async() => {
 
     const response = await runner.process(document);
 
-    console.log(response);
-
     expect(response).toBe(expected);
 });

@@ -1,3 +1,11 @@
+## [0.7.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.7.0...v0.7.1) (2024-10-22)
+
+
+### Bug Fixes
+
+* fixed issue with spaces in source codes ([fa652ac](https://github.com/ActiveEngagement/capsule-capsulate/commit/fa652ac7419a5af51c464a6ea3486d0439fb7b37))
+* updated pnpm ([f050ee4](https://github.com/ActiveEngagement/capsule-capsulate/commit/f050ee4b01111e0536973b0e33ec6bcb27531623))
+
 # [0.7.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.6.8...v0.7.0) (2024-09-18)
 
 

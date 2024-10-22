@@ -23,7 +23,7 @@ export function replaceQueryString(href: string, replacements: SourceCode[]) {
 
     for(const { key, from, to } of replacements) {
         if(url.searchParams.get(key) === from) {
-            url.searchParams.set(key, to);            
+            url.searchParams.set(key, to.replace(/\s/g, '%20'));            
         }
     }
 

@@ -20,6 +20,9 @@ test('extracting source codes.', async() => {
         'a': {
             '1': 1
         },
+        'c': {
+            'test': 1
+        },
         'utm_test':  {
             '${Gears.foo}': 2,
         }

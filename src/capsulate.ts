@@ -11,6 +11,7 @@ import { RemoveScriptTags } from './dom/RemoveScriptTags';
 import { ReplaceNonAsciiCharsWithEntities } from './dom/ReplaceNonAsciiCharsWithEntities';
 import { ReplaceQueryStrings, type ReplaceQueryStringOptions } from './dom/ReplaceQueryStrings';
 import { run } from './helpers';
+import { Courier, type CourierOptions } from './plugins/Courier';
 import { DecodeHrefAmpersands } from './plugins/DecodeHrefAmpersands';
 import { ExtractTarget, type ExtractTargetOptions } from './plugins/ExtractTarget';
 import { HtmlMinifier, type HtmlMinifierOptions } from './plugins/HtmlMinifier';
@@ -30,6 +31,7 @@ export type CapsulateOptions = {
     inlineCss?: InlineCssOptions;
     previewText?: PreviewTextOptions;
     template?: TemplateOptions;
+    courier?: CourierOptions
 }
 
 export async function capsulate(src: string, options: CapsulateOptions = {}) {
@@ -58,6 +60,7 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
         new PreserveBodyAttributes,
         new PreviewText(options.previewText),
         new DecodeHrefAmpersands,
+        new Courier(options.courier),
         // Must go last to ensure all CSS is inlined
         new InlineCss(options.inlineCss),
     ]);

@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.7.1...v0.8.0) (2025-05-09)
+
+
+### Features
+
+* added courier support ([e452e6e](https://github.com/ActiveEngagement/capsule-capsulate/commit/e452e6e10f9101168a737b2d08cf22b3da673f6e))
+
 ## [0.7.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.7.0...v0.7.1) (2024-10-22)
 
 

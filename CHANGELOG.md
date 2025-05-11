@@ -1,3 +1,10 @@
+## [0.8.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.8.0...v0.8.1) (2025-05-11)
+
+
+### Bug Fixes
+
+* added the data-courier-request-id to body ([1c459aa](https://github.com/ActiveEngagement/capsule-capsulate/commit/1c459aa268c378d908d9af5fcc2e376932142e0d))
+
 # [0.8.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.7.1...v0.8.0) (2025-05-09)
 
 

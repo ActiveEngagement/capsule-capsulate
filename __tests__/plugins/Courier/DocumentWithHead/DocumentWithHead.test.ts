@@ -15,7 +15,7 @@ test('inserting the Courier request ID into the head', async() => {
 
     const runner = new TaskRunner([
         new Courier({
-            requestId: 'some-courier-id'
+            requestId: '123'
         }),
         new Beautify()
     ]);

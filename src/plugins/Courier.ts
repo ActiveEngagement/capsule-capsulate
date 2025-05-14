@@ -18,19 +18,16 @@ export class Courier extends BasePlugin<CourierOptions> {
             return Promise.resolve($);
         }
 
+        const rootNodes = $('body').length ? $('body > *') : $.root().children();
+
+        rootNodes.each((_, el) => {
+            $(el).attr('id', `courier-request-id-${this.options.requestId}`);
+        });
+
         if($('head').length) {
             $('head').append(`<meta name="courier-request-id" value="${this.options.requestId}"/>`);
         }
         
-        const div = $(`<div data-courier-request-id="${this.options.requestId}" style="display:none;font-size:0;line-height:0;">&nbsp;</div>`);
-
-        if($('body').length) {
-            $('body').append(div);
-        }
-        else {
-            $.root().append(div);
-        }
-
         return Promise.resolve($);
     }
 

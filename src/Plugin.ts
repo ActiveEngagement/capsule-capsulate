@@ -19,7 +19,9 @@ export abstract class BasePlugin<T extends object = object> implements Plugin {
     protected options: T;
 
     constructor(options?: T) {
-        this.options = Object.assign({}, this.defaultOptions(), options ?? {} as T);
+        this.options = Object.assign(
+            {}, this.defaultOptions(), options ?? {}
+        ) as T;
     }
 
     defaultOptions(): T {

@@ -19,6 +19,7 @@ import { InlineCss, type InlineCssOptions } from './plugins/InlineCss';
 import { PreserveBodyAttributes } from './plugins/PreserveBodyAttributes';
 import { PreserveHeadTag } from './plugins/PreserveHeadTag';
 import { PreviewText, type PreviewTextOptions } from './plugins/PreviewText';
+import { ReplaceSourceCode, type ReplaceSourceCodeOptions } from './plugins/ReplaceSourceCode';
 import { Template, type TemplateOptions } from './plugins/Template';
 
 export type CapsulateOptions = {
@@ -31,7 +32,8 @@ export type CapsulateOptions = {
     inlineCss?: InlineCssOptions;
     previewText?: PreviewTextOptions;
     template?: TemplateOptions;
-    courier?: CourierOptions
+    sourceCode?: ReplaceSourceCodeOptions;
+    courier?: CourierOptions;
 }
 
 export async function capsulate(src: string, options: CapsulateOptions = {}) {
@@ -60,6 +62,7 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
         new PreserveBodyAttributes,
         new PreviewText(options.previewText),
         new DecodeHrefAmpersands,
+        new ReplaceSourceCode(options.sourceCode),
         new Courier(options.courier),
         // Must go last to ensure all CSS is inlined
         new InlineCss(options.inlineCss),

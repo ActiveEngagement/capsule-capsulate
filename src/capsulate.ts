@@ -32,7 +32,7 @@ export type CapsulateOptions = {
     inlineCss?: InlineCssOptions;
     previewText?: PreviewTextOptions;
     template?: TemplateOptions;
-    sourceCode?: ReplaceSourceCodeOptions;
+    replaceSourceCode?: ReplaceSourceCodeOptions;
     courier?: CourierOptions;
 }
 
@@ -62,7 +62,7 @@ export async function capsulate(src: string, options: CapsulateOptions = {}) {
         new PreserveBodyAttributes,
         new PreviewText(options.previewText),
         new DecodeHrefAmpersands,
-        new ReplaceSourceCode(options.sourceCode),
+        new ReplaceSourceCode(options.replaceSourceCode),
         new Courier(options.courier),
         // Must go last to ensure all CSS is inlined
         new InlineCss(options.inlineCss),

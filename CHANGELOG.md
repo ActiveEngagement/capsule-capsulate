@@ -1,3 +1,10 @@
+## [0.8.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.8.1...v0.8.2) (2025-05-14)
+
+
+### Bug Fixes
+
+* updated courier request id so it works with forwards ([295040d](https://github.com/ActiveEngagement/capsule-capsulate/commit/295040df33a450b6193913caecfb1215947ef760))
+
 ## [0.8.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.8.0...v0.8.1) (2025-05-11)
 
 

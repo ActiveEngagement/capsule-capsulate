@@ -1,3 +1,10 @@
+# [0.9.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.8.2...v0.9.0) (2025-05-19)
+
+
+### Features
+
+* added ReplaceSourceCode plugin ([a987d8b](https://github.com/ActiveEngagement/capsule-capsulate/commit/a987d8bb5b1a34db8a677c85138894908946f467))
+
 ## [0.8.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.8.1...v0.8.2) (2025-05-14)
 
 

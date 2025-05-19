@@ -1,3 +1,10 @@
+## [0.9.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.9.1...v0.9.2) (2025-05-19)
+
+
+### Bug Fixes
+
+* renamed replace source code option ([833ff9d](https://github.com/ActiveEngagement/capsule-capsulate/commit/833ff9d1a0850faf54cf4195e22e3ccc98eb1ef8))
+
 ## [0.9.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.9.0...v0.9.1) (2025-05-19)
 
 

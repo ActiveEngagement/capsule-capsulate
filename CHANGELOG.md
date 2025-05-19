@@ -1,3 +1,10 @@
+## [0.9.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.9.0...v0.9.1) (2025-05-19)
+
+
+### Bug Fixes
+
+* added replace source code to capsulate helper ([a3152c2](https://github.com/ActiveEngagement/capsule-capsulate/commit/a3152c26a0dd72fc09f6ff992e1d15135344133b))
+
 # [0.9.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.8.2...v0.9.0) (2025-05-19)
 
 

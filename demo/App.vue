@@ -13,21 +13,12 @@ const converted = ref<string>();
 
 watchEffect(async () => {
     converted.value = await capsulate(document.value, {
-        // dom: {
-        //     replaceQueryStrings: [{
-        //         key: 'utm_source',
-        //         from: 'xxxxx',
-        //         to: 'test'
-        //     }]
-        // },
-        // template: {
-        //     src: wrapper.value,
-        //     data: {
-        //         test: 123
-        //     }
-        // },
         previewText: {
-            html: 'some preview text'
+            // html: () => 'new preview text'
+            html: '<div>test</div>'
+        },
+        replaceSourceCode: {
+            sourceCode: 'test'
         }
     });
 
@@ -35,7 +26,9 @@ watchEffect(async () => {
 });
 
 function onClickCopy() {
-    navigator.clipboard.writeText(converted.value);
+    if(converted.value) {
+        navigator.clipboard.writeText(converted.value);
+    }
 }
 </script>
 

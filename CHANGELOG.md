@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v1.0.0...v1.0.1) (2025-07-16)
+
+
+### Bug Fixes
+
+* fix issues with preview text when passing a string that needs to be converted to html ([e45ddf6](https://github.com/ActiveEngagement/capsule-capsulate/commit/e45ddf620a45ca748d1049d162446db8a7f6e03b))
+
 # [1.0.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.9.3...v1.0.0) (2025-07-16)
 
 

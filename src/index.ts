@@ -31,6 +31,5 @@ export * from './plugins/InlineCss';
 export * from './plugins/PreserveBodyAttributes';
 export * from './plugins/PreserveHeadTag';
 export * from './plugins/PreviewText';
-export * from './plugins/ReplaceSourceCode';
 export * from './plugins/Template';
 

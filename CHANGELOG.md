@@ -1,3 +1,10 @@
+## [0.9.3](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.9.2...v0.9.3) (2025-07-15)
+
+
+### Bug Fixes
+
+* improved preview text plugin ([7028968](https://github.com/ActiveEngagement/capsule-capsulate/commit/70289685163dc8072f4b8ae43b7ddcbff2955923))
+
 ## [0.9.2](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.9.1...v0.9.2) (2025-05-19)
 
 

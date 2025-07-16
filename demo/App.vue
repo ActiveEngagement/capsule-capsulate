@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue';
-import { capsulate, only } from '../src/index';
+import { capsulate } from '../src/index';
 
 // @ts-ignore
 import input from './input.html?raw';
@@ -12,9 +12,14 @@ const wrapper = ref<string>(template);
 const converted = ref<string>();
 
 watchEffect(async () => {
-    converted.value = await capsulate('<a href="https://google.com/?utm_test=${Gears.foo}">${Gears.a}</a>', only({
-        htmlMinifier: undefined
-    }));
+    converted.value = await capsulate(document.value, {
+        previewText: {
+            html: 'Are you taking this popular blood tinner?'
+        },
+        template: {
+            src: wrapper.value
+        }
+    });
 
     console.log(converted.value)
 });

@@ -9,7 +9,7 @@ export type PreviewTextOptions = {
     html?: string | null | PreviewTextFunction;
 }
 
-function value<T extends any[]>(subject?: string|null|((...args: T) => PreviewTextHtml), ...args: T) {
+function value<T extends unknown[]>(subject?: string|null|((...args: T) => PreviewTextHtml), ...args: T) {
     if(subject === undefined || subject === null) {
         return subject;
     }
@@ -22,7 +22,14 @@ function value<T extends any[]>(subject?: string|null|((...args: T) => PreviewTe
 }
 
 function toCheerio(subject: string|Cheerio<AnyNode>, $: CheerioAPI): [Cheerio<AnyNode>, boolean] {
-    const el = $(subject);
+    let el: Cheerio<AnyNode>;
+
+    try {
+        el = $(subject);
+    }
+    catch {
+        el = $('<div/>').html(subject);
+    }
 
     if(el.prop('outerHTML')) {
         return [el, true];
@@ -79,11 +86,27 @@ export class PreviewText extends BasePlugin<PreviewTextOptions> {
         this.previewTextElement.css('display', 'none');
 
         if($('body').length) {
-            $('body').prepend(this.previewTextElement);
+            $('body').prepend($(this.previewTextElement));
         }
         else {
             $.root().prepend(this.previewTextElement);
         }
+
+        // const nextNode = $(this.previewTextElement).get(0)?.nextSibling;
+
+        // if(!nextNode || nextNode.nodeType !== 3) {
+        //     $(this.previewTextElement).after('\n\n');
+        // } else {
+        //     const textContent = nextNode.nodeValue;
+            
+        //     const leadingNewlines = textContent.match(/^(\n*)/)?.[1].length;
+   
+        //     if(leadingNewlines === 0) {
+        //         $(this.previewTextElement).after('\n\n');
+        //     } else if(leadingNewlines === 1) {
+        //         $(this.previewTextElement).after('\n');
+        //     }
+        // }
 
         return $;
     }

@@ -1,38 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template Document</title>
-    <style>
-        @media screen and (max-width: 650px) {
-            #template-header {
-                background: red;
+<!DOCTYPE html><html><head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html,body {
+                font-family: sans-serif;
             }
-            #template-footer {
-                background:green;
+
+            body {
+                margin:0;
+                padding:0;
+                width:100% !important;
+                -ms-text-size-adjust:100%;
+                -webkit-text-size-adjust:100%;
             }
-        }
-        
-        @media screen and (min-width: 651px) {
-            #template-header {
-                background: purple;
+
+            body > table {
+                max-width: 100%;
+	            table-layout: fixed !important;
             }
-            #template-footer {
-                background: yellow;
+
+            blockquote {
+                margin: 0 0 1rem;
             }
-        }
-    </style>
-</head>
-<body>
-    <div id="wrapper">
-        <div id="template-header">
-            Template Wrapper Header
-        </div>
-        {{ contents }}
-        <div id="template-footer">
-            Template Wrapper Footer
-        </div>
-    </div>
-</body>
-</html>
+            
+            table table {
+	            table-layout: inherit !important;
+            }
+
+            table:not([cellpadding],[cellspacing]) {
+                border-collapse:collapse;
+                mso-table-lspace: 0pt;
+                mso-table-rspace: 0pt;
+            }
+
+            table td:not([cellpadding],[cellspacing]) {
+                border-collapse:collapse;
+            }
+            
+            table.ol tr:first-child td,
+            table.ul tr:first-child td {
+                padding-top: 1em;
+            }
+            
+            table.ol tr:last-child td,
+            table.ul tr:last-child td {
+                padding-bottom: 1em;
+            }
+            
+            table.ol tr td,
+            table.ul tr td {
+                padding-right: 1em;
+            }
+
+            img {
+                outline:none;
+                max-width: 100%;
+                text-decoration:none;
+                -ms-interpolation-mode: bicubic;
+            }
+
+            a img {
+                border:none;
+            }
+
+            #capsule-main {
+                width: 100%;
+                margin: 0 auto;
+                min-width: 320px;
+                max-width: 600px;
+            }
+
+            #capsule-logo {
+                width: 200px;
+                margin-top: 2em;
+            }
+
+            #capsule-footer * {
+                font-size: 12px !important;
+                text-align: center;
+            }
+
+            .py-3 {
+                padding-top: .75rem;
+                padding-bottom: .75rem;
+            }
+            
+            .font-italic {
+                font-style: italic;
+            }
+
+            .font-size-12 {
+                font-size: 12px;
+            }   
+            
+            .font-size-14 {
+                font-size: 14px;
+            }   
+
+            .text-secondary {
+                color: #6c757d !important;
+            }
+
+            a.text-secondary:hover,
+            a.text-secondary:focus {
+                color: #494f54 !important;
+            }
+        </style>
+    </head>
+    <body><div style="display: none;">some preheader text</div>
+        <table cellpadding="0" cellspacing="0" width="100%" align="center">
+            <tbody><tr>
+                <td>
+                    <!-- Main Body -->
+                    <!--[if mso]><table cellpadding="0" cellspacing="0" align="center" width="600"><tr><td><![endif]-->
+                    <table cellpadding="0" cellspacing="0" id="capsule-main" align="center">
+                        <tbody><tr>
+                            <td align="center">
+                                <!-- Header -->
+                                <table cellpadding="0" cellspacing="0" align="center" id="capsule-header">
+                                    <tbody><tr>
+                                        <td align="center">
+                                                                                            <img src="https://d2kldsifk5aaa3.cloudfront.net/American_Eagles_head.png" alt="American Eagles" width="200" id="capsule-logo">
+                                                                                                                                    <div class="py-3 font-size-14 font-italic text-secondary">
+                                                <div><p>Zxc asdasd</p>
+</div>
+                                            </div>
+                                                                                    </td>
+                                    </tr>
+                                </tbody></table>
+                                <!-- End Header -->
+
+                                <!-- Body -->
+                                <table cellpadding="0" cellspacing="0" align="center" id="capsule-body">
+                                    <tbody><tr>
+                                        <td>
+                                            
+                                            <!-- DYNAMIC CONTENT -->
+                                            <div>
+                                                {{ contents }}
+                                            </div>
+                                            <!-- END DYNAMIC CONTENT -->
+                                            
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                <!-- End Body -->
+
+                                <!-- Footer -->
+                                <table cellpadding="0" cellspacing="0" align="center" id="capsule-footer">
+                                    <tbody><tr>
+                                        <td class="text-secondary" align="center">
+                                                                                        <div class="font-size-12">
+                                                American Eagles
+P.O. Box 15855
+Washington, DC 20003
+                                            </div>
+                                                                                        
+                                            <p class="font-size-12">
+                                                If you no longer wish to receive sponsored promotional emails from us <a href="${Gears.unsubscribe()}" target="_blank" rel="noopener"><i>unsubscribe</i></a> to unsubscribe.
+                                            </p>
+                                            
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                <!-- End Footer -->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!--[if mso]></td></tr></table><![endif]-->
+                    <!-- End Main Body -->
+                </td>
+            </tr>
+        </tbody></table>
+    
+</body></html>

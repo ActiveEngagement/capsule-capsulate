@@ -1,3 +1,16 @@
+# [1.0.0](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.9.3...v1.0.0) (2025-07-16)
+
+
+### Features
+
+* added ability to only run defined plugins and refactoed replace query strings ([07618bc](https://github.com/ActiveEngagement/capsule-capsulate/commit/07618bc917da783503810bcf40fa7b95ce06d8ef))
+* removed replace source code plugin ([b39cd92](https://github.com/ActiveEngagement/capsule-capsulate/commit/b39cd925890fe219fe1a6ef48e5bdb8c7e65f6f4))
+
+
+### BREAKING CHANGES
+
+* removed this in favor of using the dom plugin `ReplaceQueryStrings`
+
 ## [0.9.3](https://github.com/ActiveEngagement/capsule-capsulate/compare/v0.9.2...v0.9.3) (2025-07-15)
 
 

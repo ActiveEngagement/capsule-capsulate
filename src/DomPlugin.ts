@@ -1,7 +1,11 @@
 import { AnyNode, Cheerio, CheerioAPI } from 'cheerio';
+import { defaultsDeep } from 'lodash-es';
+import type { MaybeOption } from './capsulate';
 
 export interface DomPlugin {
     
+    enabled: boolean;
+
     initialize(src: string): Promise<string>
 
     preprocess($: CheerioAPI): Promise<CheerioAPI>
@@ -16,19 +20,16 @@ export interface DomPlugin {
 
 export class BaseDomPlugin<T extends object = object> implements DomPlugin {
 
+    public enabled: boolean = true;
+
     protected options: T;
 
-    constructor(options?: T) {
-        const defaultOptions = this.defaultOptions();
-
-        if(Array.isArray(options) || Array.isArray(defaultOptions)) {
-            this.options = options ?? this.defaultOptions();
+    constructor(options?: MaybeOption<T>) {
+        if(options == false) {
+            this.enabled = false;
         }
-        else {
-            this.options = Object.assign(
-                {}, defaultOptions, options ?? {} as T
-            );
-        }
+        
+        this.options = defaultsDeep({}, this.defaultOptions(), options);
     }
 
     defaultOptions(): T {

@@ -12,13 +12,17 @@ test('wrapping mso on correct divs', async() => {
         path.resolve('__tests__/dom/ReplaceQueryStrings/expected.html'), 'utf8'
     );
 
-    expect(await manipulate(error, [new ReplaceQueryStrings([
-        { key: 'a', from: '1', to: '2' },
-        { key: 'c', from: 'test', to: 'with space' },
-        { key: 'utm_test', from: '${Gears.foo}', to: '${Gears.bar}' },
-        { key: 'source_code', from: 'xxxxx', to: 'xxxxx-updated' },
-        { key: 'source_code', from: 'yyyyy', to: 'yyyyy-updated' },
-        { key: 'source_code', from: 'zzzzz', to: 'zzzzz-updated' },
-        { key: 'segmentCode', from: 'xxxxx', to: 'xxxxx-updated' }
-    ])])).toBe(expected);
+    expect(await manipulate(error, [
+        new ReplaceQueryStrings({
+            sourceCodes: [
+                { key: 'a', from: '1', to: '2' },
+                { key: 'c', from: 'test', to: 'with space' },
+                { key: 'utm_test', from: '${Gears.foo}', to: '${Gears.bar}' },
+                { key: 'source_code', from: 'xxxxx', to: 'xxxxx-updated' },
+                { key: 'source_code', from: 'yyyyy', to: 'yyyyy-updated' },
+                { key: 'source_code', from: 'zzzzz', to: 'zzzzz-updated' },
+                { key: 'segmentCode', from: 'xxxxx', to: 'xxxxx-updated' }
+            ]
+        })
+    ])).toBe(expected);
 });

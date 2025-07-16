@@ -3,8 +3,7 @@ import { Cheerio, type AnyNode } from 'cheerio';
 import parse from 'css-shorthand-parser';
 // @ts-ignore
 import cssShorthandProps from 'css-shorthand-properties';
-import camelCase from 'lodash.camelcase';
-import pickBy from 'lodash.pickby';
+import { camelCase, pickBy } from 'lodash-es';
 
 declare module 'cheerio' {
     interface Cheerio<T> {

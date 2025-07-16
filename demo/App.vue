@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue';
-import { capsulate } from '../src/index';
+import { capsulate, only } from '../src/index';
 
 // @ts-ignore
 import input from './input.html?raw';
@@ -12,17 +12,11 @@ const wrapper = ref<string>(template);
 const converted = ref<string>();
 
 watchEffect(async () => {
-    converted.value = await capsulate(document.value, {
-        previewText: {
-            // html: () => 'new preview text'
-            html: '<div>test</div>'
-        },
-        replaceSourceCode: {
-            sourceCode: 'test'
-        }
-    });
+    converted.value = await capsulate('<a href="https://google.com/?utm_test=${Gears.foo}">${Gears.a}</a>', only({
+        htmlMinifier: undefined
+    }));
 
-    console.log(converted.value);
+    console.log(converted.value)
 });
 
 function onClickCopy() {

@@ -1,11 +1,6 @@
 import { CheerioAPI } from 'cheerio';
-import pickBy from 'lodash.pickby';
+import { pickBy } from 'lodash-es';
 import { BaseDomPlugin } from '../DomPlugin';
-
-// const jQuery = require('../lib/jquery');
-// const pickBy = require('lodash.pickby');
-// const Plugin = require('../lib/Plugin');
-// const size = require('lodash/size');
 
 export class FixMsoButtons extends BaseDomPlugin {
 

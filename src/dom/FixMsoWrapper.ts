@@ -1,5 +1,5 @@
 import { type Cheerio, type CheerioAPI, type Element } from 'cheerio';
-import pickBy from 'lodash.pickby';
+import { pickBy } from 'lodash-es';
 // @ts-ignore
 import * as units from 'units-css';
 import { BaseDomPlugin } from '../DomPlugin';

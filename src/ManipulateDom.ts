@@ -4,10 +4,14 @@ import { BasePlugin } from './Plugin';
 
 export class ManipulateDom extends BasePlugin {
 
+    protected plugins: DomPlugin[];
+
     constructor(
-        protected plugins: DomPlugin[]
+        plugins: DomPlugin[]
     ) {
         super();
+
+        this.plugins = plugins.filter(plugin => plugin.enabled);
     }
 
     async preprocess($: CheerioAPI) {

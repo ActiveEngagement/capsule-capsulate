@@ -1,7 +1,11 @@
 import { CheerioAPI } from 'cheerio';
+import { defaultsDeep } from 'lodash-es';
+import type { MaybeOption } from './capsulate';
 
 export interface Plugin {
     
+    enabled: boolean;
+
     initialize(src: string): Promise<string>
 
     preprocess($: CheerioAPI): Promise<CheerioAPI>
@@ -16,12 +20,16 @@ export interface Plugin {
 
 export abstract class BasePlugin<T extends object = object> implements Plugin {
 
+    public enabled: boolean = true;
+
     protected options: T;
 
-    constructor(options?: T) {
-        this.options = Object.assign(
-            {}, this.defaultOptions(), options ?? {}
-        ) as T;
+    constructor(options?: MaybeOption<T>) {
+        if(options === false) {
+            this.enabled = false;
+        }
+
+        this.options = defaultsDeep({}, this.defaultOptions(), options);
     }
 
     defaultOptions(): T {

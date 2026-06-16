@@ -101,6 +101,78 @@ describe('replaceQueryStrings()', function() {
             to: '${Gears.bar}'
         }])).toBe('https://google.com/?a=${Gears.bar}');
     });
+
+    test('upserts a missing key onto a url with existing params', async() => {
+        expect(replaceQueryString('https://google.com/?a=1', [{
+            key: 'utm',
+            to: 'x'
+        }])).toBe('https://google.com/?a=1&utm=x');
+    });
+
+    test('upserts a missing key onto a url with no query string', async() => {
+        expect(replaceQueryString('https://google.com/', [{
+            key: 'utm',
+            to: 'x'
+        }])).toBe('https://google.com/?utm=x');
+    });
+
+    test('upsert sets the value when the key already exists', async() => {
+        expect(replaceQueryString('https://google.com/?utm=old', [{
+            key: 'utm',
+            to: 'new'
+        }])).toBe('https://google.com/?utm=new');
+    });
+
+    test('upsert encodes spaces and preserves freemarker tags', async() => {
+        expect(replaceQueryString('https://google.com/', [{
+            key: 'utm',
+            to: 'spring sale'
+        }])).toBe('https://google.com/?utm=spring%20sale');
+
+        expect(replaceQueryString('https://google.com/', [{
+            key: 'utm',
+            to: '${Gears.code}'
+        }])).toBe('https://google.com/?utm=${Gears.code}');
+    });
+
+    test('edits an existing param and upserts a new one in the same call', async() => {
+        expect(replaceQueryString('https://google.com/?a=1', [{
+            key: 'a',
+            from: '1',
+            to: '2'
+        }, {
+            key: 'utm',
+            to: 'x'
+        }])).toBe('https://google.com/?a=2&utm=x');
+    });
+
+    // Backwards-compat guard: a keyed edit (has `from`) must NOT create a missing
+    // key. The composable broadcasts every extracted code to every link, so creating
+    // here would copy params onto links that never had them.
+    test('keyed edit does not create a missing key', async() => {
+        expect(replaceQueryString('https://google.com/?a=1', [{
+            key: 'utm',
+            from: 'x',
+            to: 'y'
+        }])).toBe('https://google.com/?a=1');
+    });
+
+    // Backwards-compat guard: a value-only edit (`{from, to}`) never creates.
+    test('value-only edit does not create on a url with no query string', async() => {
+        expect(replaceQueryString('https://google.com/', [{
+            from: '1',
+            to: '2'
+        }])).toBe('https://google.com/');
+    });
+
+    test('does not touch mailto, tel, fragment, or javascript urls when upserting', async() => {
+        const replacements = [{ key: 'utm', to: 'x' }];
+
+        expect(replaceQueryString('mailto:foo@bar.com', replacements)).toBe('mailto:foo@bar.com');
+        expect(replaceQueryString('tel:+15551234567', replacements)).toBe('tel:+15551234567');
+        expect(replaceQueryString('#anchor', replacements)).toBe('#anchor');
+        expect(replaceQueryString('javascript:void(0)', replacements)).toBe('javascript:void(0)');
+    });
 });
 
 test('encoding and decoding freemarker tags', () => {

@@ -201,21 +201,47 @@ export function extractSourceCodes(html: string | CheerioAPI): ExtractedSourceCo
     }, {});
 }
 
-export type SourceCodeReplacement = {
+// Edit the value matching `from`, scoped to a single `key`.
+export type KeyedSourceCodeReplacement = {
     key: string,
     from: string|RegExp,
     to: string
-} | {
+};
+
+// Edit the value matching `from`, across every key.
+export type ValueSourceCodeReplacement = {
     from: string|RegExp,
     to: string
-} | {
+};
+
+// Upsert: no `from`, so `key` is set unconditionally — and created if absent.
+export type UpsertSourceCodeReplacement = {
     key: string,
     to: string
+};
+
+export type SourceCodeReplacement =
+    | KeyedSourceCodeReplacement
+    | ValueSourceCodeReplacement
+    | UpsertSourceCodeReplacement;
+
+// Schemes that parse via `new URL` but break if we touch their query string:
+// `mailto:foo@bar?utm=x` breaks mail clients, `#anchor` stops being a fragment, etc.
+const SKIP_PREFIXES: readonly string[] = ['mailto:', 'tel:', '#', 'javascript:'];
+
+// An upsert (no `from`) sets its key unconditionally, creating it when absent.
+// Keyed edits keep their `from` and so still skip missing keys.
+export function isUpsertReplacement(replacement: SourceCodeReplacement): replacement is UpsertSourceCodeReplacement {
+    return 'key' in replacement && !('from' in replacement);
 }
 
 export function replaceQueryString(href: string, replacements: SourceCodeReplacement[]) {
+    if(SKIP_PREFIXES.some(prefix => href.toLowerCase().startsWith(prefix))) {
+        return href;
+    }
+
     let url: URL;
-    
+
     try {
         url = new URL(href);
     }
@@ -223,12 +249,18 @@ export function replaceQueryString(href: string, replacements: SourceCodeReplace
         return href;
     }
 
-    if(!url.searchParams.size) {
+    // Nothing to edit and nothing to upsert — bail before rebuilding the query.
+    if(!url.searchParams.size && !replacements.some(isUpsertReplacement)) {
         return url.toString();
     }
 
     for(const replacement of replacements) {
         replaceSearchParams(url.searchParams, replacement);
+    }
+
+    // Still empty (no upsert matched) — avoid rebuilding a bare `?`.
+    if(!url.searchParams.size) {
+        return url.toString();
     }
 
     const rawQueryString = '?' + [...url.searchParams.entries()].map(([key, value]) => {
@@ -239,6 +271,14 @@ export function replaceQueryString(href: string, replacements: SourceCodeReplace
 }
 
 export function replaceSearchParams(params: URLSearchParams, replacement: SourceCodeReplacement) {
+    // An upsert creates its key when absent; then there is nothing left to match.
+    if(isUpsertReplacement(replacement) && !params.has(replacement.key)) {
+        params.set(replacement.key, replacement.to.replace(/\s/g, '%20'));
+
+        return;
+    }
+
+    // Any other replacement whose key is absent has nothing to match.
     if(!isValidSearchParamKey(params, replacement)) {
         return;
     }
@@ -298,8 +338,16 @@ export function useReplaceQueryStrings(src: string | CheerioAPI) {
         }))];
     }));
 
-    const model = computed(() => {
-        return sourceCodes.value.map(([, value]) => value).flat(1);
+    // Codes to add to every link; with no `from`, each is upserted.
+    const newSourceCodes = ref<UpsertSourceCodeReplacement[]>([]);
+
+    const model = computed<SourceCodeReplacement[]>(() => {
+        return [
+            ...sourceCodes.value.map(([, value]) => value).flat(1),
+            ...newSourceCodes.value
+                .filter(code => code.key.trim())
+                .map(code => ({ key: code.key.trim(), to: code.to }))
+        ];
     });
 
     async function replace() {
@@ -313,6 +361,7 @@ export function useReplaceQueryStrings(src: string | CheerioAPI) {
     return {
         model,
         sourceCodes,
+        newSourceCodes,
         replace
     };
 }

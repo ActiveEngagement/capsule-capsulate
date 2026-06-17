@@ -1,5 +1,11 @@
 ## [1.0.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v1.0.0...v1.0.1) (2025-07-16)
 
+## 1.1.3
+
+### Patch Changes
+
+- [#7](https://github.com/ActiveEngagement/capsule-capsulate/pull/7) [`577c6b5`](https://github.com/ActiveEngagement/capsule-capsulate/commit/577c6b58ded8371261a31adda3d39ef33bd8e6a8) Thanks [@actengage](https://github.com/actengage)! - Add `DeleteSourceCodeReplacement` type (`{ key, delete: true }`) to remove query parameters entirely from every URL. Updates `useReplaceQueryStrings` with `deleteSourceCode()`, `reset()`, and reactive `deletedKeys`.
+
 ## 1.1.2
 
 ### Patch Changes

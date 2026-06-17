@@ -9,11 +9,10 @@
   "files": [
     "dist"
   ],
-  "test": "node --experimental-vm-modules node_modules/.bin/jest",
   "scripts": {
     "dev": "vite dev",
     "build": "tsc --noEmit && vite build && tsc --emitDeclarationOnly --project tsconfig.types.json",
-    "test": "jest",
+    "test": "vitest run",
     "release": "changeset publish"
   },
   "repository": {
@@ -23,34 +22,28 @@
   "author": "Justin Kimbrell",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.29.0",
-    "@babel/preset-env": "^7.28.0",
-    "@babel/preset-typescript": "^7.27.1",
     "@changesets/changelog-github": "^0.6.0",
     "@changesets/cli": "^2.31.0",
-    "@commitlint/config-conventional": "^17.8.1",
-    "@jest/globals": "^30.0.4",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@eslint/js": "^10.0.1",
     "@types/html-minifier": "^4.0.5",
-    "@types/jest": "^29.5.14",
     "@types/js-beautify": "^1.14.3",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.19.8",
     "@types/nunjucks": "^3.2.6",
-    "@vitejs/plugin-vue": "^5.2.4",
-    "babel-jest": "^30.0.4",
+    "@vitejs/plugin-vue": "^6.0.7",
     "change-case": "^5.4.4",
-    "commitlint": "^17.8.1",
-    "eslint": "^9.27.0",
-    "globals": "^16.2.0",
+    "commitlint": "^21.0.2",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
     "husky": "^8.0.3",
-    "jest": "^30.0.4",
     "path": "^0.12.7",
     "tailwindcss": "^3.4.17",
-    "ts-jest": "^29.4.0",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.34.1",
-    "vite": "^6.3.5",
+    "typescript-eslint": "^8.61.1",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.9",
     "vue-tsc": "^2.2.12"
   },
   "dependencies": {
@@ -60,13 +53,29 @@
     "domhandler": "^5.0.3",
     "html-crush": "~4.2.0",
     "js-beautify": "^1.15.4",
-    "juice": "^11.0.1",
-    "lodash-es": "^4.17.21",
+    "juice": "^12.1.1",
+    "lodash-es": "^4.18.1",
     "nunjucks": "^3.2.4",
     "units-css": "^0.4.0"
   },
   "peerDependencies": {
     "capsule-lint": "^0.6.0",
     "vue": "^3.4.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "flatted": ">=3.4.2",
+      "ajv@<8.18.0": ">=8.18.0",
+      "brace-expansion": ">=2.0.3",
+      "diff": ">=4.0.4",
+      "fast-uri": ">=3.1.2",
+      "glob": ">=10.5.0",
+      "js-cookie": ">=3.0.7",
+      "js-yaml": ">=4.2.0",
+      "minimatch": ">=9.0.7",
+      "picomatch": ">=2.3.2",
+      "postcss": ">=8.5.10",
+      "yaml": ">=2.8.3"
+    }
   }
 }

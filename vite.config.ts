@@ -1,7 +1,7 @@
 import vue from '@vitejs/plugin-vue';
 import { pascalCase } from 'change-case';
 import { resolve } from 'path';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import pkg from './package.json';
 
 const external = [
@@ -34,5 +34,10 @@ export default defineConfig(config => ({
     plugins: [vue()],
     define: {
         'process.env': process.env
-    }
+    },
+    test: {
+        globals: true,
+        environment: 'node',
+        include: ['__tests__/**/*.{ts,js}', '*.{test,spec}.{ts,js}'],
+    },
 }));

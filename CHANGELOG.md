@@ -1,5 +1,11 @@
 ## [1.0.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v1.0.0...v1.0.1) (2025-07-16)
 
+## 1.1.2
+
+### Patch Changes
+
+- [#5](https://github.com/ActiveEngagement/capsule-capsulate/pull/5) [`ca55ff1`](https://github.com/ActiveEngagement/capsule-capsulate/commit/ca55ff1cc28c953ba02e4efbb6c699f2086696b5) Thanks [@actengage](https://github.com/actengage)! - Migrate from Jest to Vitest, upgrade dependencies, and fix security vulnerabilities. Upgrades vite 6→8, juice 11→12, lodash-es 4.17→4.18. Reduces audit vulnerabilities from 60 to 35.
+
 ## 1.1.1
 
 ### Patch Changes

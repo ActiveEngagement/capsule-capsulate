@@ -1,5 +1,6 @@
 import { CheerioAPI } from 'cheerio';
-import juice, { type Options } from 'juice';
+import juice from 'juice';
+type Options = juice.Options;
 import { BasePlugin } from '../Plugin';
 import { cheerio, encodeFreemarkerTags } from '../helpers';
 

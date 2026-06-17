@@ -68,4 +68,38 @@ describe('useReplaceQueryStrings()', () => {
 
         expect(model.value).toContainEqual({ key: 'utm', to: 'spring' });
     });
+
+    test('refreshes state from the committed HTML after replace()', async() => {
+        const { sourceCodes, newSourceCodes, replace } = useReplaceQueryStrings(html);
+
+        newSourceCodes.value.push({ key: 'utm', to: 'spring' });
+
+        await replace();
+
+        // Pending upsert clears and the new key surfaces in sourceCodes with counts.
+        expect(newSourceCodes.value).toEqual([]);
+
+        const keys = sourceCodes.value.map(([key]) => key);
+        expect(keys).toContain('utm');
+
+        const utm = sourceCodes.value.find(([key]) => key === 'utm')?.[1];
+        expect(utm).toEqual([
+            { key: 'utm', from: 'spring', to: 'spring', count: 2 }
+        ]);
+    });
+
+    test('successive replace() calls each commit against the prior result', async() => {
+        const { newSourceCodes, replace } = useReplaceQueryStrings(html);
+
+        newSourceCodes.value.push({ key: 'utm_source', to: 'a' });
+        await replace();
+
+        // Simulate the user re-using the same composable for a second save.
+        newSourceCodes.value.push({ key: 'utm_medium', to: 'b' });
+        const result = await replace();
+
+        // Both saves must survive — the second commit cannot drop the first.
+        expect(result).toContain('utm_source=a');
+        expect(result).toContain('utm_medium=b');
+    });
 });

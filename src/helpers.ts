@@ -326,17 +326,27 @@ export function sourceCodeReplacementPattern(replacement: SourceCodeReplacement)
     return new RegExp(escapeRegExp(replacement.from), 'i');
 }
 
-export function useReplaceQueryStrings(src: string | CheerioAPI) {
-    const sourceCodes = ref(Object.entries(
-        extractSourceCodes(src)
-    ).map<[string, (SourceCodeReplacement & {count: number})[]]>(([key, value]) => {
-        return [key, Object.entries(value).map(([value, count]) => ({
+export type KeyedSourceCodes = [string, (SourceCodeReplacement & {count: number})[]][];
+
+export function extractKeyedSourceCodes(src: string | CheerioAPI): KeyedSourceCodes {
+    return Object.entries(extractSourceCodes(src)).map(([key, value]) => [
+        key,
+        Object.entries(value).map(([value, count]) => ({
             key,
             from: value,
             to: value,
             count
-        }))];
-    }));
+        }))
+    ]);
+}
+
+export function useReplaceQueryStrings(src: string | CheerioAPI) {
+    // Mutable so successive replace() calls commit against the latest HTML
+    // rather than the original src — otherwise edits from prior replace() calls
+    // get diffed away.
+    let currentSrc: string | CheerioAPI = src;
+
+    const sourceCodes = ref(extractKeyedSourceCodes(currentSrc));
 
     // Codes to add to every link; with no `from`, each is upserted.
     const newSourceCodes = ref<UpsertSourceCodeReplacement[]>([]);
@@ -351,11 +361,20 @@ export function useReplaceQueryStrings(src: string | CheerioAPI) {
     });
 
     async function replace() {
-        return await manipulate(src.toString(), [
+        const html = await manipulate(currentSrc.toString(), [
             new ReplaceQueryStrings({
                 sourceCodes: model.value
             })
         ]);
+
+        // Refresh state from the committed HTML so newly-upserted params
+        // move into sourceCodes with their counts, pending entries clear, and
+        // the next replace() diffs against the just-committed HTML.
+        currentSrc = html;
+        sourceCodes.value = extractKeyedSourceCodes(html);
+        newSourceCodes.value = [];
+
+        return html;
     }
 
     return {

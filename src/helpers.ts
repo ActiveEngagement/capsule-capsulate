@@ -220,10 +220,17 @@ export type UpsertSourceCodeReplacement = {
     to: string
 };
 
+// Delete: removes the key entirely from every URL.
+export type DeleteSourceCodeReplacement = {
+    key: string,
+    delete: true
+};
+
 export type SourceCodeReplacement =
     | KeyedSourceCodeReplacement
     | ValueSourceCodeReplacement
-    | UpsertSourceCodeReplacement;
+    | UpsertSourceCodeReplacement
+    | DeleteSourceCodeReplacement;
 
 // Schemes that parse via `new URL` but break if we touch their query string:
 // `mailto:foo@bar?utm=x` breaks mail clients, `#anchor` stops being a fragment, etc.
@@ -232,7 +239,11 @@ const SKIP_PREFIXES: readonly string[] = ['mailto:', 'tel:', '#', 'javascript:']
 // An upsert (no `from`) sets its key unconditionally, creating it when absent.
 // Keyed edits keep their `from` and so still skip missing keys.
 export function isUpsertReplacement(replacement: SourceCodeReplacement): replacement is UpsertSourceCodeReplacement {
-    return 'key' in replacement && !('from' in replacement);
+    return 'key' in replacement && !('from' in replacement) && !('delete' in replacement);
+}
+
+export function isDeleteReplacement(replacement: SourceCodeReplacement): replacement is DeleteSourceCodeReplacement {
+    return 'delete' in replacement && (replacement as DeleteSourceCodeReplacement).delete === true;
 }
 
 export function replaceQueryString(href: string, replacements: SourceCodeReplacement[]) {
@@ -271,6 +282,12 @@ export function replaceQueryString(href: string, replacements: SourceCodeReplace
 }
 
 export function replaceSearchParams(params: URLSearchParams, replacement: SourceCodeReplacement) {
+    if(isDeleteReplacement(replacement)) {
+        params.delete(replacement.key);
+
+        return;
+    }
+
     // An upsert creates its key when absent; then there is nothing left to match.
     if(isUpsertReplacement(replacement) && !params.has(replacement.key)) {
         params.set(replacement.key, replacement.to.replace(/\s/g, '%20'));
@@ -326,32 +343,54 @@ export function sourceCodeReplacementPattern(replacement: SourceCodeReplacement)
     return new RegExp(escapeRegExp(replacement.from), 'i');
 }
 
-export function useReplaceQueryStrings(src: string | CheerioAPI) {
-    const sourceCodes = ref(Object.entries(
+function extractSourceCodeEntries(src: string | CheerioAPI) {
+    return Object.entries(
         extractSourceCodes(src)
-    ).map<[string, (SourceCodeReplacement & {count: number})[]]>(([key, value]) => {
+    ).map<[string, (KeyedSourceCodeReplacement & {count: number})[]]>(([key, value]) => {
         return [key, Object.entries(value).map(([value, count]) => ({
             key,
             from: value,
             to: value,
             count
         }))];
-    }));
+    });
+}
+
+export function useReplaceQueryStrings(initialSrc: string | CheerioAPI) {
+    const src = ref(initialSrc.toString());
+
+    const sourceCodes = ref(extractSourceCodeEntries(initialSrc));
 
     // Codes to add to every link; with no `from`, each is upserted.
     const newSourceCodes = ref<UpsertSourceCodeReplacement[]>([]);
+
+    // Keys to delete from every link.
+    const deletedKeys = ref<string[]>([]);
+
+    function deleteSourceCode(key: string) {
+        deletedKeys.value.push(key);
+        sourceCodes.value = sourceCodes.value.filter(([k]) => k !== key);
+    }
+
+    function reset(newSrc: string | CheerioAPI) {
+        src.value = newSrc.toString();
+        sourceCodes.value = extractSourceCodeEntries(newSrc);
+        newSourceCodes.value = [];
+        deletedKeys.value = [];
+    }
 
     const model = computed<SourceCodeReplacement[]>(() => {
         return [
             ...sourceCodes.value.map(([, value]) => value).flat(1),
             ...newSourceCodes.value
                 .filter(code => code.key.trim())
-                .map(code => ({ key: code.key.trim(), to: code.to }))
+                .map(code => ({ key: code.key.trim(), to: code.to })),
+            ...deletedKeys.value.map(key => ({ key, delete: true as const }))
         ];
     });
 
     async function replace() {
-        return await manipulate(src.toString(), [
+        return await manipulate(src.value, [
             new ReplaceQueryStrings({
                 sourceCodes: model.value
             })
@@ -362,6 +401,9 @@ export function useReplaceQueryStrings(src: string | CheerioAPI) {
         model,
         sourceCodes,
         newSourceCodes,
+        deletedKeys,
+        deleteSourceCode,
+        reset,
         replace
     };
 }

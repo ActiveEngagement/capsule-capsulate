@@ -1,5 +1,11 @@
 ## [1.0.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v1.0.0...v1.0.1) (2025-07-16)
 
+## 1.1.4
+
+### Patch Changes
+
+- [#9](https://github.com/ActiveEngagement/capsule-capsulate/pull/9) [`8f5bda4`](https://github.com/ActiveEngagement/capsule-capsulate/commit/8f5bda40af27f185e722b437c16b1ae3d412fbe7) Thanks [@actengage](https://github.com/actengage)! - Bump `capsule-lint` peer dependency to `^0.6.3`.
+
 ## 1.1.3
 
 ### Patch Changes

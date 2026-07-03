@@ -1,5 +1,11 @@
 ## [1.0.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v1.0.0...v1.0.1) (2025-07-16)
 
+## 2.0.0
+
+### Major Changes
+
+- [`09cc75a`](https://github.com/ActiveEngagement/capsule-capsulate/commit/09cc75a606f55619fb1f18387d39f0c95d51b574) - Updated capsule-lint to ^0.8.0
+
 ## 1.1.5
 
 ### Patch Changes

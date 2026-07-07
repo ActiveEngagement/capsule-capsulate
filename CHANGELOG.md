@@ -1,5 +1,11 @@
 ## [1.0.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v1.0.0...v1.0.1) (2025-07-16)
 
+## 1.2.1
+
+### Patch Changes
+
+- [#15](https://github.com/ActiveEngagement/capsule-capsulate/pull/15) [`85bbebe`](https://github.com/ActiveEngagement/capsule-capsulate/commit/85bbebe054db168fbbadc7ffd3ba5c34bb391b9b) Thanks [@actengage](https://github.com/actengage)! - Fixed query string replacements inside MSO conditional comments duplicating params. MSO buttons repeat the same URL on the hidden `<a>` and the `<v:roundrect>`; upserted params were appended twice to the first href and never applied to the second. Replacements are now applied once per unique URL, anchored to the attribute boundary, so duplicated and prefix-overlapping URLs are each rewritten exactly once.
+
 ## 1.2.0
 
 ### Minor Changes

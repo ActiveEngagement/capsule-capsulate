@@ -1,8 +1,5 @@
-packages:
-  - .
-
 minimumReleaseAgeExclude:
-  - capsule-lint@0.7.0 || 0.7.1 || 0.7.2 || 0.8.0
+  - "capsule-*"
 
 overrides:
   flatted: ">=3.4.2"

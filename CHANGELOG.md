@@ -1,5 +1,15 @@
 ## [1.0.1](https://github.com/ActiveEngagement/capsule-capsulate/compare/v1.0.0...v1.0.1) (2025-07-16)
 
+## 1.2.3
+
+### Patch Changes
+
+- [#19](https://github.com/ActiveEngagement/capsule-capsulate/pull/19) [`6e7b633`](https://github.com/ActiveEngagement/capsule-capsulate/commit/6e7b633b82a7222875182d7a35cc1f8cbfab87f3) Thanks [@actengage](https://github.com/actengage)! - Re-release the inline-CSS error-detail fix. 1.2.2 was versioned but never
+  published: the `release.yml` workflow added in the pnpm 11 migration omitted
+  `id-token: write`, so the OIDC/trusted publish failed. The redundant `.yml`
+  workflows are removed and `release.yaml` (which already has OIDC) is moved to
+  pnpm 11, matching capsule-lint. This publishes 1.2.3 with that fix.
+
 ## 1.2.2
 
 ### Patch Changes

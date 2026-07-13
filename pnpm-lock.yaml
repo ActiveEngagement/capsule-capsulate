@@ -24,8 +24,8 @@ importers:
   .:
     dependencies:
       capsule-lint:
-        specifier: ^0.8.0
-        version: 0.8.0
+        specifier: ^0.9.0
+        version: 0.9.0
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -854,8 +854,8 @@ packages:
     resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
     engines: {node: '>= 6'}
 
-  capsule-lint@0.8.0:
-    resolution: {integrity: sha512-Vq5ffknjnF3HAmMCwiPeDyvHR1xzuEUu+Q8FWbv0JlrB9v4DnNHd6VosdBvfQrZsg9H6RYDh1DfGJqZxU+2QOw==}
+  capsule-lint@0.9.0:
+    resolution: {integrity: sha512-TMMJtY7HqiTVzqp9NfY/eomCdEQD49EQiobr7/IF6MKcmXrwMcQX5FJ8cAM6LLPcT4lIptV+NZzU/dam6rr1EA==}
     hasBin: true
 
   chai@6.2.2:
@@ -3107,9 +3107,10 @@ snapshots:
 
   camelcase-css@2.0.1: {}
 
-  capsule-lint@0.8.0:
+  capsule-lint@0.9.0:
     dependencies:
       htmlhint: 1.9.2
+      postcss: 8.5.16
 
   chai@6.2.2: {}
 
